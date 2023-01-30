@@ -1,0 +1,6 @@
+[book]
+authors = ["Miguel Raz Guzmán Macedo"]
+language = "en"
+multilingual = false
+src = "src"
+title = "teaching-material2"
