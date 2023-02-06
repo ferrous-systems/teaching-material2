@@ -1,7 +1,0 @@
-{
-    "editor.semanticTokenColorCustomizations": {
-        "rules": {
-            "*.unsafe:rust": "#ff00ff"
-        }
-    }
-}

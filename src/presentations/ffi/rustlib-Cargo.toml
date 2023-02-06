@@ -1,7 +1,0 @@
-[package]
-name = "magic_adder"
-version = "1.0.0"
-edition = "2021"
-
-[lib]
-crate-type = ["lib", "staticlib", "cdylib"]

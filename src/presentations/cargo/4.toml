@@ -1,3 +1,0 @@
-[dependencies.async-std]
-version = "1"
-path = "/my/local/path"
