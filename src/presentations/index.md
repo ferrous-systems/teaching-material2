@@ -1,7 +1,3 @@
-# Summary
-
-- [Chapter 1](./chapter_1.md)
-
 Presentations
 =============
 
@@ -194,4 +190,3 @@ Quick warm-up exercises that can be distributed in a
 
 -   [FFI - libc
     get\_time()](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=762c5965f08b2d0a3c7375a372da6928)
-

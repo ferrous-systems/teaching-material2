@@ -1,0 +1,69 @@
+In this exercise, we will implement a simple TCP server.
+
+You will learn:
+
+-   How to write a simple single-threaded server binary
+
+-   Read Strings from the network
+
+-   How to handle a connection lifecycle
+
+Task
+====
+
+1.  Accept TCP connections on port `127.0.0.1:7878`
+
+2.  Read all incoming data as `String`
+
+3.  Print the data to the console
+
+4.  Echo it back to the client
+
+Getting started
+===============
+
+Use this template:
+
+    use std::net::{TcpListener, TcpStream};
+    use std::io;
+
+    fn handle_client(mut stream: TcpStream) -> Result<(), io::Error> {
+        // ...
+        Ok(())
+    }
+
+    fn main() -> io::Result<()> {
+        let listener = TcpListener::bind("127.0.0.1:7878")?;
+
+        // accept connections and process them serially
+        for stream in listener.incoming() {
+            handle_client(stream?);
+        }
+        Ok(())
+    }
+
+Read the documentation for the `std::io::Read`, `std::io::Write` traits,
+especially `Read::read_to_string` and `Write::write_all`.
+
+Hints
+=====
+
+Blanket import of `io` functionality
+------------------------------------
+
+    use std::io::prelude::*;
+
+Writing Strings as bytes
+------------------------
+
+    stream.write_all(string.as_bytes());
+
+Sending Data
+------------
+
+To send test data to your server, you can use our example client
+implementation:
+
+$ git clone https://github.com/ferrous-systems/teaching-material.git $
+cd teaching-material/assignments/solutions/tcp-client $ cargo run
+testmessage&lt;/programlisting&gt;
