@@ -1,6 +1,6 @@
 # Summary
 
-Template [Chapter 1](./chapter_1.md)
+[Start Here](./start_here.md)
 
 # Presentations
 
@@ -58,7 +58,7 @@ Template [Chapter 1](./chapter_1.md)
 
 -   [Iterators Again](./presentations/iterators-again.md)
 
--   [Interior Mutability](./presentations/inner-mutability.md)
+-   [Interior Mutability](./presentations/inner-mutability.md) <!-- TODO -->
 
 -   [WASM](./presentations/wasm.md)
 
@@ -96,7 +96,7 @@ Template [Chapter 1](./chapter_1.md)
 
 -   [Futures](./presentations/futures.md)
 
--   [Macros](./presentations/macros.md)
+-   [Macros](./presentations/macros.md) <!-- TODO -->
 
 -   [Match](./presentations/match.md)
 
@@ -154,7 +154,7 @@ Template [Chapter 1](./chapter_1.md)
 
 -   [Binding to LevelDB](./assignments/binding-to-leveldb.md)
 
--   [Binding to LevelDB - book version](https://exercises-2021.ferrous-systems.com/ffi-1-exercise.md)
+-   [Binding to LevelDB - book version](TODO)
 
 -   [Redis client](./assignments/redis.md)
 
@@ -168,16 +168,12 @@ Template [Chapter 1](./chapter_1.md)
 
 -   [Actix Chat using Websockets](./assignments/actix.md)
 
-# SemVer
+-   [Fill In The Blanks: Enums and Match](./assignments/enums_match.md)
+
+-   [Fill In The Blanks: Closures](./assignments/closures.md)
+
+- [FFI  libc get_time()]() <!-- (https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=762c5965f08b2d0a3c7375a372da6928) -->
+
+## SemVer
 
 -   [SemVer from file](./assignments/semver_from_file.md)
-
-# "Fill In The Blanks" warm-ups.
-
-Quick warm-up exercises that can be distributed in a [playground](https://play.rust-lang.org)
-
--   [Fill In The Blanks: Enums and Match](./fill_in_the_blanks/enums_match.md)
-
--   [Fill In The Blanks: Closures](./fill_in_the_blanks/closures.md)
-
--   [FFI - libc get_time()](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=762c5965f08b2d0a3c7375a372da6928)
