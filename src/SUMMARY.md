@@ -1,197 +1,183 @@
 # Summary
 
-- [Chapter 1](./chapter_1.md)
+Template [Chapter 1](./chapter_1.md)
 
-Presentations
-=============
+# Presentations
 
--   [Overview](./overview.html)
+-   [Overview](./presentations/overview.md)
 
--   [Installation](./installation.html)
+-   [Installation](./presentations/installation.md)
 
--   [Basic Types](./basic-types.html)
+-   [Basic Types](./presentations/basic-types.md)
 
--   [Compound Types](./compound-types.html)
+-   [Compound Types](./presentations/compound-types.md)
 
--   [Control Flow](./control-flow.html)
+-   [Control Flow](./presentations/control-flow.md)
 
--   [Little Helpers](./little-helpers.html)
+-   [Little Helpers](./presentations/little-helpers.md)
 
--   [Error Handling](./error-handling.html)
+-   [Error Handling](./presentations/error-handling.md)
 
--   [Mutability](./mutability.html)
+-   [Mutability](./presentations/mutability.md)
 
--   [Ownership & Borrowing in
-    brief](./ownership-borrowing-in-brief.html)
+-   [Ownership & Borrowing in brief](./presentations/ownership-borrowing-in-brief.md)
 
--   [Strings](./strings.html)
+-   [Strings](./presentations/strings.md)
 
--   [Drop, Panic, Abort](./drop-panic-abort.html)
+-   [Drop, Panic, Abort](./presentations/drop-panic-abort.md)
 
--   [Iterators](./iterators.html)
+-   [Iterators](./presentations/iterators.md)
 
--   [Functions](./functions.html)
+-   [Functions](./presentations/functions.md)
 
--   [Stack and Heap](./stack-and-heap.html)
+-   [Stack and Heap](./presentations/stack-and-heap.md)
 
--   [Documentation](./documentation.html)
+-   [Documentation](./presentations/documentation.md)
 
--   [Testing](./testing.html)
+-   [Testing](./presentations/testing.md)
 
--   [Basic Generics](./generics-basics.html)
+-   [Basic Generics](./presentations/generics-basics.md)
 
-<!-- -->
+# Advanced
 
--   [Traits](./traits.html)
+-   [Traits](./presentations/traits.md)
 
--   [Dynamic Dispatch](./dynamic-dispatch.html)
+-   [Dynamic Dispatch](./presentations/dynamic-dispatch.md)
 
--   [Advanced Generics](./advanced-generics-bounds.html)
+-   [Advanced Generics](./presentations/advanced-generics-bounds.md)
 
--   [Closures](./closures.html)
+-   [Closures](./presentations/closures.md)
 
--   [Imports, Modules, and
-    Visibility](./imports-modules-and-visibility.html)
+-   [Imports, Modules, and Visibility](./presentations/imports-modules-and-visibility.md)
 
--   [Crates](./crates.html)
+-   [Crates](./presentations/crates.md)
 
--   [libcore and libstd](./libcore-and-libstd.html)
+-   [libcore and libstd](./presentations/libcore-and-libstd.md)
 
--   [The stdlib](./std-lib-tour.html)
+-   [The stdlib](./presentations/std-lib-tour.md)
 
--   [Iterators Again](./iterators-again.html)
+-   [Iterators Again](./presentations/iterators-again.md)
 
--   [Interior Mutability](./inner-mutability.html)
+-   [Interior Mutability](./presentations/inner-mutability.md)
 
--   [WASM](./wasm.html)
+-   [WASM](./presentations/wasm.md)
 
--   [Lifetimes](./lifetimes.html)
+-   [Lifetimes](./presentations/lifetimes.md)
 
--   [Send and Sync](./send-and-sync.html)
+-   [Send and Sync](./presentations/send-and-sync.md)
 
-<!-- -->
+# Async/Await
 
--   [Intro to Async/Await](./async-await-intro.html)
+-   [Intro to Async/Await](./presentations/async-await-intro.md)
 
--   [Async building blocks](./async-building-blocks.html)
+-   [Async building blocks](./presentations/async-building-blocks.md)
 
--   [Intro to Tokio](./async-tokio-intro.html)
+-   [Intro to Tokio](./presentations/async-tokio-intro.md)
 
--   [Async Implementation Details](./async-implementation.html)
+-   [Async Implementation Details](./presentations/async-implementation.md)
 
--   [Async component interaction](./async-component-interaction.html)
+-   [Async component interaction](./presentations/async-component-interaction.md)
 
--   [Async: Avoiding disaster and unbounded
-    growth](./async-growth-handling.html)
+-   [Async: Avoiding disaster and unbounded growth](./presentations/async-growth-handling.md)
 
--   [Async/Await: Laziness in detail (Rust vs other
-    languages)](./async-await-laziness-in-detail.html)
+-   [Async/Await: Laziness in detail (Rust vs other languages)](./presentations/async-await-laziness-in-detail.md)
 
-<!-- -->
+# Specialized topics
 
--   [Cargo](./cargo.html)
+-   [Cargo](./presentations/cargo.md)
 
--   [Async Await](./async-await.html)
+-   [Async Await](./presentations/async-await.md)
 
--   [Deref Coersions](./deref-coersions.html)
+-   [Deref Coersions](./presentations/deref-coersions.md)
 
--   [Dynamic and Static Libs](./dynamic-and-static-libs.html)
+-   [Dynamic and Static Libs](./presentations/dynamic-and-static-libs.md)
 
--   [FFI](./ffi.html)
+-   [FFI](./presentations/ffi.md)
 
--   [Futures](./futures.html)
+-   [Futures](./presentations/futures.md)
 
--   [Macros](./macros.html)
+-   [Macros](./presentations/macros.md)
 
--   [Match](./match.html)
+-   [Match](./presentations/match.md)
 
--   [Proptest](./proptest.html)
+-   [Proptest](./presentations/proptest.md)
 
--   [Redis Exercise - Helper Slides](./redis.html)
+-   [Redis Exercise - Helper Slides](./presentations/redis.md)
 
--   [Redis Protobuf Exercise - Helper Slides](./redis-protobuf.html)
+-   [Redis Protobuf Exercise - Helper Slides](./presentations/redis-protobuf.md)
 
--   [Serde](./serde.html)
+-   [Serde](./presentations/serde.md)
 
--   [Smart Pointers](./smart-pointers.html)
+-   [Smart Pointers](./presentations/smart-pointers.md)
 
--   [Standard Types](./standard-types.html)
+-   [Standard Types](./presentations/standard-types.md)
 
--   [Unsafe](./unsafe.html)
+-   [Unsafe](./presentations/unsafe.md)
 
--   [Working With Nightly](./working-with-nightly.html)
+-   [Working With Nightly](./presentations/working-with-nightly.md)
 
--   [Debugging Rust](./debugging-rust.html)
+-   [Debugging Rust](./presentations/debugging-rust.md)
 
--   [Basic Design Patterns](./design-patterns.html)
+-   [Basic Design Patterns](./presentations/design-patterns.md)
 
-Assignments
-===========
+# Assignments
 
--   [FizzBuzz](./assignments/fizzbuzz.html)
+-   [FizzBuzz](./assignments/fizzbuzz.md)
 
--   [Shapes](./assignments/shapes.html)
+-   [Shapes](./assignments/shapes.md)
 
--   [Files, match, and
-    Result](./assignments/files-match-result-assignment.html)
+-   [Files, match, and Result](./assignments/files-match-result-assignment.md)
 
--   [FizzBuzz command line](./assignments/fizzbuzz-command-line.html)
+-   [FizzBuzz command line](./assignments/fizzbuzz-command-line.md)
 
--   [Rust Latin](./assignments/rustlatin.html)
+-   [Rust Latin](./assignments/rustlatin.md)
 
--   [Durable file](./assignments/durable-file.html)
+-   [Durable file](./assignments/durable-file.md)
 
--   [Narcissistic number
-    check](./assignments/narcissistic-number-check.html)
+-   [Narcissistic number check](./assignments/narcissistic-number-check.md)
 
--   [Lifetimes with Serde](./assignments/serde-lifetimes.html)
+-   [Lifetimes with Serde](./assignments/serde-lifetimes.md)
 
--   [Redisish protocol parser](./assignments/redisish.html)
+-   [Redisish protocol parser](./assignments/redisish.md)
 
--   [TCP server](./assignments/tcp-echo-server.html)
+-   [TCP server](./assignments/tcp-echo-server.md)
 
--   [TCP client](./assignments/tcp-client.html)
+-   [TCP client](./assignments/tcp-client.md)
 
--   [Green and Yellow game](./assignments/green_yellow.html)
+-   [Green and Yellow game](./assignments/green_yellow.md)
 
--   [Connected mailbox](./assignments/connected-mailbox.html)
+-   [Connected mailbox](./assignments/connected-mailbox.md)
 
--   [Multithreaded mailbox](./assignments/multithreaded-mailbox.html)
+-   [Multithreaded mailbox](./assignments/multithreaded-mailbox.md)
 
--   [Calculator](./assignments/calc.html)
+-   [Calculator](./assignments/calc.md)
 
--   [Binding to LevelDB](./assignments/binding-to-leveldb.html)
+-   [Binding to LevelDB](./assignments/binding-to-leveldb.md)
 
--   [Binding to LevelDB - book
-    version](https://exercises-2021.ferrous-systems.com/ffi-1-exercise.html)
+-   [Binding to LevelDB - book version](https://exercises-2021.ferrous-systems.com/ffi-1-exercise.md)
 
--   [Redis client](./assignments/redis.html)
+-   [Redis client](./assignments/redis.md)
 
--   [Redis client with protocol
-    buffers](./assignments/redis-protobuf.html)
+-   [Redis client with protocol buffers](./assignments/redis-protobuf.md)
 
--   [Simple async chat](./assignments/simple-chat.html)
+-   [Simple async chat](./assignments/simple-chat.md)
 
--   [Async Mailbox](./assignments/async-mailbox.html)
+-   [Async Mailbox](./assignments/async-mailbox.md)
 
--   [Async Channels](./assignments/async-channels.html)
+-   [Async Channels](./assignments/async-channels.md)
 
--   [Actix Chat using Websockets](./assignments/actix.html)
+-   [Actix Chat using Websockets](./assignments/actix.md)
 
-<!-- -->
+# SemVer
 
--   [SemVer from file](./assignments/semver_from_file.html)
+-   [SemVer from file](./assignments/semver_from_file.md)
 
-**"Fill In The Blanks" warm-ups.**
+# "Fill In The Blanks" warm-ups.
 
-Quick warm-up exercises that can be distributed in a
-[playground](https://play.rust-lang.org)
+Quick warm-up exercises that can be distributed in a [playground](https://play.rust-lang.org)
 
--   [Fill In The Blanks: Enums and
-    Match](./fill_in_the_blanks/enums_match.html)
+-   [Fill In The Blanks: Enums and Match](./fill_in_the_blanks/enums_match.md)
 
--   [Fill In The Blanks: Closures](./fill_in_the_blanks/closures.html)
+-   [Fill In The Blanks: Closures](./fill_in_the_blanks/closures.md)
 
--   [FFI - libc
-    get\_time()](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=762c5965f08b2d0a3c7375a372da6928)
-
+-   [FFI - libc get_time()](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=762c5965f08b2d0a3c7375a372da6928)
