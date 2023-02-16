@@ -1,24 +1,23 @@
 [Table of Contents](./index.html)
 ```rust
-use std::io; // 
-use std::io::prelude::*;
-use std::fs::File;
-
-fn main() -> Result<(), io::Error> { // 
-    let open_file = File::open("test"); // 
-
-    let mut file = match open_file { // 
-        Ok(file) => file,
-        Err(e) => return Err(e)
-    };
-
-    let mut buffer = String::new(); // 
-    file.read_to_string(&mut buffer)?; // 
-    println!("{}", buffer);
-
-    Ok(()) // 
+fn main() {
+    let random_number = generate_random_number();
+    let mut my_choice = 10;
+    my_choice += random_number;
+    println!("{my_choice}");
 }
+
+fn generate_random_number() -> i32 {
+    4 // chosen by dice roll, guaranteed to be random
+}
+
 ```
+
+What is Rust?
+=============
+
+- Rust is an empathic systems programming language that is determined to not let you shoot yourself in the foot.
+
 
 A Little Bit of History
 =======================
@@ -79,16 +78,10 @@ Goals
 
 -   Approachable project
 
-Rust wants to be usable first!
-==============================
-
-!
-=
-
 Many examples in this course are very small, which is why we will also
 spend time discussing the impact of many features on large projects.
 
-The Three Words
+The Four Words
 ===============
 
 -   Safe
@@ -96,6 +89,8 @@ The Three Words
 -   Concurrent
 
 -   Fast
+
+-   Pragmatic
 
 Safe
 ====
@@ -162,3 +157,5 @@ From diverse backgrounds:
 -   Functional languages like Haskell and Scala
 
 -   C/C++
+
+- Safety critical systems

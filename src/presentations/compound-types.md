@@ -3,15 +3,16 @@
 Structs
 =======
 
-\`struct\`s group and name data of different types.
+`struct`s group and name data of different types.
 
 Definition
 ==========
-
+```rust
     struct Point {
         x: i32,
         y: i32,
     }
+```
 
 Construction
 ============
@@ -19,7 +20,7 @@ Construction
 -   there is no partial initialization
 
 <!-- -->
-
+```rust
     struct Point {
         x: i32,
         y: i32,
@@ -28,6 +29,7 @@ Construction
     fn main() {
         let p = Point { x: 1, y: 1 };
     }
+```
 
 Side note
 =========
@@ -42,6 +44,7 @@ Field Access
 
 <!-- -->
 
+```rust
     struct Point {
         x: i32,
         y: i32,
@@ -52,19 +55,21 @@ Field Access
         println!("{}", p.x);
         println!("{}", p.y);
     }
-
+```
 Tuples
 ======
 
+```rust
     fn main() {
         let p = (1, 2);
         println!("{}", p.0);
         println!("{}", p.1);
     }
-
+```
 Tuple Structs
 =============
 
+```rust
     struct Point(i32,i32);
 
     fn main() {
@@ -72,11 +77,11 @@ Tuple Structs
         println!("{}", p.0);
         println!("{}", p.1);
     }
-
+```
 Enums
 =====
 
-\`enum\`s represent different variation of the same subject.
+`enum`s represent different variation of the same subject.
 
 -   stress that enums are an "either or" type: you can only have one
     variant at a time (you’re not accumulating data as with structs)
@@ -86,7 +91,7 @@ Enums
 
 Definition and Construction
 ===========================
-
+```rust
     enum Direction {
         Right,
         Left,
@@ -97,12 +102,13 @@ Definition and Construction
     fn main() {
         let direction = Direction::Left;
     }
-
+```
 The different choices of Enums are called "variants."
 
 Enums with Values
 =================
 
+```rust
     enum Movement {
         Right(i32),
         Left(i32),
@@ -113,17 +119,20 @@ Enums with Values
     fn main() {
         let movement = Movement::Left(12);
     }
-
+```
 Enums with Structured Variants
 ==============================
 
 -   each enum variant will be its **worst-case** size! (e.g. the size of
     its biggest member)
 
-**possible interactive detour:** - Q: what’s the size of `Actions` on
+TODO: Fix this
+## **possible interactive detour:** 
+
+Q: what’s the size of `Actions` on
 bytes? - correct A: 12, because we have a tagged union:
 
-    ```pseudo-c
+```c
     struct {
         tag: u32 // discriminant is always u32 => 4 bytes
         data: union {
@@ -131,7 +140,6 @@ bytes? - correct A: 12, because we have a tagged union:
             move_to: tsruct{ x: i21, y: i32} // 4 bytes
         }
     }
-    ```
 
     enum Actions {
         StickAround,
@@ -141,6 +149,7 @@ bytes? - correct A: 12, because we have a tagged union:
     fn main() {
         let action = Actions::MoveTo { x: 0, y: 0 };
     }
+```
 
 `null`
 ======
@@ -154,6 +163,8 @@ Does not exist.
 
 The empty tuple `()` represents the absence of data.
 
+```rust
     fn prints_but_returns_nothing(data: &str) -> () {
         println!("passed string: {}", data);
     }
+```

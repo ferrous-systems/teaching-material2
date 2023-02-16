@@ -9,9 +9,7 @@ Any function with known error conditions returns a `Result<T,E>`.
 
 **There are no exceptions.**
 
-!
-=
-
+```rust
     fn this_can_fail(succeeds: bool) -> Result<String, String> {
         if succeeds {
             Ok(String::from("Success"))
@@ -24,10 +22,10 @@ Any function with known error conditions returns a `Result<T,E>`.
         let outcome = this_can_fail(true);
         println!("{:?}", outcome);
     }
-
+```
 Results Must Be Used
 ====================
-
+```rust
     fn this_can_fail(succeeds: bool) -> Result<String, String> {
         if succeeds {
             Ok(String::from("Success"))
@@ -39,8 +37,9 @@ Results Must Be Used
     fn main() {
         this_can_fail(true);
     }
-
-warning: unused \`Result\` that must be used --&gt; src/main.rs:10:5 |
+```
+TODO: Fix this
+warning: unused `Result` that must be used --&gt; src/main.rs:10:5 |
 10 | this\_can\_fail(true); | ^^^^^^^^^^^^^^^^^^^^ | = note:
 \`\#\[warn(unused\_must\_use)\]\` on by default = note: this \`Result\`
 may be an \`Err\` variant, which should be
@@ -48,19 +47,21 @@ handled&lt;/programlisting&gt;
 
 Using Results With `match`
 ==========================
-
+```rust
+```rust
     fn main() {
         match this_can_fail(false) {
             Ok(val) => println!("Success: {}", val),
             Err(err) => println!("Error: {}", err),
         }
     }
-
+```
 Using Results With Conditionals
 ===============================
 
 Check for success with `is_ok()`, errors with `is_err()`:
 
+```rust
     fn main() {
         if this_can_fail(false).is_ok() {
             println!("It worked!");
@@ -74,6 +75,7 @@ Using Results With `?`
 
 Use `?` in functions with multiple possible failures.
 
+```rust
     fn multiple_possible_failures() -> Result<String,String> {
         this_can_fail(true)?;
         println!("After 1st potential error.");
@@ -85,7 +87,7 @@ Use `?` in functions with multiple possible failures.
     fn main() {
         multiple_possible_failures();
     }
-
+```
 Using Results With `?`
 ======================
 
@@ -102,23 +104,25 @@ Using `?` in `main`
 
 <!-- -->
 
+```rust
     use std::error::Error;
 
     fn main() -> Result<(), Box<dyn Error>> {
         maybe_dangerous()?;
         Ok(())
     }
-
+```
 Mapping Result Values
 =====================
 
+```rust
     fn main() {
         let some_result = this_can_fail(true);
         // Only done if `some_result` is an `Ok` Variant.
         let mapped_result = some_result.map(|val| val.len());
         println!("{:?}", mapped_result);
     }
-
+```
 `map_err()` is also available.
 
 Dynamic errors
@@ -127,6 +131,7 @@ Dynamic errors
 Rust has an idiomatic dynamic error type, which most errors can be
 converted into:
 
+```rust
     use std::fs::File;
 
     fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -136,7 +141,7 @@ converted into:
 
         Ok(())
     }
-
+```
 To be converted like this, errors must implement the std::error::Error
 trait.
 

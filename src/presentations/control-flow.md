@@ -14,6 +14,7 @@ Control Flow primitives
 Control Flow with `if`
 ======================
 
+```rust
     fn main() {
         if 1 == 2 { //  
             println!("unlikely");
@@ -21,14 +22,14 @@ Control Flow with `if`
             println!("expected");
         }
     }
-
+```
 -   Paranthesis around the conditional are not necessary
 
 -   Blocks need brackets, no shorthand
 
 Control Flow with `match`
 =========================
-
+```rust
     fn main() {
         let a = 4;
         match a % 3 {
@@ -36,14 +37,14 @@ Control Flow with `match`
             _ => { println!("not divisible by 3") }, // 
         }
     }
-
+```
 -   match arm
 
 -   default arm
 
 Control Flow with `match` and `enums`
 =====================================
-
+```rust
     enum Direction { //
         North(i32), //
         East(i32),
@@ -57,7 +58,7 @@ Control Flow with `match` and `enums`
             _ => false
         }
     }
-
+```
 -   `enum` can take multiple forms
 
 -   The forms are called "variants" and can carry data
@@ -69,6 +70,7 @@ Control Flow with `match` and `enums`
 2 important enums
 =================
 
+```rust
     enum Option<T> {
         Some(T),
         None,
@@ -78,7 +80,7 @@ Control Flow with `match` and `enums`
         Ok(T),
         Err(E),
     }
-
+```
 -   `Option` describes the possible absence of a value
 
 -   `Result` describes that an operation might return an error instead
@@ -86,6 +88,7 @@ Control Flow with `match` and `enums`
 Using `Option` and `Result`
 ===========================
 
+```rust
     fn main() {
         let will_overflow: Option<u8> = 10_u8.checked_add(250);
         match will_overflow {
@@ -93,10 +96,11 @@ Using `Option` and `Result`
             None => eprintln!("addition overflow!"),
         }
     }
-
+```
 Using `Option` and `Result`
 ===========================
 
+```rust
     use std::fs::File;
     use std::io;
 
@@ -108,10 +112,11 @@ Using `Option` and `Result`
             Err(e) => println!("Open failed: {:?}", e),
         }
     }
-
+```
 Match guards
 ============
 
+```rust
     fn main() {
         let result: Option<u8> = 5_u8.checked_add(5);
 
@@ -120,7 +125,7 @@ Match guards
             _ => println!("5+5 ... isn't even?"),
         }
     }
-
+```
 -   Match guards allow further refining of a `match`
 
 Combining matches
@@ -128,6 +133,7 @@ Combining matches
 
 You can use the `|` operator to match several values in one arm.
 
+```rust
     enum Direction {
         North(u32),
         East(u32),
@@ -141,10 +147,11 @@ You can use the `|` operator to match several values in one arm.
             _ => false,
         }
     }
-
+```
 Shorthand: `if let` conditionals
 ================================
 
+```rust
     fn main() {
         let maybe_arg = std::env::args().nth(2);
         // can't know at compile time how many args are passed to our program
@@ -152,12 +159,13 @@ Shorthand: `if let` conditionals
             println!("Got second command line argument: {}", arg);
         }
     }
-
+```
 -   `if let` are idiomatic if only one case is of interest
 
 `loop`
 ======
 
+```rust
     fn main() {
         let mut i = 0;
 
@@ -167,12 +175,13 @@ Shorthand: `if let` conditionals
             if i > 100 { break; }
         }
     }
-
+```
 `loop` is used for (potentially) infinite loops
 
 `for`
 =====
 
+```rust
     fn main() {
         let numbers = vec![1, 2, 3];
         // `for item in iterable` creates an iterator by calling `iterable.into_iter()`
@@ -181,12 +190,13 @@ Shorthand: `if let` conditionals
             println!("{}", num);
         }
     }
-
+```
 `for` is used for iteration
 
 `while`
 =======
 
+```rust
     fn main() {
         let mut i = 0;
 
@@ -200,12 +210,13 @@ Shorthand: `if let` conditionals
             println!("number: {}", i);
         }
     }
-
+```
 `while` is used for conditional loops
 
 `break`, `continue`
 ===================
 
+```rust
     'outer: for i in 0..10 {
         loop {
             if i < 5 {
@@ -215,26 +226,28 @@ Shorthand: `if let` conditionals
             }
         }
     }
-
+```
 terminate current iteration or entire loop, using optional labels if not
 referring to innermost loop
 
 `return`
 ========
 
+```rust
     fn get_number() -> u32 {
         return 5;
 
         8
     }
-
+```
 -   `return` can be used for early returns
 
 -   The result of the last expression of a function is always returned
 
-`?`
+`?` (early return operator)
 ===
 
+```rust
     use std::io;
     use std::io::Read;
 
@@ -246,5 +259,5 @@ referring to innermost loop
 
          Ok(buffer)
     }
-
+```
 -   `?` is "on error, early return"

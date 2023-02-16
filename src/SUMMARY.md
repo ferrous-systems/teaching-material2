@@ -168,9 +168,9 @@
 
 -   [Actix Chat using Websockets](./assignments/actix.md)
 
--   [Fill In The Blanks: Enums and Match](./assignments/enums_match.md)
+-   [Fill In The Blanks: Enums and Match](./assignments/fill_in_the_blanks_enums_match.md)
 
--   [Fill In The Blanks: Closures](./assignments/closures.md)
+-   [Fill In The Blanks: Closures](./assignments/fill_in_the_blanks_closures.md)
 
 - [FFI  libc get_time()]() <!-- (https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=762c5965f08b2d0a3c7375a372da6928) -->
 

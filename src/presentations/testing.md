@@ -1,7 +1,7 @@
 [Table of Contents](./index.html)
 
-!
-=
+TODO: Move to "Applied Rust" 
+TODO: Maybe merge with proptest / fuzzing / nextest / verification module
 
 Testing is fundamental to Rust.
 
@@ -31,7 +31,7 @@ Unit Tests
 
 Unit Tests
 ==========
-
+```rust
     enum Direction { North, South, East, West }
 
     fn is_north(dir: Direction) -> bool {
@@ -46,16 +46,17 @@ Unit Tests
         assert!(is_north(Direction::North) == true);
         assert!(is_north(Direction::South) == false);
     }
-
+```
 Unit Tests
 ==========
 
+```
     $ cargo test
     running 1 test
     test is_north_works ... ok
 
     test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
-
+```
 `tests` Submodule
 =================
 
@@ -69,6 +70,7 @@ Unit Tests
 `tests` Submodule
 =================
 
+```rust
     enum Direction { North, South, East, West }
 
     fn is_north(dir: Direction) -> bool {
@@ -88,16 +90,17 @@ Unit Tests
             assert!(is_north(Direction::South) == false);
         }
     }
+```
 
 `tests` Submodule
 =================
-
+```
     $ cargo test
     running 1 test
     test tests::is_north_works ... ok
 
     test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
-
+```
 Documentation Tests
 ===================
 
@@ -119,6 +122,7 @@ Documentation Tests
 Documentation Tests
 ===================
 
+```
     $ cargo test
     running 0 tests
 
@@ -131,6 +135,7 @@ Documentation Tests
 
     test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
 
+```
 Integration Tests
 =================
 
@@ -141,8 +146,9 @@ Integration Tests
 Integration Tests
 =================
 
-**`/tests/basic.rs`.**
 
+**`/tests/basic.rs`.**
+```rust
     use example::{is_north, Direction};
 
     #[test]
@@ -150,10 +156,10 @@ Integration Tests
         assert!(is_north(Direction::North) == true); // 
         assert!(is_north(Direction::South) == false);
     }
-
+```
 Integration Tests
 =================
-
+```
     $ cargo test
     running 1 test
     test is_north_works ... ok
@@ -171,3 +177,4 @@ Integration Tests
     running 0 tests
 
     test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured
+```

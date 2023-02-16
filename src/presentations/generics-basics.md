@@ -1,13 +1,14 @@
 [Table of Contents](./index.html)
 
-!
-=
+TODO: Move to "Applied Rust"
+TODO: Fix naming inconsistency in folder/presentation/filename/kebab vs snake case?
 
 Generics are fundamental for Rust.
 
 Generic Structs
 ===============
 
+```rust
     struct Point<Precision> {
         x: Precision,
         y: Precision
@@ -17,7 +18,7 @@ Generic Structs
         let point = Point { x: 1_u32, y: 2 };
         let point: Point<i32> = Point { x: 1, y: 2 };
     }
-
+```
 Type Inference
 ==============
 
@@ -37,7 +38,7 @@ Generic Enums
 -   similar-ish to C++ templates
 
 <!-- -->
-
+```rust
     enum Either<T, X> {
         Left(T),
         Right(X),
@@ -56,15 +57,15 @@ Generic Enums
         Some(T),
         None,
     }
-
+```
 Generic Functions
 =================
 
--   the pattern is always "name&lt;type&gt;" regardless of whether name
+-   the pattern is always `name<type>` regardless of whether name
     is a function name, parameter name, etc
 
 Generic Functions have type parameters.
-
+```rust
     fn accept_any_type<T>(arg: T) {
         // ...
     }
@@ -72,7 +73,7 @@ Generic Functions have type parameters.
     fn accept_and_return_any_type<T, U>(arg: T) -> U {
         // ...
     }
-
+```
 Generic functions are used when computations can be expressed in an
 abstract way.
 

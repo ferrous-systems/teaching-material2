@@ -1,7 +1,6 @@
 [Table of Contents](./index.html)
 
-!
-=
+TODO: Yeet slides to Applied Rust?
 
 Rust defaults to allocation on the stack
 

@@ -10,27 +10,38 @@ Declaration
 Arguments
 =========
 
+```rust
     fn return_nothing() {}
+
+    fn return_nothing_as_well() -> () {
+        println!("Hello!");
+    }
 
     fn return_a_random() -> i32 {
         4 // Chosen by dice roll.
     }
 
-    fn maybe_return_a_random(should: bool) -> Option<i32> {
-        if should {
-            Some(4)
+    fn return_max(should: bool) -> Option<i32> {
+        if x > y {
+            x
         } else {
-            None
+            y
         }
     }
+```
 
 Returning
 =========
 
-Returning is optional. Signatures must be complete.
-
+Returning is optional. Signatures must be complete. Note the `;`!
+```rust
     fn doesnt_return() {
         true;
+    }
+
+    fn doesnt_return_either() -> () {
+        true;
+        ()
     }
 
     fn doesnt_compile() -> bool {
@@ -40,16 +51,18 @@ Returning is optional. Signatures must be complete.
     fn returns() -> bool {
         true
     }
+```
 
+TODO: Move rest of slides to "Applied Rust"
 Generic Functions
 =================
 
 Generic functions have type parameters.
-
+```rust
     fn takes_anything<T>(thing: T) -> T {
         thing
     }
-
+```
 With Bounds
 ===========
 
@@ -57,6 +70,7 @@ Generic functions can be *constrained*.
 
 These are equivalent:
 
+```rust
     fn prints_anything<T: Debug>(thing: T) {
         println!("{:?}", thing);
     }
@@ -67,12 +81,13 @@ These are equivalent:
     {
         println!("{:?}", thing);
     }
-
+```
 Functions for types
 ===================
 
 If we didn’t have methods (like in C), we’d have to write this:
 
+```rust
     struct Square(f32);
 
     fn square_num_sides() -> u32 {
@@ -86,13 +101,14 @@ If we didn’t have methods (like in C), we’d have to write this:
     fn square_double_size(square: &mut Square) {
         square.0 *= 2.0;
     }
-
+```
 Associated Functions
 ====================
 
 Fortunately, Rust has a better solution than putting `square_` on all
 our function names.
 
+```rust
     struct Square(f32);
 
     impl Square {
@@ -104,7 +120,7 @@ our function names.
     fn main() {
         println!("Num sides: {}", Square::num_sides());
     }
-
+```
 Methods that access data
 ========================
 
@@ -114,6 +130,7 @@ we can use `&self`.
 This is a shortcut for `self: &Self`, where `Self` is an alias for
 whatever `impl Foo` block we’re inside of.
 
+```rust
     struct Square(f32);
 
     impl Square {
@@ -126,7 +143,7 @@ whatever `impl Foo` block we’re inside of.
         let sq = Square(1.0);
         println!("Area: {}", sq.calc_area());
     }
-
+```
 Methods that mutate data
 ========================
 
@@ -136,6 +153,7 @@ we can use `&mut self`.
 This is a shortcut for `self: &mut Self`, where `Self` is an alias for
 whatever `impl Foo` block we’re inside of.
 
+```rust
     struct Square(f32);
 
     impl Square {
@@ -154,7 +172,7 @@ whatever `impl Foo` block we’re inside of.
         sq.double_size();
         println!("New Area: {}", sq.calc_area());
     }
-
+```
 Methods that taken ownership of the data
 ========================================
 
@@ -164,6 +182,7 @@ type, we can use `self`.
 This is a shortcut for `self: Self`, where `Self` is an alias for
 whatever `impl Foo` block we’re inside of.
 
+```rust
     struct Square(f32);
 
     impl Square {
@@ -183,3 +202,4 @@ whatever `impl Foo` block we’re inside of.
         // This line won't compile
         // println!("Area: {}", sq.calc_area());
     }
+```
