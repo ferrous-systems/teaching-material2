@@ -1,5 +1,7 @@
 [Table of Contents](./index.html)
 
+TODO: Move to "Applied Rust"
+
 !
 =
 
@@ -17,8 +19,7 @@ Where Do They Come From?
 -   Collections like `Vec<T>` have an `iter()` function which yields an
     iterator.
 
--   Things like `std::net::TcpListener` which provides an iterator of
-    \`\`TcpStream\`\`s via \`\`incoming()\`\`.
+-   Things like `std::net::TcpListener` which provides an iterator of `TcpStream`s via `incoming()`.
 
 -   Functions like `str::split` and `str::split_n`
 
@@ -27,6 +28,7 @@ Where Do They Come From?
 Owned iterators
 ===============
 
+```rust
     fn main() {
         let vec = vec![1,2,3];
         let iter = vec.into_iter();
@@ -37,7 +39,7 @@ Owned iterators
 
         //println!("{:?}", vec); 
     }
-
+```
 -   this won’t work
 
 Borrowed iterators
@@ -48,6 +50,7 @@ Borrowed iterators
 
 <!-- -->
 
+```rust
     fn main() {
         let vec = vec![1,2,3];
         let iter = vec.iter();
@@ -58,10 +61,10 @@ Borrowed iterators
 
         println!("{:?}", vec);
     }
-
+```
 Mutably Borrowed iterators
 ==========================
-
+```rust
     fn main() {
         let mut vec = vec![1,2,3];
         let iter_mut = vec.iter_mut();
@@ -72,7 +75,7 @@ Mutably Borrowed iterators
 
         println!("{:?}", vec);
     }
-
+```
 Conventions
 ===========
 
@@ -108,7 +111,7 @@ Common Uses
     there’s not for loop to unwrap the return value of `next()` for us
 
 Iterators can be advanced manually:
-
+```rust
     fn main() {
         let items = vec![0, 1, 2];
         let mut iterator = items.into_iter();
@@ -117,12 +120,12 @@ Iterators can be advanced manually:
         println!("{:?}", iterator.next());
         println!("{:?}", iterator.next());
     }
-
+```
 Combinators: `map()`
 ====================
 
 Transform items as they are evaluated:
-
+```rust
     fn main() {
         let fizzbuzz = (0..10_000)
             .map(|x| match x {
@@ -135,12 +138,12 @@ Transform items as they are evaluated:
             println!("{}", item);
         }
     }
-
+```
 Combinators: `filter()`
 =======================
 
 Filter out unwanted values, skipping further computation on them:
-
+```rust
     fn main() {
         let evens = (0..10_000)
             .filter(|x| x % 2 == 0);
@@ -148,3 +151,4 @@ Filter out unwanted values, skipping further computation on them:
             println!("{}", item);
         }
     }
+```

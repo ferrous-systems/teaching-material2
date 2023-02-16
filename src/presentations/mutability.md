@@ -11,19 +11,20 @@ Where does Rust land?
 An Example
 ==========
 
+```rust
     fn main() {
         let answer = 42;
         answer = 32;
     }
-
+```
 Correct
 =======
-
+```rust
     fn main() {
         let mut answer = 42;
         answer = 32;
     }
-
+```
 !
 =
 

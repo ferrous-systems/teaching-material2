@@ -29,7 +29,7 @@ Most common are `String` and `&str`.
 
 Creation
 ========
-
+```rust
     fn main() {
         // &'static str
         let this = "Hello";
@@ -38,7 +38,7 @@ Creation
         // &str
         let other = that.as_str();
     }
-
+```
 When to Use What?
 =================
 
@@ -54,14 +54,14 @@ When to Use What?
 
 Just because multiple types exist doesn’t mean they can’t work in
 harmony.
-
+```rust
     fn main() {
         let part_one = String::from("Hello ");
         let part_two = String::from("there ");
         let whole = part_one + &part_two + "world!";
         println!("{}", whole);
     }
-
+```
 This is because `String` s implement `Deref<Target=str>` .
 
 Exotic String types
@@ -109,41 +109,41 @@ Common String Tasks
 ===================
 
 Splitting:
-
+```rust
     fn main() {
         let words = "Cow says moo";
         let each: Vec<_> = words.split(" ").collect();
         println!("{:?}", each);
     }
-
+```
 Common String Tasks
 ===================
 
 Concatenation:
-
+```rust
     fn main() {
         let animal = String::from("Cow");
         let sound = String::from("moo");
         let words = [&animal, " says ", &sound].concat();
         println!("{:?}", words);
     }
-
+```
 Common String Tasks
 ===================
 
 Replacing:
-
+```rust
     fn main() {
         let words = "Cow says moo";
         let replaced = words.replace("moo", "roar");
         println!("{}", replaced);
     }
-
+```
 Accepting `String` or `str`
 ===========================
 
 It’s possible to accept either rather painlessly:
-
+```rust
     fn accept_either<S>(thing: S) -> String
     where S: AsRef<str> {
         String::from("foo") + thing.as_ref()
@@ -153,7 +153,7 @@ It’s possible to accept either rather painlessly:
         println!("{}", accept_either("blah"));
         println!("{}", accept_either(String::from("blah")));
     }
-
+```
 Raw String Literals
 ===================
 
@@ -166,7 +166,7 @@ Raw String Literals
 -   Escape sequences are not processed
 
 <!-- -->
-
+```rust
     fn main () {
         let json = r##"
     {
@@ -176,7 +176,7 @@ Raw String Literals
     "##;
         assert_eq!(r"\n", "\\n");
     }
-
+```
 Byte String Literals
 ====================
 
@@ -185,7 +185,7 @@ Byte String Literals
 -   used to declare static byte slices (have a `&[u8]` type)
 
 <!-- -->
-
+```rust
     fn main() {
         let byte_string: &[u8] = b"allows ASCII and \xF0\x9F\x98\x80 only";
         println!("Can Debug fmt but not Display fmt: {:?}", byte_string);
@@ -193,3 +193,4 @@ Byte String Literals
             println!("Now can Display '{}'", string);
         }
     }
+```

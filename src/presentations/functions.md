@@ -1,12 +1,14 @@
 [Table of Contents](./index.html)
 
+# Functions
+
 Declaration
 ===========
-
+```rust
     fn add(first: i32, second: i32) -> i32 {
         first + second
     }
-
+```
 Arguments
 =========
 

@@ -1,3 +1,5 @@
+TODO: Turn into trainer's notes
+TODO: Ownership 2x2 cheatsheet
 -   stress that this is central to understanding Rust and that we will
     spend as much time on it as needed until everyone feel like they
     have a grasp on it
@@ -39,7 +41,7 @@ These rules:
 
 Example
 =======
-
+```rust
     use std::fs::File;
     use std::io::Write;
     use std::io;
@@ -54,7 +56,7 @@ Example
 
         file.write_all(b"Hello World!")
     }  // 
-
+```
 -   Tries to open a file
 
 -   Checks the Result of the opening operation
@@ -65,7 +67,7 @@ Example
 
 Ownership passing
 =================
-
+```rust
     use std::fs::File;
     use std::io::Write;
     use std::io;
@@ -86,14 +88,14 @@ Ownership passing
 
         // 
     }
-
+```
 -   Ownership is passed here.
 
 -   The value dropped here.
 
 First safety checkpoint
 =======================
-
+```rust
     use std::fs::File;
     use std::io::Write;
     use std::io;
@@ -113,12 +115,12 @@ First safety checkpoint
     fn write_and_close(mut file: File) -> io::Result<()> {
         file.write_all(b"Hello World!")
     }
-
+```
 -   This is illegal.
 
 Oops!
 =====
-
+```
     8  |     let file = match file_create {
        |         ---- move occurs because `file` has type `std::fs::File`, which does not implement the `Copy` trait
     ...
@@ -126,7 +128,7 @@ Oops!
        |                     ---- value moved here
     14 |     write_and_close(file)
        |                     ^^^^ value used here after move
-
+```
 !
 =
 
@@ -155,7 +157,7 @@ References & Borrowing
 Intuitively: what you own, you can borrow.
 
 ---
-
+```rust
     use std::fs::File;
     use std::io::Write;
     use std::io;
@@ -177,7 +179,7 @@ Intuitively: what you own, you can borrow.
         println!("len: {:?}", f.metadata()?.len());
         Ok(())
     }
-
+```
 Immutable references
 ====================
 
@@ -193,7 +195,7 @@ Immutable references
 
 Mutable Borrowing
 =================
-
+```rust
     use std::fs::File;
     use std::io::Write;
     use std::io;
@@ -219,7 +221,7 @@ Mutable Borrowing
     fn write_to_file(f: &mut File) -> io::Result<()> {
         f.write_all(b"Hello World!")
     }
-
+```
 Mutable references
 ==================
 
@@ -317,7 +319,7 @@ We can create a second copy of the data!
 
 !
 =
-
+```rust
     #[derive(Debug, Clone)]
     struct Dot {
         x: i32,
@@ -333,7 +335,7 @@ We can create a second copy of the data!
     fn pacman(dot: Dot) {
         println!("Eating {:?}", dot);
     }
-
+```
 !
 =
 
@@ -342,7 +344,7 @@ data at hand - can be costly.
 
 Working with moves: copy instead of move
 ========================================
-
+```rust
     #[derive(Debug, Clone, Copy)]
     struct Dot {
         x: i32,
@@ -358,7 +360,7 @@ Working with moves: copy instead of move
     fn pacman(dot: Dot) {
         println!("Eating {:?}", dot);
     }
-
+```
 !
 =
 
@@ -384,6 +386,7 @@ Small quiz
 `drop` is the function that deallocates a value immediately. What does
 the implementation look like?
 
+```rust
     use std::fs::File;
 
     fn main() {
@@ -392,11 +395,13 @@ the implementation look like?
         drop(file);
         // do something long
     }
-
+```
 !
 =
 
+```rust
     #[inline]
     fn drop<T>(_: T) {
       // take ownership, drop out of scope
     }
+```

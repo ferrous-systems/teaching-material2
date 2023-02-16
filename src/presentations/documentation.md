@@ -1,6 +1,8 @@
 TODO: leave a link to explore docs 
+
 TODO: move rest to applied Rust
-[Table of Contents](./index.html)
+
+# Documentation
 
 `rustdoc`
 =========

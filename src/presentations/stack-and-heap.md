@@ -7,6 +7,7 @@ Rust defaults to allocation on the stack
 Stack Allocation
 ================
 
+```rust
     struct Point {
         x: i32,
         y: i32
@@ -15,12 +16,13 @@ Stack Allocation
     fn main() {
         let point = Point { x: 1, y: 1};
     }
-
+```
 Box
 ===
 
 Heap allocation is represented by the type `Box`.
 
+```rust
     struct Point {
         x: i32,
         y: i32
@@ -30,12 +32,13 @@ Heap allocation is represented by the type `Box`.
         let point = Point { x: 1, y: 1};
         let point_on_heap = Box::new(point);
     }
-
+```
 Ownership and Borrowing
 =======================
 
 `Box` is owned, but you can borrow the contained values.
 
+```rust
     #[derive(Debug)]
     struct Point {
         x: i32,
@@ -51,7 +54,7 @@ Ownership and Borrowing
     fn print_point(p: &Point) {
         println!("{:?}", p);
     }
-
+```
 Other heap allocations
 ======================
 

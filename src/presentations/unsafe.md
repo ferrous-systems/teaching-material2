@@ -56,7 +56,7 @@ full [text on this](https://rust-unofficial.github.io/too-many-lists/)
 =
 
 Unsafe code must **always** be marked `unsafe`.
-
+```rust
     use std::fmt::Debug;
 
     fn main() {
@@ -68,7 +68,7 @@ Unsafe code must **always** be marked `unsafe`.
     unsafe fn deref_pointer<T: Debug>(p: *mut T) {
         println!("{:?}", *p)
     }
-
+```
 Traps of `unsafe`
 =================
 
@@ -93,20 +93,20 @@ Practical example
 
 As Rust forbids aliasing, it is impossible in safe Rust to split a slice
 into 2 non-overlapping parts.
-
+```rust
     #[inline]
     fn split_at_mut(&mut self, mid: isize) -> (&mut [T], &mut [T]) {
         let len = self.len();
         let ptr = self.as_mut_ptr();
 
-        unsafe {
-            assert!(mid <= len);
+        assert!(mid <= len);
 
+        unsafe {
             (from_raw_parts_mut(ptr, mid),
              from_raw_parts_mut(ptr.offset(mid), len - mid))
         }
     }
-
+```
 Highlight unsafe code in VSCode
 ===============================
 
@@ -116,7 +116,7 @@ Highlight unsafe code in VSCode
 -   Helpful for longer `unsafe` blocks
 
 <!-- -->
-
+```
     {
         "editor.semanticTokenColorCustomizations": {
             "rules": {
@@ -124,3 +124,4 @@ Highlight unsafe code in VSCode
             }
         }
     }
+```

@@ -1,6 +1,7 @@
-[Table of Contents](./index.html)
+# Testing
 
 TODO: Move to "Applied Rust" 
+
 TODO: Maybe merge with proptest / fuzzing / nextest / verification module
 
 Testing is fundamental to Rust.

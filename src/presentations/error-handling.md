@@ -48,7 +48,6 @@ handled&lt;/programlisting&gt;
 Using Results With `match`
 ==========================
 ```rust
-```rust
     fn main() {
         match this_can_fail(false) {
             Ok(val) => println!("Success: {}", val),
@@ -69,7 +68,7 @@ Check for success with `is_ok()`, errors with `is_err()`:
             println!("It didn't work!")
         }
     }
-
+```
 Using Results With `?`
 ======================
 

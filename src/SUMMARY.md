@@ -2,7 +2,7 @@
 
 [Start Here](./start_here.md)
 
-# Presentations
+# Rust Fundamentals
 
 -   [Overview](./presentations/overview.md)
 
@@ -36,7 +36,7 @@
 
 -   [Testing](./presentations/testing.md)
 
--   [Basic Generics](./presentations/generics-basics.md)
+-   [Basic Generics](./presentations/basic-generics.md)
 
 # Advanced
 
