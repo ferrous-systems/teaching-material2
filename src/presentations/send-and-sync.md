@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Send and Sync
 
 !
 =
@@ -20,7 +20,7 @@ They are **automatically derived** for all types if appropriate.
 
 Automatically Derived
 =====================
-
+```rust
     use std::thread;
 
     #[derive(Debug)]
@@ -34,7 +34,7 @@ Automatically Derived
             println!("{:?}", thing);
         }).join().unwrap();
     }
-
+```
 !
 =
 
@@ -44,7 +44,7 @@ Such as `Rc`, raw pointers, and `UnsafeCell`.
 
 Example: `Rc`
 =============
-
+```rust
     use std::rc::Rc;
     use std::thread;
 
@@ -56,25 +56,28 @@ Example: `Rc`
             println!("{:?}", only_one_thread);
         }).join().unwrap();
     }
-
+```
 Example: `Rc`
 =============
 
+```
     error[E0277]: the trait bound `std::rc::Rc<bool>: std::marker::Send` is not satisfied
      --> <anon>:7:5
       |
     7 |     thread::spawn(move || {
       |     ^^^^^^^^^^^^^ the trait `std::marker::Send` is not implemented for `std::rc::Rc<bool>`
+```
 
 Implementing
 ============
 
 It’s possible to add the implementation of `Send` and `Sync` to a type.
-
+```rust
     struct Thing(*mut String);
 
     unsafe impl Send for Thing {}
     unsafe impl Sync for Thing {}
+```
 
 In these cases, the task of thread safety is left to the implementor.
 
@@ -88,8 +91,9 @@ Relationships
 =============
 
 A type `&T` can implement `Send` if the type `T` also implements `Sync`.
-
+```rust
     unsafe impl<'a, T: Sync + ?Sized> Send for &'a T {}
+```
 
 Relationships
 =============
@@ -97,7 +101,9 @@ Relationships
 A type `&mut T` can implement `Send` if the type `T` also implements
 `Send`.
 
+```rust
     unsafe impl<'a, T: Send + ?Sized> Send for &'a mut T {}
+```
 
 Consequences
 ============

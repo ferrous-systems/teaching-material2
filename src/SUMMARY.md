@@ -94,14 +94,14 @@
 
 -   [Dynamic and Static Libs](./presentations/dynamic-and-static-libs.md)
 
--   [FFI](./presentations/ffi.md)
+<!-- TODO: Move to FFI Module -   [FFI](./presentations/ffi.md) -->
 
--   [Futures](./presentations/futures.md)
+<!-- TODO: Move to Async Block-   [Futures](./presentations/futures.md) -->
 
--   [Macros](./presentations/macros.md) <!-- TODO -->
+-   [Macros](./presentations/macros.md)
 
 -   [Match](./presentations/match.md)
-
+<!-- TODO
 -   [Proptest](./presentations/proptest.md)
 
 -   [Redis Exercise - Helper Slides](./presentations/redis.md)
@@ -109,6 +109,7 @@
 -   [Redis Protobuf Exercise - Helper Slides](./presentations/redis-protobuf.md)
 
 -   [Serde](./presentations/serde.md)
+-->
 
 -   [Smart Pointers](./presentations/smart-pointers.md)
 
@@ -118,14 +119,14 @@
 
 -   [Working With Nightly](./presentations/working-with-nightly.md)
 
--   [Debugging Rust](./presentations/debugging-rust.md)
+<!-- TODO -   [Debugging Rust](./presentations/debugging-rust.md) -->
 
 -   [Basic Design Patterns](./presentations/design-patterns.md)
 
 # Assignments
 
 -   [FizzBuzz](./assignments/fizzbuzz.md)
-<!--
+<!-- TODO
 -   [Shapes](./assignments/shapes.md)
 
 -   [Files, match, and Result](./assignments/files-match-result-assignment.md)

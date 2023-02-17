@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# The stdlib
 
 !
 =
@@ -30,6 +30,7 @@ Entry
 Calling `.entry()` on a `HashMap` accesses this API and allows for
 *insert or update* access.
 
+```rust
     use std::collections::HashMap;
 
     fn main() {
@@ -42,6 +43,7 @@ Calling `.entry()` on a `HashMap` accesses this API and allows for
         });
         println!("{:?}", map);
     }
+```
 
 PhantomData
 ===========
@@ -53,6 +55,7 @@ Zero-sized types are used to mark things that "act like" they own a `T`.
 These are useful for types which require markers, generics, or use
 unsafe code.
 
+```rust
     use std::marker::PhantomData;
 
     struct HttpRequest<ResponseValue> {
@@ -61,6 +64,7 @@ unsafe code.
     }
 
     fn main() {}
+```
 
 Command
 =======
@@ -72,6 +76,7 @@ should be spawned.
 
 Used for interacting with other executables.
 
+```rust
     use std::process::Command;
 
     fn main() {
@@ -80,7 +85,7 @@ Used for interacting with other executables.
                 .spawn()
                 .expect("ls command failed to start");
     }
-
+```
 Synchronization Primitives
 ==========================
 
@@ -88,7 +93,7 @@ Synchronization Primitives
 
 Provides types such a `Mutex`, `RwLock`, `CondVar`, `Arc` and `Barrier`
 s.
-
+```rust
     use std::sync::Mutex;
 
     fn main() {
@@ -103,12 +108,11 @@ s.
 
         println!("{}", *mutex.lock().unwrap());
     }
-
+```
 Read and Write
 ==============
 
-[`std::io::Read`](https://doc.rust-lang.org/std/io/trait.Read.html) &
-[`std::io::Write`](https://doc.rust-lang.org/std/io/trait.Write.html)
+[`std::io::Read`](https://doc.rust-lang.org/std/io/trait.Read.html) & [`std::io::Write`](https://doc.rust-lang.org/std/io/trait.Write.html)
 
 Generic read and write functionality to files, sockets, buffers, and
 anything in between.
@@ -117,6 +121,7 @@ Also part of
 [`std::io::prelude`](https://doc.rust-lang.org/std/io/prelude/)
 (`use std::io::prelude::*`).
 
+```rust
     use std::io::{Read, Write};
 
     fn main() {
@@ -130,7 +135,7 @@ Also part of
 
         println!("{}", read_in);
     }
-
+```
 Filesystem Manipulation
 =======================
 
@@ -138,7 +143,7 @@ Filesystem Manipulation
 [`std::path`](https://doc.rust-lang.org/std/path/)
 
 Path handling and file manipulation.
-
+```rust
     use std::fs::{File, canonicalize};
     use std::io::Write;
 
@@ -151,3 +156,4 @@ Path handling and file manipulation.
         let components: Vec<_> = path.components().collect();
         println!("{:?}", components);
     }
+```

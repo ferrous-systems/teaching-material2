@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Dynamic and Static Libs
 
 !
 =
@@ -7,7 +7,7 @@ Let’s try to use Rust from C.
 
 Library
 =======
-
+```rust
     #[derive(Debug)]
     #[repr(C)]
     pub struct Point {
@@ -33,10 +33,10 @@ Library
             point.inspect();
         };
     }
-
+```
 C-Header (excerpt)
 ==================
-
+```c
     #include <stdint.h>
     #include <stdbool.h>
 
@@ -50,20 +50,20 @@ C-Header (excerpt)
     void destroy_point(Point* p);
 
     void inspect(Point* p);
-
+```
 Cargo
 =====
-
+```toml
     [lib]
     crate-type = ["cdylib", "staticlib"]
-
+```
 `cargo build` will now build a static lib instead of an rlib.
-\`cdylib\`s are a special kind of dylib that also removes all
+`cdylib`s are a special kind of dylib that also removes all
 Rust-specific metadata.
 
 Usage
 =====
-
+```c
     #include "../include/point.h"
 
     int main (int argc, char const *argv[])
@@ -74,24 +74,28 @@ Usage
             inspect_point(p);
             destroy_point(p);
     }
+```
 
+```console
     gcc -L target/debug/ -I include -lc -lm -lSystem -lcore test/test.c -o point
+```
 
 Execution
 =========
-
+```console
     $ ./point
     Point { x: 1, y: 1 }
     Point { x: 2, y: 1 }
     point(98132,0x7fffb30293c0) malloc: *** error for object 0x7fa635c02980: pointer being freed was not allocated
     *** set a breakpoint in malloc_error_break to debug
     Abort trap: 6
+```
 
 Woops!
 ======
 
 Take good care of ownership!
-
+```rust,ignore
     #[no_mangle]
     pub extern "C" fn inspect_point(p: *mut Point) {
         unsafe {
@@ -105,8 +109,10 @@ Take good care of ownership!
     pub extern "C" fn inspect_point(p: &Point) {
         p.inspect();
     }
+```
 
 Helpers
 =======
 
--   Cheddar - generates C-Headers from Rust-Libs.
+-   Cheddar - generates C-Headers from Rust-Libs. TODO: isn't this `cbindgen` now?
+-   `bindgen` - generates Rust bindings from C headers

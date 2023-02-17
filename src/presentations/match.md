@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Match
 
 !
 =
@@ -7,7 +7,7 @@ To check variants of enums, `match` is used.
 
 !
 =
-
+```rust
     fn main() {
         let mut args = std::env::args();
 
@@ -16,10 +16,11 @@ To check variants of enums, `match` is used.
             None => { println!("No Argument") }
         }
     }
+```
 
 Alternative: if-let
 ===================
-
+```rust
     fn main() {
         let mut args = std::env::args();
 
@@ -27,10 +28,10 @@ Alternative: if-let
            println!("Argument: {}", arg);
         }
     }
-
+```
 !
 =
-
+```rust
     fn main() {
         let maybe_file = std::fs::File::open("Not there!");
 
@@ -39,7 +40,7 @@ Alternative: if-let
             Err(e) => { println!("File not opened!! Error: {:?}", e) }
         }
     }
-
+```
 !
 =
 
@@ -47,7 +48,7 @@ Matches must cover all variants!
 
 Ignoring variants
 =================
-
+```rust
     fn main() {
         let maybe_file = std::fs::File::open("Not there!");
 
@@ -56,16 +57,16 @@ Ignoring variants
             _ => {}
         }
     }
-
+```
 !
 =
 
 Results carry a special marker: they must not be ignored!
-
+```rust,ignore,does_not_compile
     fn main() {
         std::fs::File::open("Not there!");
     }
-
+```
 Solution: match or pass on.
 
 !
@@ -73,6 +74,7 @@ Solution: match or pass on.
 
 `match` does not only work on enums:
 
+```rust
     fn main() {
         let number = 4;
 
@@ -81,27 +83,26 @@ Solution: match or pass on.
             _ => println!("Number is something else")
         }
     }
-
+```
 !
 =
 
 `match` and `if` expressions:
-
+```rust,ignore,does_not_compile
     fn main() {
         let mut args = std::env::args();
-
         let value = if let Some(arg) = args.nth(1) {
                         arg
                     } else {
                         "default!".to_string()
                     };
     }
-
+```
 !
 =
 
 `match` can be used on multiple expressions!
-
+```rust
     fn main() {
         let n = 2400;
         match (n % 400, n % 100, n % 4) {
@@ -109,8 +110,8 @@ Solution: match or pass on.
             (_, 0, _) => false,
             (_, _, 0) => true,
             _ => false,
-        }
+        };
     }
-
+```
 **Remember**: `match` arms are evaluated sequentially - first correct
 choice is chosen.

@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Proptest
 
 This is your brain
 ==================

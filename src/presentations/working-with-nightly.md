@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Working with nightly
 
 Why?
 ====
@@ -16,9 +16,10 @@ Using Nightly
 =============
 
 Use `rustup` to override the version used in a specific directory.
-
-    cd /nightly_project
+```console
+    cd nightly_project
     rustup override set nightly
+```
 
 Features
 ========
@@ -38,10 +39,11 @@ Enabling Features
 =================
 
 To enable a feature, add the following line into `src/main.rs` (for
-executables), or\`src/lib.rs\` (for libraries):
+executables), or `src/lib.rs` (for libraries):
 
+```rust,ignore
     #![feature(asm, no_std)]
-
+```
 Compiler Plugins
 ================
 
@@ -51,8 +53,7 @@ Compiler Plugins add additional capabilities to Rust. For example:
 
 -   Linters
 
--   Libraries like
-    [`regex_macros`](https://github.com/rust-lang/regex#usage-regex-compiler-plugin)
+-   Libraries like [`regex_macros`](https://github.com/rust-lang/regex#usage-regex-compiler-plugin)
 
 Enabling Compiler Plugins
 =========================
@@ -60,7 +61,9 @@ Enabling Compiler Plugins
 To enable a compiler plugin add the following line into `src/main.rs`
 (for executables), or\`src/lib.rs\` (for libraries):
 
+```rust,ignore
     #![plugin(some_plugin)]
+```
 
 Warning
 =======

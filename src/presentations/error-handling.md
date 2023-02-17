@@ -117,7 +117,7 @@ Using `?` in `main`
 
 TODO: Fix this example
 
-```rust
+```rust,ignore,does_not_compile
     use std::error::Error;
 
     fn maybe_dangerous() -> Option<()>{
@@ -125,7 +125,7 @@ TODO: Fix this example
     }
 
     fn main() -> Result<(), Box<dyn Error>> {
-        maybe_dangerous().ok_or(|| ())?;
+        maybe_dangerous()?;
     }
 ```
 Mapping Result Values
@@ -155,7 +155,7 @@ Dynamic errors
 Rust has an idiomatic dynamic error type, which most errors can be
 converted into:
 
-```rust
+```rust,does_not_compile,ignore
     use std::fs::File;
 
     fn main() -> Result<(), Box<dyn std::error::Error>> {

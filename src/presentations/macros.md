@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Macros
 
 !
 =
@@ -54,7 +54,7 @@ Macros: Syntax
 ==============
 
 Let’s see how they look:
-
+```rust
     macro_rules! double {
       // Input parameters
       ($value:expr)
@@ -70,7 +70,7 @@ Let’s see how they look:
         double! { 5 };
         double![5];
     }
-
+```
 Macros: Syntax
 ==============
 
@@ -91,7 +91,7 @@ Both in the input and output.
 
 Macros: Repetitions
 ===================
-
+```rust
     macro_rules! implement_foo_for {
         [
             // This is a repetition!
@@ -116,7 +116,7 @@ Macros: Repetitions
         1_u8.foo();
         1_u16.foo();
     }
-
+```
 Macros: Repetitions
 ===================
 
@@ -128,7 +128,7 @@ Each repetition in the input should have a matching one in the output.
 
 Macros: Custom Syntax
 =====================
-
+```rust
     macro_rules! email {
         ($user:expr => $domain:expr) => {
             format!("{}@{}", $user, $domain);
@@ -139,7 +139,7 @@ Macros: Custom Syntax
         let address = email!("me" => "example.org");
         println!("{}", address);
     }
-
+```
 Macros: Custom Syntax
 =====================
 

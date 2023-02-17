@@ -21,7 +21,7 @@ Arguments
         4 // Chosen by dice roll.
     }
 
-    fn return_max(should: bool) -> Option<i32> {
+    fn return_max(x: i32, y: i32) -> i32 {
         if x > y {
             x
         } else {
@@ -43,11 +43,15 @@ Returning is optional. Signatures must be complete. Note the `;`!
         true;
         ()
     }
+```
 
+```rust,does_not_compile,ignore
     fn doesnt_compile() -> bool {
         true;
     }
+```
 
+```rust
     fn returns() -> bool {
         true
     }
@@ -71,9 +75,15 @@ Generic functions can be *constrained*.
 These are equivalent:
 
 ```rust
+    use std::fmt::Debug;
+
     fn prints_anything<T: Debug>(thing: T) {
         println!("{:?}", thing);
     }
+```
+
+```rust
+    use std::fmt::Debug;
 
     fn prints_anything<T>(thing: T)
     where

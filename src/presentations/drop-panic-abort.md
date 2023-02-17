@@ -33,7 +33,7 @@ For this, the `Drop` trait can be implemented.
 
 !
 =
-
+```rust,ignore,does_not_compile
     struct LevelDB {
         handle: *mut leveldb_database_t
     }
@@ -43,7 +43,7 @@ For this, the `Drop` trait can be implemented.
             unsafe { leveldb_close(self.handle) };
         }
     }
-
+```
 Warning!
 ========
 
@@ -62,7 +62,7 @@ Panics
 ======
 
 Rust also has another error mechanism: `panic!`
-
+```rust,ignore,does_not_compile
     fn main() {
         panicking_function();
     }
@@ -70,7 +70,7 @@ Rust also has another error mechanism: `panic!`
     fn panicking_function() {
         panic!("gosh, don't call me!");
     }
-
+```
 !
 =
 

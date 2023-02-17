@@ -1,10 +1,10 @@
-[Table of Contents](./index.html)
+# Deref Coercions
 
 Motivation
 ==========
 
 Why does the following work?
-
+```rust
     struct Point {
         x: i32,
         y: i32
@@ -14,7 +14,7 @@ Why does the following work?
         let boxed_p = Box::new(Point { x: 1, y: 2 });
         println!("{}", boxed_p.x);
     }
-
+```
 Box doesn’t have a field named "x"!
 
 Auto-Dereferencing
@@ -40,7 +40,7 @@ This makes wrapper types very ergonomic and easy to use!
 =
 
 Dereferencing is described by the `Deref` and `DerefMut`-Traits.
-
+```rust
     impl<T> Deref for Box<T> {
         type Target = T;
 
@@ -48,15 +48,15 @@ Dereferencing is described by the `Deref` and `DerefMut`-Traits.
             self.inner
         }
     }
-
+```
 This call is introduced when dereferencing is requested.
 
 Important deref behaviours
 ==========================
 
--   String -&gt; &str
+-   `String` -> `&str`
 
--   Vec&lt;T&gt; -&gt; &\[T\]
+-   `Vec<T>` -> `&[T]`
 
 Functions that don’t modify the lengths of a String or a Vector should
 accept a slice instead. The memory layout is chosen so that this is
@@ -64,7 +64,7 @@ accept a slice instead. The memory layout is chosen so that this is
 
 !
 =
-
+```rust
     fn print_me(message: &str) { println!("{}", message); }
 
     fn main() {
@@ -73,3 +73,4 @@ accept a slice instead. The memory layout is chosen so that this is
         print_me(&a_string);
         print_me(a_string.as_str())
     }
+```

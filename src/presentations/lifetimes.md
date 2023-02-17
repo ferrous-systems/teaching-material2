@@ -1,8 +1,8 @@
-[Table of Contents](./index.html)
+# Lifetimes
 
 !
 =
-
+```rust
     struct Point {
         x: i32,
         y: i32,
@@ -17,10 +17,11 @@
     fn main() {
         return_point();
     }
-
+```
 !
 =
 
+```rust
     struct Point {
         x: i32,
         y: i32
@@ -30,7 +31,7 @@
         let p = Point { x: 1, y: 2 };
         Box::new(p)
     }
-
+```
 !
 =
 
@@ -52,7 +53,7 @@ Lifetimes
 
 You have used them already
 ==========================
-
+```rust
     struct Point {
         x: i32,
         y: i32
@@ -67,10 +68,10 @@ You have used them already
             &self.y
         }
     }
-
+```
 Motivation
 ==========
-
+```rust
     struct Container<T> {
         inner: &T,
     }
@@ -93,7 +94,7 @@ Motivation
         let borrowed_s = c.borrow_inner();
         drop(c);
     }
-
+```
 !
 =
 
@@ -103,11 +104,11 @@ This code would - if it compiled - violate memory safety.
 =
 
 The correct struct definition is:
-
+```
     struct Container<'container, T> {
         inner: &'container T,
     }
-
+```
 !
 =
 
@@ -128,7 +129,7 @@ Lifetimes describe minimal conditions
 
 Multiple lifetimes in one signature
 ===================================
-
+```rust
     // slice::split_at
 
     fn split_at<T>(slice: &[T], mid: usize) -> (&[T], &[T]) {
@@ -138,10 +139,10 @@ Multiple lifetimes in one signature
     fn split_at_explicit<'a, T>(slice: &'a [T], mid: usize) -> (&'a [T], &'a [T]) {
         todo!()
     }
-
+```
 Sublifetimes
 ============
-
+```
     use std::str::Split;
 
     struct Tokenizer<'input> {
@@ -178,7 +179,7 @@ Sublifetimes
         println!("{:?}", content2);
 
     }
-
+```
 !
 =
 
@@ -231,15 +232,17 @@ This is due to most data having to live outside of the stack.
 Lifetimes describe all types, not only references, therefore they are
 also bounds in generic code.
 
+```
     fn inspect<'a, T: std::fmt::Debug + 'a>(t: T) {
         println!("{:?}", t);
     }
+```
 
 Lifetime Elision
 ================
 
 For simple cases, lifetimes are automatically inserted into signatures.
-
+```rust
     fn foo(bar: &str) -> &str {
         todo!();
     }
@@ -247,21 +250,22 @@ For simple cases, lifetimes are automatically inserted into signatures.
     fn foo_explicit<'a>(bar: &'a str) -> &'a str {
         todo!();
     }
-
+```
 Lifetimes and Bindings
 ======================
-
+```rust
     let mut sink = io::BufWriter::new(io::stdout().lock());
 
     let stdout = io::stdout();
     let mut sink = io::BufWriter::new(stdout.lock());
+```
 
 Lifetimes and Boxes
 ===================
 
 For boxes, the default lifetime bound of the contained value is
 `'static`. Sometimes, this is too long and can be overwritten:
-
+```rust
     fn main() {
         let v = vec![1, 2, 3];
         let i = make_iter(&v);
@@ -270,3 +274,4 @@ For boxes, the default lifetime bound of the contained value is
     fn make_iter<'a>(v: &'a Vec<u8>) -> Box<impl Iterator<Item = &u8> + 'a> {
         Box::new(v.iter())
     }
+```

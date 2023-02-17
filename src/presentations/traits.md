@@ -353,7 +353,7 @@ Limitations:
 !
 =
 
-```rust
+```rust,does_not_compile
     trait Foo {}
 
     trait Bar {

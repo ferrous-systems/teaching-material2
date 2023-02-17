@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Async Await
 
 Welcome
 =======
@@ -64,11 +64,13 @@ Tutorial
 What are Futures?
 =================
 
+```rust,ignore
     pub trait Future {
         type Output;
 
         fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output>;
     }
+```
 
 Futures
 =======
@@ -85,7 +87,7 @@ async-await functions and Futures
 =================================
 
 ==
-
+```rust
     use async_std::io;
 
     async fn read_from_stdin() -> io::Result<()> {
@@ -98,6 +100,7 @@ async-await functions and Futures
 
         Ok(())
     }
+```
 
 async-await functions and Futures
 =================================
@@ -118,6 +121,7 @@ Async blocks
 !
 =
 
+```rust
     use async_std::io;
     use std::time::Duration;
 
@@ -133,6 +137,7 @@ Async blocks
             Ok(())
         })
     }
+```
 
 Cold Futures
 ============
@@ -143,7 +148,7 @@ Cold Futures
 
 Tasks
 =====
-
+```rust
     use std::time::Duration;
 
     use async_std::io;
@@ -156,7 +161,7 @@ Tasks
         // This async scope times out after 5 seconds.
         task::block_on(timeout_on_stdin(duration))
     }
-
+```
 Tasks
 =====
 

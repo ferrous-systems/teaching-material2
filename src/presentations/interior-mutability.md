@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Interior Mutability
 
 !
 =
@@ -27,7 +27,7 @@ content, and increment the view count.
 
 Without `Cell` s
 ================
-
+```rust
     #[derive(Debug, Default)]
     struct Post {
         content: String,
@@ -40,12 +40,12 @@ Without `Cell` s
             self.viewed_times += 1;
         }
     }
-
+```
 Without `Cell` s
 ================
 
 This isn’t ideal! `view` takes a `&mut self`, meaning this won’t work:
-
+```rust,ignore
     fn main() {
         let post = Post {
             content: String::from("Blah"),
@@ -69,10 +69,11 @@ This isn’t ideal! `view` takes a `&mut self`, meaning this won’t work:
             self.viewed_times += 1;
         }
     }
+```
 
 Without `Cell` s
 ================
-
+```rust,ignore
     fn main() {
         // We need to make the entire struct mutable!
         let mut post = Post {
@@ -97,7 +98,7 @@ Without `Cell` s
             self.viewed_times += 1;
         }
     }
-
+```
 Tossing our views into a `Cell`
 ===============================
 
@@ -109,7 +110,7 @@ Let’s see our previous example with `Cell`.
 
 Tossing our views into a `Cell`
 ===============================
-
+```rust,ignore
     fn main() {
         let post = Post {
             content: String::from("Blah"),
@@ -134,9 +135,11 @@ Tossing our views into a `Cell`
     }
 
     use std::cell::Cell;
-
+```
 Again with `RefCell`
 ====================
+```rust,ignore
+    use std::cell::RefCell;
 
     fn main() {
         let post = Post {
@@ -160,8 +163,7 @@ Again with `RefCell`
         }
     }
 
-    use std::cell::RefCell;
-
+```
 !
 =
 

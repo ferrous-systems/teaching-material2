@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# WASM
 
 What?
 =====
@@ -24,7 +24,7 @@ This can be added through the host system in various ways.
 
 Hello World
 ===========
-
+```lisp
     (module
         ;; Import the required fd_write WASI function which will write the given io vectors to stdout
         ;; The function signature for fd_write is:
@@ -52,6 +52,7 @@ Hello World
             drop ;; Discard the number of bytes written from the top of the stack
         )
     )
+```
 
 WASM targets in Rust
 ====================
@@ -75,14 +76,16 @@ Installation: `rustup` Target
 =============================
 
 `rustup` allows installing multiple compilation targets.
-
-    $ rustup target install wasm32-unknown-unknown
-    $ rustup target install wasm32-wasi
-
+```console
+rustup target install wasm32-unknown-unknown
+rustup target install wasm32-wasi
+```
 Installing a host runtime
 =========================
 
-    curl https://wasmtime.dev/install.sh -sSf | bash
+```
+curl https://wasmtime.dev/install.sh -sSf | bash
+```
 
 -   Currently need building from git:
     <https://github.com/bytecodealliance/wasmtime>
@@ -90,9 +93,11 @@ Installing a host runtime
 Usage: Hello World!
 ===================
 
-    $ cargo new hello-world
-    $ cargo build --target wasm32-wasi
-    $ wasmtime target/wasm32-wasi/debug/main.wasm
+```console
+cargo new hello-world
+cargo build --target wasm32-wasi
+wasmtime target/wasm32-wasi/debug/main.wasm
+```
 
 Usage: The WASI tutorial example
 ================================

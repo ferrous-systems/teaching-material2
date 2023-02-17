@@ -12,7 +12,7 @@ Dispatch through Enums
 ======================
 
 If the number of possible choices is limited, an Enum can be used:
-```rust
+```rust,ignore,does_not_compile
     enum Operation {
         Get,
         Set(String),
@@ -29,7 +29,7 @@ If the number of possible choices is limited, an Enum can be used:
 ```
 Alternative Form
 ================
-```rust
+```rust,ignore,does_not_compile
     enum Operation {
         Get,
         Set(String),

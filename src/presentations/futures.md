@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Futures
 
 !
 =
@@ -29,6 +29,9 @@ They feel like a channel to use, even coming with a `tx` and `rx` pair.
 
 You’ve got oneshot
 ==================
+```rust,ignore,does_not_compile
+    use futures::Future;
+    use futures::sync::oneshot;
 
     fn main() {
         // This is a simple future, sort of like a one-time channel.
@@ -44,9 +47,7 @@ You’ve got oneshot
             .unwrap();
         println!("{}", result);
     }
-
-    use futures::Future;
-    use futures::sync::oneshot;
+```
 
 You’ve got oneshot
 ==================
@@ -58,6 +59,12 @@ thread until data is received!
 
 You’ve got oneshot (threads)
 ============================
+
+```rust
+    use std::thread;
+    use std::time::Duration;
+    use futures::Future;
+    use futures::sync::oneshot;
 
     fn main() {
         let (tx, rx) = oneshot::channel();
@@ -71,15 +78,11 @@ You’ve got oneshot (threads)
             .unwrap();
         println!("{}", result);
     }
-
-    use std::thread;
-    use std::time::Duration;
-    use futures::Future;
-    use futures::sync::oneshot;
+```
 
 Multiple oneshots
 =================
-
+```rust
     const NUM_OF_TASKS: usize = 10;
 
     fn main() {
@@ -122,7 +125,7 @@ Multiple oneshots
         thread::sleep(a_little_bit);
         choice
     }
-
+```
 57 channels (and nothing on)
 ============================
 
@@ -137,7 +140,14 @@ memory.
 
 57 channels (and nothing on)
 ============================
-
+```rust
+    use std::time::Duration;
+    use std::thread;
+    use rand::distributions::{Range, IndependentSample};
+    use futures::future::{Future, ok};
+    use futures::stream::Stream;
+    use futures::sync::mpsc;
+    use futures::Sink;
     const BUFFER_SIZE: usize = 57;
 
     fn main() {
@@ -175,14 +185,6 @@ memory.
         println!("Sum: {}", sum);
     }
 
-    use std::time::Duration;
-    use std::thread;
-    use rand::distributions::{Range, IndependentSample};
-    use futures::future::{Future, ok};
-    use futures::stream::Stream;
-    use futures::sync::mpsc;
-    use futures::Sink;
-
     // This function sleeps for a bit, then returns how long it slept.
     pub fn sleep_a_little_bit() -> u64 {
         let mut generator = rand::thread_rng();
@@ -195,11 +197,12 @@ memory.
         choice
     }
 
+```
+
 Toes in the CPU pool
 ====================
 
-`futures-rs` comes with
-[`futures_cpupool`](https://docs.rs/futures-cpupool/0.1.7/futures_cpupool/)
+`futures-rs` comes with [`futures_cpupool`](https://docs.rs/futures-cpupool/0.1.7/futures_cpupool/)
 which provides a simple, easy to use CPU Pool type.
 
 This allows for us to dispatch arbitrary (heterogeneous!) jobs to a pool
@@ -207,7 +210,10 @@ without worrying about where (and when) it gets executed.
 
 Toes in the CPU pool
 ====================
-
+```rust
+    use futures::future::Future;
+    use futures_cpupool::Builder;
+    
     fn main() {
         // Creates a CpuPool with workers equal to the cores on the machine.
         let pool = Builder::new().create();
@@ -225,10 +231,7 @@ Toes in the CPU pool
         println!("{}, {}", resulting_string, resulting_integer);
         // Returns `First, 2`
     }
-
-    use futures::future::Future;
-    use futures_cpupool::Builder;
-
+```
 Interacting with futures
 ========================
 

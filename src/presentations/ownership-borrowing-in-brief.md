@@ -95,7 +95,7 @@ Ownership passing
 
 First safety checkpoint
 =======================
-```rust
+```rust,does_not_compile,ignore
     use std::fs::File;
     use std::io::Write;
     use std::io;
@@ -120,7 +120,7 @@ First safety checkpoint
 
 Oops!
 =====
-```
+```console
     8  |     let file = match file_create {
        |         ---- move occurs because `file` has type `std::fs::File`, which does not implement the `Copy` trait
     ...
@@ -386,7 +386,7 @@ Small quiz
 `drop` is the function that deallocates a value immediately. What does
 the implementation look like?
 
-```rust
+```rust,ignore,does_not_compile
     use std::fs::File;
 
     fn main() {

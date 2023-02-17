@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Smart Pointers
 
 !
 =
@@ -11,7 +11,7 @@ They all have something in common: They are managed by ownership.
 ================
 
 Runtime reference counted within a thread.
-
+```rust
     use std::rc::Rc;
 
     struct Point {
@@ -24,7 +24,7 @@ Runtime reference counted within a thread.
         let first_handle = rced_point.clone();
         let second_handle = rced_point.clone();
     }
-
+```
 Semantics
 =========
 
@@ -40,7 +40,7 @@ Semantics
 ==================
 
 Weak pointer to data.
-
+```rust
     use std::rc::Rc;
 
     struct Point {
@@ -53,7 +53,7 @@ Weak pointer to data.
         let first_handle = rced_point.clone();
         let weak = Rc::downgrade(&first_handle);
     }
-
+```
 Semantics
 =========
 

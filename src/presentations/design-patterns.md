@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Design Patters
 
 `.clone()` before Lifetimes
 ===========================
@@ -46,14 +46,16 @@ The usage depends on the context.
 Pattern: `From<T>`, `Into<T>` - Example
 =======================================
 
+```rust
     fn main() {
         let string = String::from("string slice");
         let string2: String = "string slice".into();
     }
-
+```
 Pattern: What does `?` do?
 ==========================
 
+```rust
     use std::fs::File;
     use std::io::{self, Write};
 
@@ -85,7 +87,7 @@ Pattern: What does `?` do?
     }
 
     fn main() {}
-
+```
 Pattern: `AsRef<T>`
 ===================
 
@@ -94,7 +96,7 @@ produce references to another type.
 
 Pattern: `AsRef<T>` - Example
 =============================
-
+```rust
     use std::fs::File;
     use std::path::Path;
     use std::path::PathBuf;
@@ -109,7 +111,7 @@ Pattern: `AsRef<T>` - Example
         let path = p.as_ref();
         let file = File::open(path);
     }
-
+```
 Pattern: Constructor `new()`
 ============================
 
@@ -122,17 +124,18 @@ Pattern: Constructor `new()`
     Try using `#[derive(Default)]` first.
 
 <!-- -->
-
+```rust
     pub struct Stuff {
         value: i64,
     }
 
     impl Stuff {
-        /// constructor by convention
+        // constructor by convention
         fn new(value: i64) -> Self {
             Self { value: value }
         }
     }
+```
 
 Pattern: NewType
 ================
@@ -144,13 +147,13 @@ Pattern: NewType
 -   Also used to `impl` external Traits on external Types
 
 <!-- -->
-
+```rust
     struct MyString(String);
 
     impl MyString {
-        ///... my implementations for MyString
+        //... my implementations for MyString
     }
-
+```
 Pattern: Extending external Types
 =================================
 
@@ -159,7 +162,7 @@ Pattern: Extending external Types
 -   This pattern allows you to extend external Type using a local Trait.
 
 <!-- -->
-
+```rust
     trait VecExt {
         fn magic_number(&self) -> usize;
     }
@@ -174,7 +177,7 @@ Pattern: Extending external Types
         let v = vec![1, 2, 3, 4, 5];
         println!("Magic Number = {}", v.magic_number());
     }
-
+```
 Pattern: Narrowing variable’s scope
 ===================================
 
@@ -187,9 +190,9 @@ Pattern: Narrowing variable’s scope
     served its purpose.
 
 <!-- -->
-
+```rust
     // Get the inner type from Option
-    let item = returns_option();
+    let item = Some(3);
     if let Some(item) = item {
         println!("{:?}", item);
     }
@@ -202,3 +205,4 @@ Pattern: Narrowing variable’s scope
     // Shadow using `let` again
     let data = data;
     // data is immutable from now on
+```

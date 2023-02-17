@@ -51,13 +51,14 @@ Unit Tests
 Unit Tests
 ==========
 
-```
+```console
     $ cargo test
     running 1 test
     test is_north_works ... ok
 
     test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
 ```
+
 `tests` Submodule
 =================
 
@@ -95,7 +96,7 @@ Unit Tests
 
 `tests` Submodule
 =================
-```
+```console
     $ cargo test
     running 1 test
     test tests::is_north_works ... ok
@@ -113,17 +114,18 @@ Documentation Tests
 
 Documentation Tests
 ===================
-
-    /// ```rust
-    /// use example::Direction;
-    /// let way_home = Direction::North;
-    /// ```
-    pub enum Direction { North, South, East, West }
+```rust,ignore
+/// ```rust
+/// use example::Direction;
+/// let way_home = Direction::North;
+/// ```
+pub enum Direction { North, South, East, West }
+```
 
 Documentation Tests
 ===================
 
-```
+```console
     $ cargo test
     running 0 tests
 
@@ -135,8 +137,8 @@ Documentation Tests
     test Direction_0 ... ok
 
     test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
-
 ```
+
 Integration Tests
 =================
 
@@ -149,7 +151,7 @@ Integration Tests
 
 
 **`/tests/basic.rs`.**
-```rust
+```rust,ignore
     use example::{is_north, Direction};
 
     #[test]
@@ -160,7 +162,7 @@ Integration Tests
 ```
 Integration Tests
 =================
-```
+```console
     $ cargo test
     running 1 test
     test is_north_works ... ok
@@ -179,3 +181,4 @@ Integration Tests
 
     test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured
 ```
+

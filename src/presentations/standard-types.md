@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Standard Types
 
 !
 =
@@ -60,7 +60,7 @@ and aids in confidence.
 
 This is only recommended in testing and prototyping.
 
-```rust
+```rust,ignore,does_not_compile
     fn main() {
         let nothing: Option<usize> = None;
         nothing.unwrap();
@@ -112,6 +112,7 @@ Results can be handled via `unwrap()` just like `Option` types, and can
 be handled in the same ways.
 
 ```rust
+    use std::fs::File;
     fn main() {
         if let Err(e) = File::open("nein") {
             println!("{:?}", e);
@@ -176,7 +177,7 @@ HashMaps are key value stores. Keys must implement `Hash`.
     fn main() {
         let mut kv_store = HashMap::new();
         kv_store.insert("key", true);
-        println!("{}", kv_store.get("key"));
+        println!("{:?}", kv_store.get("key"));
     }
 ```
 
