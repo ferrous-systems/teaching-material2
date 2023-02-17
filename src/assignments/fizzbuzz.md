@@ -20,29 +20,30 @@ Task
 
 2.  Implement the following function:
 
-        fn fizzbuzz(i: u32) -> String {
-            ///....
-        }
+```rust,ignore,does_not_compile
+    fn fizzbuzz(i: u32) -> String {
+        //...
+    }
 
-    Implementing the following rules:
+```
+    
+Implementing the following rules:
 
-    -   If `i` is divisible by `3`, return `String::from("Fizz")`
+-   If `i` is divisible by `3`, return `String::from("Fizz")`
 
-    -   If `i` is divisible by `5`, return `String::from("Buzz")`
+-   If `i` is divisible by `5`, return `String::from("Buzz")`
 
-    -   If `i` is divisible by both `3` and `5`, return
-        `String::from("FizzBuzz")`
+-   If `i` is divisible by both `3` and `5`, return `String::from("FizzBuzz")`
 
-    -   Return the number as a String, otherwise, using `i.to_string()`
+-   Return the number as a String, otherwise, using `i.to_string()`
 
-    -   Test the function
+-   Test the function
 
 3.  Write a main function that loops from `1` to `100` using `for`
 
-    -   Call the `fizzbuzz` function inside the loop and store the
-        result in the variable `fizz`.
+-   Call the `fizzbuzz` function inside the loop and store the result in the variable `fizz`.
 
-    -   Print the returned value using `println!("{}", fizz)`
+-   Print the returned value using `println!("{}", fizz)`
 
 Help
 ====
@@ -59,16 +60,22 @@ Getting Started
 
 Create a new binary Cargo project, check the build and see if it runs:
 
-$ cargo new fizzbuzz $ cd fizzbuzz $ cargo run&lt;/programlisting&gt;
+```console
+cargo new fizzbuzz 
+cd fizzbuzz 
+cargo run
+```
 
 Creating Strings
 ----------------
 
 The recommended ways to get a `String` type for this exercise are:
 
+```rust,ignore,does_not_compile
     let string = String::from("Fizz");
     let i = 4;
     let string = i.to_string();
+```
 
 Counting from 1 to 100
 ----------------------
@@ -77,6 +84,7 @@ If you have issues that your program only counts to 99, be aware that
 the `..`-range syntax in Rust is *end-exclusive*. Either move the bound
 or use the inclusive range syntax.
 
+```rust,does_not_compile,ignore
     for i in 1..5 {
         // Only gives you 1, 2, 3, 4
     }
@@ -84,6 +92,7 @@ or use the inclusive range syntax.
     for i in 1..=5 {
         // Gives you 1, 2, 3, 4 and 5
     }
+```
 
 Returning data
 --------------
@@ -91,10 +100,11 @@ Returning data
 If you have issues returning data from multiple branches of your
 solution, liberally use `return`.
 
+```rust,ignore,does_not_compile
     if x % 5 == 0 {
         return String::from("Buzz");
     }
-
+```
 Printing to console
 -------------------
 
@@ -102,16 +112,19 @@ The recommended way to print to the console in this exercise is
 `println!`. `println!` *always* needs a format string - it uses `{}` as
 a placeholder to mean **print the next argument**, like Python 3 or C\#.
 
+```rust,ignore,does_not_compile
     let s = String::from("Fizz");
     println!("The value is s is {}. That's nice.", s);
+```
 
 Testing
 -------
 
 Testing functions are annotated using the `#[test]` attribute,
 assertions use `assert!(expr == expr)` or `assert_eq!(expr, expr)`.
-
+```rust,ignore,does_not_compile
     #[test]
     fn my_test() {
         assert_eq!(1, 1);
     }
+```

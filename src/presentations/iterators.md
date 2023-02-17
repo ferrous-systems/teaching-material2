@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Iterators
 
 TODO: Move to "Applied Rust"
 

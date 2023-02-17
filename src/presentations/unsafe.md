@@ -93,11 +93,11 @@ Practical example
 
 As Rust forbids aliasing, it is impossible in safe Rust to split a slice
 into 2 non-overlapping parts.
-```rust
+```rust,ignore
     #[inline]
-    fn split_at_mut(&mut self, mid: isize) -> (&mut [T], &mut [T]) {
-        let len = self.len();
-        let ptr = self.as_mut_ptr();
+    fn split_at_mut<T>(v: &mut [T], mid: isize) -> (&mut [T], &mut [T]) {
+        let len = v.len();
+        let ptr = v.as_mut_ptr();
 
         assert!(mid <= len);
 
@@ -116,7 +116,7 @@ Highlight unsafe code in VSCode
 -   Helpful for longer `unsafe` blocks
 
 <!-- -->
-```
+```text
     {
         "editor.semanticTokenColorCustomizations": {
             "rules": {

@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Installation
 
 Rustup
 ======
@@ -11,7 +11,7 @@ Rustup installs and manages Rust compiler toolchains
 
 Hello, world! with Cargo
 ========================
-
+```console
     $ cargo new hello-world
     $ cd hello-world
     $ cat src/main.rs
@@ -25,10 +25,10 @@ Hello, world! with Cargo
         Finished debug [unoptimized + debuginfo] target(s) in 0.0 secs
          Running `target/debug/hello-world`
     Hello, world!
-
+```
 Important commands
 ==================
-
+```console
     # Installation of a toolchain (here: the stable release channel)
     $ rustup install stable
 
@@ -46,7 +46,7 @@ Important commands
 
     # Add and install a target to the toolchain (here: to cross-compile for an ARMv6-M target)
     $ rustup target add thumbv6m-none-eabi
-
+```
 For up-to-date information, please see [Rust Component
 History](https://rust-lang.github.io/rustup-components-history/)
 

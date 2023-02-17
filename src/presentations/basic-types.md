@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Basic types
 
 ints
 ====
@@ -18,11 +18,13 @@ Rust comes with all standard int types, with and without sign
 Syntactic clarity in specifying numbers
 =======================================
 
+```rust,ignore
     123_456   // underscore as separator
     0x12      // prefix 0x to indicate hex value
     0o23      // prefix 0o to indicate octal value
     0b0001    // prefix 0b to indicate binary value
     b'a'      // A single byte character
+```
 
 Architecture-dependent numbers
 ==============================
@@ -36,11 +38,12 @@ Casts
 
 Casts between number are possible, **also shortening casts**:
 
+```rust
     fn main() {
         let foo = 3_i64;
         let bar = foo as i32;
     }
-
+```
 !
 =
 
@@ -57,10 +60,11 @@ Floats
 
 Rust also comes with floats of all standard sizes: `f32`, `f64`
 
+```rust
     fn main() {
         let float: f64 = 1.0;
     }
-
+```
 Boolean
 =======
 
@@ -78,11 +82,12 @@ represented as a "single character"
 
 -   Four (4) bytes in size
 
--   Can save more than ASCII, like glyphs, emojis, accented characters
+-   Can save more than ASCII, like glyphs, emoji, accented characters
     etc.
 
 <!-- -->
 
+```rust
     fn main() {
         // U+0072 LATIN SMALL LETTER R
         let ascii_char = 'r';
@@ -90,21 +95,28 @@ represented as a "single character"
         let special_char = 'μ';
         // U+0154 LATIN CAPITAL LETTER R WITH ACUTE
         let accented_char = 'Ŕ';
-        // U+2622 RADIOACTIVE SIGN
-        let emoji_char = '\u{2622}';
+      // U+1F60E Symbol, other
+        let emoji_char = '😎';
+    }
+```
+
+```rust,ignore,does_not_compile
+    fn main() {
         // U+1F468 U+200D U+1F469 U+200D U+1F467 U+200D U+1F467
         let seven_chars_emoji = '👨‍👩‍👧‍👧'; // Error: char must be one codepoint long
     }
+```
 
 Arrays
 ======
 
 Fixed-size arrays have the following notation:
 
+```rust
     fn main() {
         let arr: [i32; 4] = [1,2,3,4];
     }
-
+```
 Arrays of dynamic size
 ======================
 
@@ -113,6 +125,8 @@ Arrays of dynamic size in Rust are represented as slices.
 Slices carry a pointer to the array and a length. Slices cannot be
 resized.
 
+```rust
     fn main() {
         let arr: &[i32] = &[1,2,3,4];
     }
+```

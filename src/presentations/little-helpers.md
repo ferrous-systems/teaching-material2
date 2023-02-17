@@ -1,19 +1,23 @@
-[Table of Contents](./index.html)
+# Little Helpers
+
+TODO: Move to "Applied Rust"?
 
 Some collected hints to get you started.
 
+```rust, ignore
     #[derive(Eq, PartialEq, Debug)] 
     pub struct Point { 
         x: i32,
         y: i32,
     }
+```
 
 -   Derives allow to generate some standard functionality
 
 -   Any type can carry a visibility modifier to export them
 
 <!-- -->
-
+```rust
     #[derive(Debug)]
     struct Point {
         x: i32,
@@ -25,13 +29,14 @@ Some collected hints to get you started.
         println!("{:?}", p); 
         println!("{:#?}", p); 
     }
+```
 
 -   Debug makes the `Debug` formatting string work
 
 -   There’s also a more structured version, also enabled through it
 
 <!-- -->
-
+```rust
     #[derive(Eq,PartialEq,Debug)]  
     struct Point {
         x: i32, 
@@ -46,7 +51,7 @@ Some collected hints to get you started.
         }
         assert_eq!(p1, p2); 
     }
-
+```
 -   `Eq` describes total equality: for every pair of values, equality is
     defined
 
@@ -63,9 +68,13 @@ Unwrap Results and Option
 
 If you expect something to work or an item to be there, use `unwrap`:
 
+```rust,does_not_compile,ignore
+    use std::fs::File;
+
     fn main() {
         let file: File = File::open("Cargo.toml").unwrap();
     }
+```
 
 This expects the operation to have worked. You can add structured error
 handling later.
@@ -74,14 +83,14 @@ Strings and their slices
 ========================
 
 Strings and string slices work much the same.
-
+```rust
     fn main() {
         let slice: &str = "Hello world!";
         let string: String = String::from(slice);
     }
-
+```
 In the beginning, habitually use `String`.
-
+```rust,ignore
     struct Owned {
         string_data: String
     }
@@ -106,6 +115,7 @@ In the beginning, habitually use `String`.
     fn failing_test() {
         assert_eq!(1, 2);
     }
+```
 
 Rust and Cargo allows you to easily provide test for your code.
 
@@ -115,7 +125,7 @@ These can be put either directly in the source file or in any file in
 -   Only needed when putting files in `tests`.
 
 <!-- -->
-
+```rust
     fn addition(a: i32, b: i32) -> i32 {
         todo!()
     }
@@ -124,3 +134,4 @@ These can be put either directly in the source file or in any file in
     fn addition_test() {
         assert_eq!(addition(1,2), 3);
     }
+```

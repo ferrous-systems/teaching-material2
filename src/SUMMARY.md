@@ -68,6 +68,7 @@
 
 # Async/Await
 
+<!--
 -   [Intro to Async/Await](./presentations/async-await-intro.md)
 
 -   [Async building blocks](./presentations/async-building-blocks.md)
@@ -81,6 +82,7 @@
 -   [Async: Avoiding disaster and unbounded growth](./presentations/async-growth-handling.md)
 
 -   [Async/Await: Laziness in detail (Rust vs other languages)](./presentations/async-await-laziness-in-detail.md)
+-->
 
 # Specialized topics
 
@@ -123,7 +125,7 @@
 # Assignments
 
 -   [FizzBuzz](./assignments/fizzbuzz.md)
-
+<!--
 -   [Shapes](./assignments/shapes.md)
 
 -   [Files, match, and Result](./assignments/files-match-result-assignment.md)
@@ -174,6 +176,7 @@
 
 - [FFI  libc get_time()]() <!-- (https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=762c5965f08b2d0a3c7375a372da6928) -->
 
+<!--
 ## SemVer
 
 -   [SemVer from file](./assignments/semver_from_file.md)

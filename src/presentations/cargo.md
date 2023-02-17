@@ -38,7 +38,7 @@ The [Cargo Manifest](http://doc.crates.io/manifest.html) is written
 using [TOML](http://doc.crates.io/manifest.html).
 
 It at least contains the name of the project.
-
+```toml
     [package]
     name = "tcp-mailbox"
     version = "0.1.0"
@@ -47,6 +47,7 @@ It at least contains the name of the project.
     [dependencies]
     async-std = "1" # would also choose 1.5
     clap = "2.2" # would also choose 2.3
+```
 
 `cargo build`
 =============
@@ -196,8 +197,9 @@ It is possible to temporarily replace libraries with local ones.
 For this, their path needs to be registered in
 `$PROJECT_PATH/.cargo/config`.
 
+```toml
     paths = ["/my/local/path", "/another/path"]
-
+```
 Libraries found here will be preferred. This allows easy testing of
 patches.
 
@@ -239,30 +241,32 @@ compilation.
 
 This happens through feature flags.
 
+```rust
     #[cfg(experimental)]
     fn amazing_function() {
 
     }
-
+```
 !
 =
 
 These can be registered in `Cargo.toml`.
 
+```toml
     [features]
     default = []
     # Turns on experimental features.
     experimental = []
-
+```
 !
 =
 
 And then be expressed on a dependency:
-
+```toml
     [dependencies.my_lib]
     version = "0.1"
     features = ["experimental"]
-
+```
 or used with `+cargo build --features experimental,other_feature`
 
 Directly invoking `rustc`

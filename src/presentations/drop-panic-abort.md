@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Drop, Panic, Abort
 
 TODO: Move to "Applied Rust"
 

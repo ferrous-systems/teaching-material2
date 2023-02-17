@@ -1,10 +1,10 @@
+# Ownership & Borrowing In Brief
+
 TODO: Turn into trainer's notes
 TODO: Ownership 2x2 cheatsheet
 -   stress that this is central to understanding Rust and that we will
     spend as much time on it as needed until everyone feel like they
     have a grasp on it
-
-[Table of Contents](./index.html)
 
 !
 =

@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Advanced Generics
 
 !
 =
@@ -18,6 +18,7 @@ This can happen at any point where type parameters are used.
 
 Example: `println!("{:?}")` requires Debug
 
+```rust
     use std::fmt::Debug;
 
     fn print_everything<T: Debug>(to_print: T) {
@@ -29,22 +30,22 @@ Example: `println!("{:?}")` requires Debug
     {
         println!("{:?}", to_print);
     }
-
+```
 !
 =
 
 Example: A generic Struct that requires inner values to implement
 `Debug`
-
+```rust
     struct MyStruct<T: Debug> {
         inner: T
     }
-
+```
 !
 =
 
 Bounds can also be expressed for implementation targets:
-
+```rust,ignore,does_not_compile
     trait Distance<T> { /* ... */ }
 
     trait Centered {
@@ -55,16 +56,16 @@ Bounds can also be expressed for implementation targets:
         where T: Centered,
               X: Centered {
     }
-
+```
 !
 =
 
 Traits can also directly require prerequisites:
-
+```rust,ignore,does_not_compile
     trait Logger<X: Debug> {
         fn log(&self, x: X);
     }
-
+```
 !
 =
 
@@ -76,11 +77,11 @@ Exception: `Sized`
 If not specified otherwise, all type parameters carry the bound `Sized`
 (the type has a statically known memory size). This can be suppressed by
 using the bound `?Sized`.
-
+```rust,ignore,does_not_compile
     fn take_unsized<T: ?Sized>(t: &T) {
         //...
     }
-
+```
 !
 =
 
@@ -93,6 +94,7 @@ requires a known size.
 Bounds can be used everywhere, which can be used to de-facto constrain
 types at the call site.
 
+```rust
     struct Wrapper<T> {
         inner: T
     }
@@ -106,7 +108,7 @@ types at the call site.
             println!("{:?}", &self.inner);
         }
     }
-
+```
 !
 =
 
@@ -117,18 +119,18 @@ during construction and at call sites.
 =
 
 Bounds are very common in conversion functions.
-
+```rust
     use std::path::Path;
 
     fn open_file<P: AsRef<Path>>(pathlike: P) {
         let path = pathlike.as_ref();
     }
-
+```
 Generic implementations
 =======================
 
 Bounds can be used to constrain the target of an implementation.
-
+```rust
     trait Log<T> {
         fn log(&self, t: T);
     }
@@ -138,16 +140,18 @@ Bounds can be used to constrain the target of an implementation.
             println!("Logging: {:?}", t);
         }
     }
-
+```
 Trait Inheritance
 =================
 
 Traits can also request the implementation of other traits and declare
 default implementations for methods relying on that information.
 
+```rust
     trait Named {
         fn name(&self) -> &'static str;
     }
     trait Person : Named {
         fn home_address(&self) -> Address;
     }
+```

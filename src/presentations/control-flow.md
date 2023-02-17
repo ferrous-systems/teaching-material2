@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Control Flow
 
 Control Flow primitives
 =======================

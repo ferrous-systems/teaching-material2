@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Overview
 ```rust
 fn main() {
     let random_number = generate_random_number();

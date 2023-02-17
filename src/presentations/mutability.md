@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Mutability
 
 !
 =
@@ -11,7 +11,7 @@ Where does Rust land?
 An Example
 ==========
 
-```rust
+```rust,does_not_compile, ignore
     fn main() {
         let answer = 42;
         answer = 32;

@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Closures
 
 !
 =
@@ -14,6 +14,7 @@ Rust has closures. Multiple, even.
 Notation
 ========
 
+```rust
     fn main() {
         let vec = vec![1,2,3];
         let out = vec.iter().map(|x| x * 2).collect::<Vec<_>>();
@@ -26,7 +27,7 @@ Notation
         let out = vec.iter().map(double).collect::<Vec<_>>();
         println!("{:?}", out);
     }
-
+```
 Closure Types
 =============
 
@@ -48,21 +49,24 @@ signatures!
 Notation of closure arguments
 =============================
 
+```rust
     fn call_with_one<F>(some_closure: F) -> i32
     where
         F: Fn(i32) -> i32,
     {
         some_closure(1)
     }
-
+```
 Moves and Closures
 ==================
 
 To resolve ambiguity, closures borrow by default. Moving needs to be
 requested.
 
+```rust
     fn main() {
         let num = 5;
 
         let owns_num = move |x: i32| x + num;
     }
+```

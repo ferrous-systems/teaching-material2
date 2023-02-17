@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Stack and Heap
 
 TODO: Yeet slides to Applied Rust?
 

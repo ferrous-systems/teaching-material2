@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Dynamic Dispatch
 
 !
 =
@@ -12,7 +12,7 @@ Dispatch through Enums
 ======================
 
 If the number of possible choices is limited, an Enum can be used:
-
+```rust
     enum Operation {
         Get,
         Set(String),
@@ -26,10 +26,10 @@ If the number of possible choices is limited, an Enum can be used:
             Operation::Count => execute_count()
         }
     }
-
+```
 Alternative Form
 ================
-
+```rust
     enum Operation {
         Get,
         Set(String),
@@ -45,7 +45,7 @@ Alternative Form
             }
         }
     }
-
+```
 Recommendation
 ==============
 
@@ -83,12 +83,13 @@ Trait Objects and Closures
 
 Closure traits fulfill object safety rules.
 
+```rust
     fn factory() -> Box<dyn Fn(i32) -> i32> {
         let num = 5;
 
         Box::new(move |x| x + num)
     }
-
+```
 Further properties
 ==================
 
@@ -96,7 +97,7 @@ Further properties
     support downcasts through the `Any` trait.
 
 <!-- -->
-
+```rust
     use std::fmt::Debug;
     use std::any::Any;
 
@@ -121,3 +122,4 @@ Further properties
         log(&String::from("String here"));
         log(&1)
     }
+```

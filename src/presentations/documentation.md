@@ -1,8 +1,9 @@
+# Documentation
+
 TODO: leave a link to explore docs 
 
 TODO: move rest to applied Rust
 
-# Documentation
 
 `rustdoc`
 =========
@@ -21,8 +22,9 @@ The standard library documentation is hosted at
 
 A local, offline version can be opened with:
 
+```console
     rustup doc --std
-
+```
 Crate Documentation
 ===================
 
@@ -46,7 +48,7 @@ How is it Generated?
 `rustdoc` can read Rust code and Markdown documents.
 
 `//!` and `///` comments are read as Markdown.
-
+```rust
     //! Module documentation. (e.g. the 'Examples' part of `std::vec`).
 
     /// Document functions, structs, traits and values.
@@ -56,7 +58,7 @@ How is it Generated?
     // This comment will not be shown as documentation.
     // The function itself will be.
     fn function_without_documentation() {}
-
+```
 Example: Components
 ===================
 
@@ -67,17 +69,27 @@ Code Examples
 =============
 
 By default code blocks in documentation are tested.
-
-/// \`\`\`rust /// assert\_eq!(always\_true(), true) /// \`\`\` fn
-always\_true() -&gt; bool { true }
+```rust,ignore
+/// ```rust 
+/// assert_eq!(always_true(), true)
+/// ```
+fn always_true() -> bool { true }
+```
 
 No-Run Examples
 ===============
 
 This code will not be run, as it doesn’t terminate.
 
-/// \`\`\`rust,no\_run /// serve(); /// \`\`\` fn serve() -&gt; ! { loop
-{} }
+```rust,ignore
+/// ```rust,no_run
+/// serve(); 
+/// ```
+fn serve() -> ! {
+    loop
+    {} 
+}
+```
 
 Navigation
 ==========
@@ -93,9 +105,13 @@ Cargo integration
 
 This command builds and opens the docs to your current project:
 
-\`\`\`sh $ cargo doc --open \`\`\`
+```console,ignore
+$ cargo doc --open 
+```
 
 !
 =
 
-\`\`\`sh $ cargo doc --document-private-items --open \`\`\`
+```console,ignore
+$ cargo doc --document-private-items --open 
+```

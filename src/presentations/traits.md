@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Traits
 
 !
 =
@@ -19,6 +19,7 @@ method overload are missing.
 Simple implementations: associated function
 ===========================================
 
+```rust
     #[derive(Debug)]
     struct Point {
         x: i32,
@@ -35,6 +36,7 @@ Simple implementations: associated function
         let my_point = Point::new(1, 2);
         println!("My point being: {:?}", my_point);
     }
+```
 
 Remark
 ======
@@ -48,7 +50,7 @@ A Python analogy
     very similar
 
 <!-- -->
-
+```rust
     #[derive(Debug)]
     struct Point {
         x: i32,
@@ -108,6 +110,7 @@ A Python analogy
 
         my_point.inspect();
     }
+```
 
 Borrowing and Ownership of `self`
 =================================
@@ -180,6 +183,7 @@ generically.
 !
 =
 
+```rust
     struct Point {
         x: i32,
         y: i32
@@ -200,7 +204,7 @@ generically.
         let p2 = Point { x: 2, y: 2 };
         println!("{}", p1.distance(&p2));
     }
-
+```
 Self
 ====
 
@@ -213,7 +217,7 @@ Traits can have type parameters.
 
 !
 =
-
+```rust
     struct Point {
         x: i32,
         y: i32
@@ -234,7 +238,7 @@ Traits can have type parameters.
         let p2 = Point { x: 2, y: 2 };
         println!("{}", p1.distance(&p2));
     }
-
+```
 !
 =
 
@@ -251,6 +255,7 @@ There are multiple techniques.
 Full qualified function calls
 =============================
 
+```rust
     struct Point {
         x: i32,
         y: i32
@@ -271,7 +276,7 @@ Full qualified function calls
         let p2 = Point { x: 2, y: 2 };
         println!("{}", <Point as Distance<Point>>::distance(&p1, &p2));
     }
-
+```
 Any reachable function in Rust can be addressed with this syntax.
 
 Associated Types
@@ -282,7 +287,7 @@ inference.
 
 !
 =
-
+```rust
     #[derive(Debug)]
     struct Point {
         x: i32,
@@ -308,12 +313,13 @@ inference.
         let p2 = Point { x: 1, y: 2 };
         println!("{:?}", p1.add(&p2))
     }
+```
 
 `impl Trait`
 ============
 
 `impl Trait` is used when the type of a value does not need to be named.
-
+```rust
     fn main() {
         let v = vec![1,2,3];
         let i = make_iter(&v);
@@ -322,10 +328,10 @@ inference.
     fn make_iter<'a>(v: &'a Vec<u8>) -> impl Iterator<Item=u8> + 'a {
         v.iter().map(|v| (*v)*2)
     }
-
+```
 !
 =
-
+```rust
     fn main() {
         let v = vec![1,2,3];
         let i = v.iter();
@@ -335,6 +341,7 @@ inference.
     fn double<'a>(i: impl Iterator<Item=&'a u8> + 'a) -> impl Iterator<Item=u8> + 'a {
         i.map(|v| (*v)*2)
     }
+```
 
 !
 =
@@ -346,8 +353,10 @@ Limitations:
 !
 =
 
+```rust
     trait Foo {}
 
     trait Bar {
         fn fooify(&self) -> impl Foo;
     }
+```

@@ -1,4 +1,4 @@
-[Table of Contents](./index.html)
+# Error Handling
 
 !
 =
@@ -9,7 +9,7 @@ Any function with known error conditions returns a `Result<T,E>`.
 
 **There are no exceptions.**
 
-```rust
+```rust,
     fn this_can_fail(succeeds: bool) -> Result<String, String> {
         if succeeds {
             Ok(String::from("Success"))
@@ -38,16 +38,18 @@ Results Must Be Used
         this_can_fail(true);
     }
 ```
-TODO: Fix this
-warning: unused `Result` that must be used --&gt; src/main.rs:10:5 |
-10 | this\_can\_fail(true); | ^^^^^^^^^^^^^^^^^^^^ | = note:
-\`\#\[warn(unused\_must\_use)\]\` on by default = note: this \`Result\`
-may be an \`Err\` variant, which should be
-handled&lt;/programlisting&gt;
 
 Using Results With `match`
 ==========================
 ```rust
+    fn this_can_fail(succeeds: bool) -> Result<String, String> {
+        if succeeds {
+            Ok(String::from("Success"))
+        } else {
+            Err(String::from("Error"))
+        }
+    }
+
     fn main() {
         match this_can_fail(false) {
             Ok(val) => println!("Success: {}", val),
@@ -61,6 +63,14 @@ Using Results With Conditionals
 Check for success with `is_ok()`, errors with `is_err()`:
 
 ```rust
+    fn this_can_fail(succeeds: bool) -> Result<String, String> {
+        if succeeds {
+            Ok(String::from("Success"))
+        } else {
+            Err(String::from("Error"))
+        }
+    }
+
     fn main() {
         if this_can_fail(false).is_ok() {
             println!("It worked!");
@@ -75,6 +85,14 @@ Using Results With `?`
 Use `?` in functions with multiple possible failures.
 
 ```rust
+    fn this_can_fail(succeeds: bool) -> Result<String, String> {
+        if succeeds {
+            Ok(String::from("Success"))
+        } else {
+            Err(String::from("Error"))
+        }
+    }
+
     fn multiple_possible_failures() -> Result<String,String> {
         this_can_fail(true)?;
         println!("After 1st potential error.");
@@ -90,31 +108,38 @@ Use `?` in functions with multiple possible failures.
 Using Results With `?`
 ======================
 
-Output:
-
-After 1st potential error.&lt;/programlisting&gt;
-
-Note the early exit.
+Note the early exit. Click on the `Play` button on the top right corner!
 
 Using `?` in `main`
 ===================
 
 -   `main` can return `Result`
 
-<!-- -->
+TODO: Fix this example
 
 ```rust
     use std::error::Error;
 
+    fn maybe_dangerous() -> Option<()>{
+        Some(())
+    }
+
     fn main() -> Result<(), Box<dyn Error>> {
-        maybe_dangerous()?;
-        Ok(())
+        maybe_dangerous().ok_or(|| ())?;
     }
 ```
 Mapping Result Values
 =====================
 
 ```rust
+    fn this_can_fail(succeeds: bool) -> Result<String, String> {
+        if succeeds {
+            Ok(String::from("Success"))
+        } else {
+            Err(String::from("Error"))
+        }
+    }
+
     fn main() {
         let some_result = this_can_fail(true);
         // Only done if `some_result` is an `Ok` Variant.

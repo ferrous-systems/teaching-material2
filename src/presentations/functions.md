@@ -1,5 +1,3 @@
-[Table of Contents](./index.html)
-
 # Functions
 
 Declaration

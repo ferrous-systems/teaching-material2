@@ -1,38 +1,39 @@
-[Table of Contents](./index.html)
+# Imports, Modules, and Visibility
 
 Imports
 =======
 
 All used items must be declared. This is similar to Java or Haskell.
 
+```rust
     use std::fs::File;
 
     fn main() {
         let f = File::open("test");
     }
-
+```
 Module Imports
 ==============
 
 It is possible to import the module instead and qualify every use.
-
+```rust
     use std::fs;
 
     fn main() {
         let f = fs::File::open("test");
     }
-
+```
 Glob Imports
 ============
 
 You can also import everything from a module.
-
+```
     use std::fs::*;
 
     fn main() {
         let f = File::open("test");
     }
-
+```
 This is **generally** frowned upon.
 
 Prelude
@@ -46,7 +47,7 @@ Other Preludes
 
 Other libraries offer `prelude`-Modules, one of the most common is
 `std::io`.
-
+```rust
     use std::io::prelude::*;
     use std::fs::File;
 
@@ -58,14 +59,14 @@ Other libraries offer `prelude`-Modules, one of the most common is
 
         println!("The bytes: {:?}", buffer);
     }
-
+```
 Here, the glob is accepted.
 
 Structured imports
 ==================
 
 You can combine multiple things, that are also nested.
-
+```rust
     use std::{fs::File, io::{Read, Write}};
 
     fn main() {
@@ -77,28 +78,28 @@ You can combine multiple things, that are also nested.
         let mut f2 = File::create("bar.txt").unwrap();
         f2.write_all(&buffer).unwrap();
     }
-
+```
 Renaming on import
 ==================
-
+```rust
     use std::fs as file_system;
 
     fn main() {
         let f = file_system::File::open("test");
     }
-
+```
 Local import
 ============
 
 Imports can happen inside a function. They only take effect within the
 function.
-
+```rust
     fn main() {
         use std::fs::File;
 
         let f = File::open("test");
     }
-
+```
 Modules
 =======
 
@@ -124,7 +125,7 @@ The root modules for multiple applications in `src/bin/*.rs`.
 
 Example
 =======
-
+```rust
     fn main() {
         workload::work();
     }
@@ -134,46 +135,48 @@ Example
             println!("hard at work!");
         }
     }
-
+```
 Moving the Module to a Separate File
 ====================================
 
 Our application could also have the following layout:
 
+```text
     |
     |-src
       |- main.rs
       |- workload.rs
+```
 
 A Larger Module as a Directory
 ==============================
 
 Simply by adding a new folder of the same name
-
+```text
     |
     |-src
       |- main.rs
       |- workload.rs
       |- workload/
          |- thing.rs
-
+```
 A Larger Module as a Directory
 ==============================
 
 Or declare a module via `mod.rs`
-
+```text
     |
     |-src
       |- main.rs
       |- workload
          |- mod.rs
          |- thing.rs
-
+```
 !
 =
 
 In both cases, the module must be registered with the root module.
-
+```rust,ignore,does_not_compile
     mod workload;
 
     fn main() {
@@ -181,7 +184,7 @@ In both cases, the module must be registered with the root module.
 
         workload::thing::do_stuff();
     }
-
+```
 !
 =
 
@@ -199,7 +202,7 @@ path are exported.
 
 Example
 =======
-
+```rust
     pub mod workload;
 
     pub trait Distance {
@@ -209,7 +212,7 @@ Example
     pub fn foo() {
 
     }
-
+```
 !
 =
 
@@ -228,7 +231,7 @@ Struct functions are also not exported by default.
 
 !
 =
-
+```rust
     pub struct Point {
         x: i32,
         y: i32
@@ -239,15 +242,15 @@ Struct functions are also not exported by default.
            Point { x: 1, y: 2 }
         }
     }
-
+```
 !
 =
-
+```rust
     pub struct Point {
         pub x: i32,
         pub y: i32
     }
-
+```
 !
 =
 
@@ -260,7 +263,7 @@ In general, exporting fields should be avoided:
 
 Pub qualifiers
 ==============
-
+```rust
     pub(crate) fn crate_local() {
 
     }
@@ -268,3 +271,4 @@ Pub qualifiers
     pub(super) fn visible_in_super_module() {
 
     }
+```
