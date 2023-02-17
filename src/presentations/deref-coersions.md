@@ -40,7 +40,9 @@ This makes wrapper types very ergonomic and easy to use!
 =
 
 Dereferencing is described by the `Deref` and `DerefMut`-Traits.
-```rust
+```rust,ignore,does_not_compile
+    use std::ops::Deref;
+
     impl<T> Deref for Box<T> {
         type Target = T;
 

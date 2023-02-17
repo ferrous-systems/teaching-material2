@@ -65,7 +65,7 @@ Generic Functions
     is a function name, parameter name, etc
 
 Generic Functions have type parameters.
-```rust
+```rust,ignore
     fn accept_any_type<T>(arg: T) {
         // ...
     }

@@ -162,26 +162,27 @@ Cargo knows 3 different kinds of dependencies:
 Example
 =======
 
-    [dependencies]
-    async-std = "1"
-
-    [build-dependencies]
-    cbindgen = "0.5"
-
-    [dev-dependencies]
-    quickcheck = "0.9"
+```toml
+[dependencies]
+async-std = "1"
+[build-dependencies]
+cbindgen = "0.5"
+[dev-dependencies]
+quickcheck = "0.9"
+```
 
 Dependencies in detail
 ======================
 
-    [dependencies.async-std]
-    version = "1"
-    git = "https://github.com/skade/async-std.git"
-    branch = "my-new-feature"
-
-    [dependencies.async-std]
-    version = "1"
-    path = "/my/local/path"
+```toml
+[dependencies.async-std]
+version = "1"
+git = "https://github.com/skade/async-std.git"
+branch = "my-new-feature"
+[dependencies.async-std]
+version = "1"
+path = "/my/local/path"
+```
 
 Aside
 =====

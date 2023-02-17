@@ -88,7 +88,7 @@
 
 -   [Cargo](./presentations/cargo.md)
 
--   [Async Await](./presentations/async-await.md)
+<!-- TODO: Move to Async Module-   [Async Await](./presentations/async-await.md) -->
 
 -   [Deref Coersions](./presentations/deref-coersions.md)
 
@@ -96,7 +96,7 @@
 
 <!-- TODO: Move to FFI Module -   [FFI](./presentations/ffi.md) -->
 
-<!-- TODO: Move to Async Block-   [Futures](./presentations/futures.md) -->
+<!-- TODO: Move to Async Module -   [Futures](./presentations/futures.md) -->
 
 -   [Macros](./presentations/macros.md)
 

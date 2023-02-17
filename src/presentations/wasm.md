@@ -83,7 +83,7 @@ rustup target install wasm32-wasi
 Installing a host runtime
 =========================
 
-```
+```console
 curl https://wasmtime.dev/install.sh -sSf | bash
 ```
 

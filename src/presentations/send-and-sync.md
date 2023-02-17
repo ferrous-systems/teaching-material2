@@ -44,7 +44,7 @@ Such as `Rc`, raw pointers, and `UnsafeCell`.
 
 Example: `Rc`
 =============
-```rust
+```rust,ignore,does_not_compile
     use std::rc::Rc;
     use std::thread;
 
@@ -60,7 +60,7 @@ Example: `Rc`
 Example: `Rc`
 =============
 
-```
+```console
     error[E0277]: the trait bound `std::rc::Rc<bool>: std::marker::Send` is not satisfied
      --> <anon>:7:5
       |
@@ -91,7 +91,7 @@ Relationships
 =============
 
 A type `&T` can implement `Send` if the type `T` also implements `Sync`.
-```rust
+```rust,ignore,does_not_compile
     unsafe impl<'a, T: Sync + ?Sized> Send for &'a T {}
 ```
 
@@ -101,7 +101,7 @@ Relationships
 A type `&mut T` can implement `Send` if the type `T` also implements
 `Send`.
 
-```rust
+```rust,ignore
     unsafe impl<'a, T: Send + ?Sized> Send for &'a mut T {}
 ```
 

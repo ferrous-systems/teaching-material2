@@ -87,7 +87,7 @@ async-await functions and Futures
 =================================
 
 ==
-```rust
+```rust,ignore
     use async_std::io;
 
     async fn read_from_stdin() -> io::Result<()> {
@@ -105,11 +105,13 @@ async-await functions and Futures
 async-await functions and Futures
 =================================
 
+```rust,ignore
     use std::time::Duration;
 
     async fn timeout_on_stdin(duration: Duration) -> io::Result<()> {
         io::timeout(duration, read_from_stdin())
     }
+```
 
 Async blocks
 ============
@@ -121,7 +123,7 @@ Async blocks
 !
 =
 
-```rust
+```rust,ignore
     use async_std::io;
     use std::time::Duration;
 
@@ -148,7 +150,7 @@ Cold Futures
 
 Tasks
 =====
-```rust
+```rust,ignore
     use std::time::Duration;
 
     use async_std::io;

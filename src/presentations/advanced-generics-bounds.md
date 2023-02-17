@@ -37,6 +37,8 @@ Example: `println!("{:?}")` requires Debug
 Example: A generic Struct that requires inner values to implement
 `Debug`
 ```rust
+    use std::fmt::Debug;
+
     struct MyStruct<T: Debug> {
         inner: T
     }
@@ -95,6 +97,8 @@ Bounds can be used everywhere, which can be used to de-facto constrain
 types at the call site.
 
 ```rust
+    use std::fmt::Debug;
+
     struct Wrapper<T> {
         inner: T
     }
@@ -131,6 +135,8 @@ Generic implementations
 
 Bounds can be used to constrain the target of an implementation.
 ```rust
+    use std::fmt::Debug;
+
     trait Log<T> {
         fn log(&self, t: T);
     }
@@ -147,7 +153,7 @@ Trait Inheritance
 Traits can also request the implementation of other traits and declare
 default implementations for methods relying on that information.
 
-```rust
+```rust,ignore
     trait Named {
         fn name(&self) -> &'static str;
     }

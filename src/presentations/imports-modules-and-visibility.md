@@ -202,7 +202,7 @@ path are exported.
 
 Example
 =======
-```rust
+```rust,ignore
     pub mod workload;
 
     pub trait Distance {
@@ -263,7 +263,7 @@ In general, exporting fields should be avoided:
 
 Pub qualifiers
 ==============
-```rust
+```rust,ignore
     pub(crate) fn crate_local() {
 
     }

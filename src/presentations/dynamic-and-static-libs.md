@@ -7,7 +7,7 @@ Let’s try to use Rust from C.
 
 Library
 =======
-```rust
+```rust,ignore
     #[derive(Debug)]
     #[repr(C)]
     pub struct Point {

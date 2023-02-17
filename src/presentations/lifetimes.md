@@ -2,7 +2,7 @@
 
 !
 =
-```rust
+```rust,does_not_compile,ignore
     struct Point {
         x: i32,
         y: i32,
@@ -71,7 +71,7 @@ You have used them already
 ```
 Motivation
 ==========
-```rust
+```rust,does_not_compile,ignore
     struct Container<T> {
         inner: &T,
     }
@@ -104,7 +104,7 @@ This code would - if it compiled - violate memory safety.
 =
 
 The correct struct definition is:
-```
+```rust
     struct Container<'container, T> {
         inner: &'container T,
     }
@@ -142,7 +142,7 @@ Multiple lifetimes in one signature
 ```
 Sublifetimes
 ============
-```
+```rust
     use std::str::Split;
 
     struct Tokenizer<'input> {
@@ -232,7 +232,9 @@ This is due to most data having to live outside of the stack.
 Lifetimes describe all types, not only references, therefore they are
 also bounds in generic code.
 
-```
+```rust
+    use std::fmt::Debug;
+
     fn inspect<'a, T: std::fmt::Debug + 'a>(t: T) {
         println!("{:?}", t);
     }
@@ -254,6 +256,7 @@ For simple cases, lifetimes are automatically inserted into signatures.
 Lifetimes and Bindings
 ======================
 ```rust
+    use std::io;
     let mut sink = io::BufWriter::new(io::stdout().lock());
 
     let stdout = io::stdout();
