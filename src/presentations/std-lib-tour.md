@@ -143,7 +143,8 @@ Filesystem Manipulation
 [`std::path`](https://doc.rust-lang.org/std/path/)
 
 Path handling and file manipulation.
-```rust
+<!-- If you don't ignore this, mdbook will produce those files at the root of the repo -->
+```rust,ignore
     use std::fs::{File, canonicalize};
     use std::io::Write;
 

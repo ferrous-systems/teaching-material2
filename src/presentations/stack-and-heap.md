@@ -7,7 +7,7 @@ Rust defaults to allocation on the stack
 Stack Allocation
 ================
 
-```rust
+```rust,editable
     struct Point {
         x: i32,
         y: i32
@@ -22,7 +22,7 @@ Box
 
 Heap allocation is represented by the type `Box`.
 
-```rust
+```rust,editable
     struct Point {
         x: i32,
         y: i32
@@ -38,7 +38,7 @@ Ownership and Borrowing
 
 `Box` is owned, but you can borrow the contained values.
 
-```rust
+```rust,editable
     #[derive(Debug)]
     struct Point {
         x: i32,

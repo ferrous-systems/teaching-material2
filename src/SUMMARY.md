@@ -2,6 +2,10 @@
 
 [Start Here](./start_here.md)
 
+[Glossary](./presentations/glossary.md)
+
+---
+
 # Rust Fundamentals
 
 -   [Overview](./presentations/overview.md)
@@ -38,7 +42,9 @@
 
 -   [Basic Generics](./presentations/basic-generics.md)
 
-# Advanced
+---
+
+# Applied Rust
 
 -   [Traits](./presentations/traits.md)
 
@@ -65,6 +71,8 @@
 -   [Lifetimes](./presentations/lifetimes.md)
 
 -   [Send and Sync](./presentations/send-and-sync.md)
+
+---
 
 # Async/Await
 
@@ -123,7 +131,9 @@
 
 -   [Basic Design Patterns](./presentations/design-patterns.md)
 
-# Assignments
+---
+
+# Exercises
 
 -   [FizzBuzz](./assignments/fizzbuzz.md)
 <!-- TODO
@@ -181,3 +191,5 @@
 ## SemVer
 
 -   [SemVer from file](./assignments/semver_from_file.md)
+
+-->

@@ -28,7 +28,7 @@ Where Do They Come From?
 Owned iterators
 ===============
 
-```rust
+```rust,editable
     fn main() {
         let vec = vec![1,2,3];
         let iter = vec.into_iter();
@@ -50,7 +50,7 @@ Borrowed iterators
 
 <!-- -->
 
-```rust
+```rust,editable
     fn main() {
         let vec = vec![1,2,3];
         let iter = vec.iter();
@@ -64,7 +64,7 @@ Borrowed iterators
 ```
 Mutably Borrowed iterators
 ==========================
-```rust
+```rust,editable
     fn main() {
         let mut vec = vec![1,2,3];
         let iter_mut = vec.iter_mut();
@@ -111,7 +111,7 @@ Common Uses
     there’s not for loop to unwrap the return value of `next()` for us
 
 Iterators can be advanced manually:
-```rust
+```rust,editable
     fn main() {
         let items = vec![0, 1, 2];
         let mut iterator = items.into_iter();
@@ -125,7 +125,7 @@ Combinators: `map()`
 ====================
 
 Transform items as they are evaluated:
-```rust
+```rust,editable
     fn main() {
         let fizzbuzz = (0..10_000)
             .map(|x| match x {
@@ -143,7 +143,7 @@ Combinators: `filter()`
 =======================
 
 Filter out unwanted values, skipping further computation on them:
-```rust
+```rust,editable
     fn main() {
         let evens = (0..10_000)
             .filter(|x| x % 2 == 0);

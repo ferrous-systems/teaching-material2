@@ -29,7 +29,7 @@ Most common are `String` and `&str`.
 
 Creation
 ========
-```rust
+```rust,editable
     fn main() {
         // &'static str
         let this = "Hello";
@@ -54,7 +54,7 @@ When to Use What?
 
 Just because multiple types exist doesn’t mean they can’t work in
 harmony.
-```rust
+```rust,editable
     fn main() {
         let part_one = String::from("Hello ");
         let part_two = String::from("there ");
@@ -109,7 +109,7 @@ Common String Tasks
 ===================
 
 Splitting:
-```rust
+```rust,editable
     fn main() {
         let words = "Cow says moo";
         let each: Vec<_> = words.split(" ").collect();
@@ -120,7 +120,7 @@ Common String Tasks
 ===================
 
 Concatenation:
-```rust
+```rust,editable
     fn main() {
         let animal = String::from("Cow");
         let sound = String::from("moo");
@@ -132,7 +132,7 @@ Common String Tasks
 ===================
 
 Replacing:
-```rust
+```rust,editable
     fn main() {
         let words = "Cow says moo";
         let replaced = words.replace("moo", "roar");
@@ -143,7 +143,7 @@ Accepting `String` or `str`
 ===========================
 
 It’s possible to accept either rather painlessly:
-```rust
+```rust,editable
     fn accept_either<S>(thing: S) -> String
     where S: AsRef<str> {
         String::from("foo") + thing.as_ref()
@@ -166,7 +166,7 @@ Raw String Literals
 -   Escape sequences are not processed
 
 <!-- -->
-```rust
+```rust,editable
     fn main () {
         let json = r##"
     {
@@ -185,7 +185,7 @@ Byte String Literals
 -   used to declare static byte slices (have a `&[u8]` type)
 
 <!-- -->
-```rust
+```rust,editable
     fn main() {
         let byte_string: &[u8] = b"allows ASCII and \xF0\x9F\x98\x80 only";
         println!("Can Debug fmt but not Display fmt: {:?}", byte_string);

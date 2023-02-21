@@ -12,40 +12,40 @@ Rustup installs and manages Rust compiler toolchains
 Hello, world! with Cargo
 ========================
 ```console
-    $ cargo new hello-world
-    $ cd hello-world
-    $ cat src/main.rs
+cargo new hello-world
+cd hello-world
+cat src/main.rs
     fn main() {
         println!("Hello, world!");
     }
-    $ cargo build
+cargo build
        Compiling hello-world v0.1.0 (file:///Users/skade/Code/rust/scratchpad/hello-world)
         Finished debug [unoptimized + debuginfo] target(s) in 0.35 secs
-    $ cargo run
+cargo run
         Finished debug [unoptimized + debuginfo] target(s) in 0.0 secs
          Running `target/debug/hello-world`
-    Hello, world!
+Hello, world!
 ```
 Important commands
 ==================
 ```console
-    # Installation of a toolchain (here: the stable release channel)
-    $ rustup install stable
+# Installation of a toolchain (here: the stable release channel)
+rustup install stable
 
-    # Selection of a default toolchain
-    $ rustup default stable
+# Selection of a default toolchain
+rustup default stable
 
-    # Display documentation in browser
-    $ rustup doc [--std]
+# Display documentation in browser
+rustup doc [--std]
 
-    # Override the default toolchain in your directory
-    $ rustup override set stable
+# Override the default toolchain in your directory
+rustup override set stable
 
-    # List supported targets
-    $ rustup target list
+# List supported targets
+rustup target list
 
-    # Add and install a target to the toolchain (here: to cross-compile for an ARMv6-M target)
-    $ rustup target add thumbv6m-none-eabi
+# Add and install a target to the toolchain (here: to cross-compile for an ARMv6-M target)
+rustup target add thumbv6m-none-eabi
 ```
 For up-to-date information, please see [Rust Component
 History](https://rust-lang.github.io/rustup-components-history/)

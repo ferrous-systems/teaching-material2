@@ -7,7 +7,7 @@ Structs
 
 Definition
 ==========
-```rust
+```rust,editable
     struct Point {
         x: i32,
         y: i32,
@@ -20,7 +20,7 @@ Construction
 -   there is no partial initialization
 
 <!-- -->
-```rust
+```rust,editable
     struct Point {
         x: i32,
         y: i32,
@@ -44,7 +44,7 @@ Field Access
 
 <!-- -->
 
-```rust
+```rust,editable
     struct Point {
         x: i32,
         y: i32,
@@ -59,7 +59,7 @@ Field Access
 Tuples
 ======
 
-```rust
+```rust,editable
     fn main() {
         let p = (1, 2);
         println!("{}", p.0);
@@ -69,7 +69,7 @@ Tuples
 Tuple Structs
 =============
 
-```rust
+```rust,editable
     struct Point(i32,i32);
 
     fn main() {
@@ -91,7 +91,7 @@ Enums
 
 Definition and Construction
 ===========================
-```rust
+```rust,editable
     enum Direction {
         Right,
         Left,
@@ -108,7 +108,7 @@ The different choices of Enums are called "variants."
 Enums with Values
 =================
 
-```rust
+```rust,editable
     enum Movement {
         Right(i32),
         Left(i32),
@@ -163,7 +163,7 @@ Does not exist.
 
 The empty tuple `()` represents the absence of data.
 
-```rust
+```rust,editable
     fn prints_but_returns_nothing(data: &str) -> () {
         println!("passed string: {}", data);
     }

@@ -8,7 +8,7 @@ Generics are fundamental for Rust.
 Generic Structs
 ===============
 
-```rust
+```rust,editable
     struct Point<Precision> {
         x: Precision,
         y: Precision
@@ -38,7 +38,7 @@ Generic Enums
 -   similar-ish to C++ templates
 
 <!-- -->
-```rust
+```rust,editable
     enum Either<T, X> {
         Left(T),
         Right(X),
@@ -65,7 +65,7 @@ Generic Functions
     is a function name, parameter name, etc
 
 Generic Functions have type parameters.
-```rust,ignore
+```rust,ignore,editable
     fn accept_any_type<T>(arg: T) {
         // ...
     }

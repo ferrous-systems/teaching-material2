@@ -27,7 +27,7 @@ Glob Imports
 ============
 
 You can also import everything from a module.
-```
+```rust
     use std::fs::*;
 
     fn main() {
@@ -66,7 +66,7 @@ Structured imports
 ==================
 
 You can combine multiple things, that are also nested.
-```rust
+```rust,
     use std::{fs::File, io::{Read, Write}};
 
     fn main() {

@@ -2,7 +2,7 @@
 
 Declaration
 ===========
-```rust
+```rust,editable
     fn add(first: i32, second: i32) -> i32 {
         first + second
     }
@@ -10,7 +10,7 @@ Declaration
 Arguments
 =========
 
-```rust
+```rust,editable
     fn return_nothing() {}
 
     fn return_nothing_as_well() -> () {
@@ -34,7 +34,7 @@ Returning
 =========
 
 Returning is optional. Signatures must be complete. Note the `;`!
-```rust
+```rust,editable
     fn doesnt_return() {
         true;
     }
@@ -62,7 +62,7 @@ Generic Functions
 =================
 
 Generic functions have type parameters.
-```rust
+```rust,editable
     fn takes_anything<T>(thing: T) -> T {
         thing
     }
@@ -74,7 +74,7 @@ Generic functions can be *constrained*.
 
 These are equivalent:
 
-```rust
+```rust,editable
     use std::fmt::Debug;
 
     fn prints_anything<T: Debug>(thing: T) {
@@ -97,7 +97,7 @@ Functions for types
 
 If we didn’t have methods (like in C), we’d have to write this:
 
-```rust
+```rust,editable
     struct Square(f32);
 
     fn square_num_sides() -> u32 {
@@ -118,7 +118,7 @@ Associated Functions
 Fortunately, Rust has a better solution than putting `square_` on all
 our function names.
 
-```rust
+```rust,editable
     struct Square(f32);
 
     impl Square {
@@ -140,7 +140,7 @@ we can use `&self`.
 This is a shortcut for `self: &Self`, where `Self` is an alias for
 whatever `impl Foo` block we’re inside of.
 
-```rust
+```rust,editable
     struct Square(f32);
 
     impl Square {
@@ -163,7 +163,7 @@ we can use `&mut self`.
 This is a shortcut for `self: &mut Self`, where `Self` is an alias for
 whatever `impl Foo` block we’re inside of.
 
-```rust
+```rust,editable
     struct Square(f32);
 
     impl Square {
@@ -192,7 +192,7 @@ type, we can use `self`.
 This is a shortcut for `self: Self`, where `Self` is an alias for
 whatever `impl Foo` block we’re inside of.
 
-```rust
+```rust,editable
     struct Square(f32);
 
     impl Square {

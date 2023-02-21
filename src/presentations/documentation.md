@@ -48,7 +48,7 @@ How is it Generated?
 `rustdoc` can read Rust code and Markdown documents.
 
 `//!` and `///` comments are read as Markdown.
-```rust
+```rust,editable
     //! Module documentation. (e.g. the 'Examples' part of `std::vec`).
 
     /// Document functions, structs, traits and values.
@@ -69,7 +69,7 @@ Code Examples
 =============
 
 By default code blocks in documentation are tested.
-```rust,ignore
+```rust,ignore,editable
 /// ```rust 
 /// assert_eq!(always_true(), true)
 /// ```
@@ -81,7 +81,7 @@ No-Run Examples
 
 This code will not be run, as it doesn’t terminate.
 
-```rust,ignore
+```rust,ignore,editable
 /// ```rust,no_run
 /// serve(); 
 /// ```

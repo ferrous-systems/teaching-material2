@@ -18,7 +18,7 @@ Rust comes with all standard int types, with and without sign
 Syntactic clarity in specifying numbers
 =======================================
 
-```rust,ignore
+```rust,ignore,editable
     123_456   // underscore as separator
     0x12      // prefix 0x to indicate hex value
     0o23      // prefix 0o to indicate octal value
@@ -38,7 +38,7 @@ Casts
 
 Casts between number are possible, **also shortening casts**:
 
-```rust
+```rust,editable
     fn main() {
         let foo = 3_i64;
         let bar = foo as i32;
@@ -87,7 +87,7 @@ represented as a "single character"
 
 <!-- -->
 
-```rust
+```rust,editable
     fn main() {
         // U+0072 LATIN SMALL LETTER R
         let ascii_char = 'r';
@@ -100,7 +100,7 @@ represented as a "single character"
     }
 ```
 
-```rust,ignore,does_not_compile
+```rust,ignore,does_not_compile,editable
     fn main() {
         // U+1F468 U+200D U+1F469 U+200D U+1F467 U+200D U+1F467
         let seven_chars_emoji = '👨‍👩‍👧‍👧'; // Error: char must be one codepoint long

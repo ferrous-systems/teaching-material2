@@ -14,7 +14,7 @@ Control Flow primitives
 Control Flow with `if`
 ======================
 
-```rust
+```rust,editable
     fn main() {
         if 1 == 2 { //  
             println!("unlikely");
@@ -29,7 +29,7 @@ Control Flow with `if`
 
 Control Flow with `match`
 =========================
-```rust
+```rust,editable
     fn main() {
         let a = 4;
         match a % 3 {
@@ -44,7 +44,7 @@ Control Flow with `match`
 
 Control Flow with `match` and `enums`
 =====================================
-```rust
+```rust,editable
     enum Direction { //
         North(i32), //
         East(i32),
@@ -70,7 +70,7 @@ Control Flow with `match` and `enums`
 2 important enums
 =================
 
-```rust
+```rust,editable
     enum Option<T> {
         Some(T),
         None,
@@ -88,7 +88,7 @@ Control Flow with `match` and `enums`
 Using `Option` and `Result`
 ===========================
 
-```rust
+```rust,editable
     fn main() {
         let will_overflow: Option<u8> = 10_u8.checked_add(250);
         match will_overflow {
@@ -100,7 +100,7 @@ Using `Option` and `Result`
 Using `Option` and `Result`
 ===========================
 
-```rust
+```rust,editable
     use std::fs::File;
     use std::io;
 
@@ -116,7 +116,7 @@ Using `Option` and `Result`
 Match guards
 ============
 
-```rust
+```rust,editable
     fn main() {
         let result: Option<u8> = 5_u8.checked_add(5);
 
@@ -133,7 +133,7 @@ Combining matches
 
 You can use the `|` operator to match several values in one arm.
 
-```rust
+```rust,editable
     enum Direction {
         North(u32),
         East(u32),
@@ -151,7 +151,7 @@ You can use the `|` operator to match several values in one arm.
 Shorthand: `if let` conditionals
 ================================
 
-```rust
+```rust,editable
     fn main() {
         let maybe_arg = std::env::args().nth(2);
         // can't know at compile time how many args are passed to our program
@@ -165,7 +165,7 @@ Shorthand: `if let` conditionals
 `loop`
 ======
 
-```rust
+```rust,editable
     fn main() {
         let mut i = 0;
 
@@ -181,7 +181,7 @@ Shorthand: `if let` conditionals
 `for`
 =====
 
-```rust
+```rust,editable
     fn main() {
         let numbers = vec![1, 2, 3];
         // `for item in iterable` creates an iterator by calling `iterable.into_iter()`
@@ -196,7 +196,7 @@ Shorthand: `if let` conditionals
 `while`
 =======
 
-```rust
+```rust,editable
     fn main() {
         let mut i = 0;
 
@@ -216,7 +216,7 @@ Shorthand: `if let` conditionals
 `break`, `continue`
 ===================
 
-```rust
+```rust,editable
     'outer: for i in 0..10 {
         loop {
             if i < 5 {
@@ -233,7 +233,7 @@ referring to innermost loop
 `return`
 ========
 
-```rust
+```rust,editable
     fn get_number() -> u32 {
         return 5;
 
@@ -247,7 +247,7 @@ referring to innermost loop
 `?` (early return operator)
 ===
 
-```rust
+```rust,editable
     use std::io;
     use std::io::Read;
 

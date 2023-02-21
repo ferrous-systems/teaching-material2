@@ -32,7 +32,7 @@ Unit Tests
 
 Unit Tests
 ==========
-```rust
+```rust,editable
     enum Direction { North, South, East, West }
 
     fn is_north(dir: Direction) -> bool {
@@ -72,7 +72,7 @@ Unit Tests
 `tests` Submodule
 =================
 
-```rust
+```rust,editable
     enum Direction { North, South, East, West }
 
     fn is_north(dir: Direction) -> bool {
@@ -114,7 +114,7 @@ Documentation Tests
 
 Documentation Tests
 ===================
-```rust,ignore
+```rust,ignore,editable
 /// ```rust
 /// use example::Direction;
 /// let way_home = Direction::North;
@@ -151,7 +151,7 @@ Integration Tests
 
 
 **`/tests/basic.rs`.**
-```rust,ignore
+```rust,ignore,editable
     use example::{is_north, Direction};
 
     #[test]

@@ -11,7 +11,7 @@ Where does Rust land?
 An Example
 ==========
 
-```rust,does_not_compile, ignore
+```rust,does_not_compile, ignore, editable
     fn main() {
         let answer = 42;
         answer = 32;
@@ -19,7 +19,7 @@ An Example
 ```
 Correct
 =======
-```rust
+```rust,editable
     fn main() {
         let mut answer = 42;
         answer = 32;

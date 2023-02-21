@@ -9,7 +9,7 @@ Any function with known error conditions returns a `Result<T,E>`.
 
 **There are no exceptions.**
 
-```rust,
+```rust,editable
     fn this_can_fail(succeeds: bool) -> Result<String, String> {
         if succeeds {
             Ok(String::from("Success"))
@@ -25,7 +25,7 @@ Any function with known error conditions returns a `Result<T,E>`.
 ```
 Results Must Be Used
 ====================
-```rust
+```rust,editable
     fn this_can_fail(succeeds: bool) -> Result<String, String> {
         if succeeds {
             Ok(String::from("Success"))
@@ -41,7 +41,7 @@ Results Must Be Used
 
 Using Results With `match`
 ==========================
-```rust
+```rust,editable
     fn this_can_fail(succeeds: bool) -> Result<String, String> {
         if succeeds {
             Ok(String::from("Success"))
@@ -62,7 +62,7 @@ Using Results With Conditionals
 
 Check for success with `is_ok()`, errors with `is_err()`:
 
-```rust
+```rust,editable
     fn this_can_fail(succeeds: bool) -> Result<String, String> {
         if succeeds {
             Ok(String::from("Success"))
@@ -84,7 +84,7 @@ Using Results With `?`
 
 Use `?` in functions with multiple possible failures.
 
-```rust
+```rust,editable
     fn this_can_fail(succeeds: bool) -> Result<String, String> {
         if succeeds {
             Ok(String::from("Success"))
@@ -117,7 +117,7 @@ Using `?` in `main`
 
 TODO: Fix this example
 
-```rust,ignore,does_not_compile
+```rust,ignore,does_not_compile,editable
     use std::error::Error;
 
     fn maybe_dangerous() -> Option<()>{
@@ -131,7 +131,7 @@ TODO: Fix this example
 Mapping Result Values
 =====================
 
-```rust
+```rust,editable
     fn this_can_fail(succeeds: bool) -> Result<String, String> {
         if succeeds {
             Ok(String::from("Success"))
@@ -155,7 +155,7 @@ Dynamic errors
 Rust has an idiomatic dynamic error type, which most errors can be
 converted into:
 
-```rust,does_not_compile,ignore
+```rust,does_not_compile,ignore,editable
     use std::fs::File;
 
     fn main() -> Result<(), Box<dyn std::error::Error>> {

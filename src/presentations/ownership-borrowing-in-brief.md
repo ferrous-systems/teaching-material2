@@ -41,7 +41,7 @@ These rules:
 
 Example
 =======
-```rust
+```rust,editable
     use std::fs::File;
     use std::io::Write;
     use std::io;
@@ -67,7 +67,7 @@ Example
 
 Ownership passing
 =================
-```rust
+```rust,editable
     use std::fs::File;
     use std::io::Write;
     use std::io;
@@ -95,7 +95,7 @@ Ownership passing
 
 First safety checkpoint
 =======================
-```rust,does_not_compile,ignore
+```rust,does_not_compile,ignore,editable
     use std::fs::File;
     use std::io::Write;
     use std::io;
@@ -157,7 +157,7 @@ References & Borrowing
 Intuitively: what you own, you can borrow.
 
 ---
-```rust
+```rust,editable
     use std::fs::File;
     use std::io::Write;
     use std::io;
@@ -195,7 +195,7 @@ Immutable references
 
 Mutable Borrowing
 =================
-```rust
+```rust,editable
     use std::fs::File;
     use std::io::Write;
     use std::io;
@@ -319,7 +319,7 @@ We can create a second copy of the data!
 
 !
 =
-```rust
+```rust,editable
     #[derive(Debug, Clone)]
     struct Dot {
         x: i32,
@@ -344,7 +344,7 @@ data at hand - can be costly.
 
 Working with moves: copy instead of move
 ========================================
-```rust
+```rust,editable
     #[derive(Debug, Clone, Copy)]
     struct Dot {
         x: i32,
@@ -386,7 +386,7 @@ Small quiz
 `drop` is the function that deallocates a value immediately. What does
 the implementation look like?
 
-```rust,ignore,does_not_compile
+```rust,ignore,does_not_compile,editable
     use std::fs::File;
 
     fn main() {
@@ -399,7 +399,7 @@ the implementation look like?
 !
 =
 
-```rust
+```rust,editable
     #[inline]
     fn drop<T>(_: T) {
       // take ownership, drop out of scope

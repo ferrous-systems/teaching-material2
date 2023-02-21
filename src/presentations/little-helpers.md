@@ -4,7 +4,7 @@ TODO: Move to "Applied Rust"?
 
 Some collected hints to get you started.
 
-```rust, ignore
+```rust, ignore,editable
     #[derive(Eq, PartialEq, Debug)] 
     pub struct Point { 
         x: i32,
@@ -17,7 +17,7 @@ Some collected hints to get you started.
 -   Any type can carry a visibility modifier to export them
 
 <!-- -->
-```rust
+```rust,editable
     #[derive(Debug)]
     struct Point {
         x: i32,
@@ -36,7 +36,7 @@ Some collected hints to get you started.
 -   There’s also a more structured version, also enabled through it
 
 <!-- -->
-```rust
+```rust,editable
     #[derive(Eq,PartialEq,Debug)]  
     struct Point {
         x: i32, 
@@ -68,7 +68,7 @@ Unwrap Results and Option
 
 If you expect something to work or an item to be there, use `unwrap`:
 
-```rust,does_not_compile,ignore
+```rust,does_not_compile,ignore,editable
     use std::fs::File;
 
     fn main() {
@@ -83,14 +83,14 @@ Strings and their slices
 ========================
 
 Strings and string slices work much the same.
-```rust
+```rust,editable
     fn main() {
         let slice: &str = "Hello world!";
         let string: String = String::from(slice);
     }
 ```
 In the beginning, habitually use `String`.
-```rust,ignore
+```rust,ignore,editable
     struct Owned {
         string_data: String
     }
@@ -125,7 +125,7 @@ These can be put either directly in the source file or in any file in
 -   Only needed when putting files in `tests`.
 
 <!-- -->
-```rust
+```rust,editable
     fn addition(a: i32, b: i32) -> i32 {
         todo!()
     }
