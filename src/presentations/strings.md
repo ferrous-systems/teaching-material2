@@ -21,7 +21,7 @@ Most common are `String` and `&str`.
 `&str`
 ======
 
--   An immutable reference to a string slice.
+-   A shared reference to a string slice.
 
 -   Only seen as a borrowed value.
 

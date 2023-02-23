@@ -180,10 +180,10 @@ Intuitively: what you own, you can borrow.
         Ok(())
     }
 ```
-Immutable references
+Shared references
 ====================
 
-`&` is the so-called "immutable" reference. They are:
+`&` is the so-called "shared" reference. They are:
 
 -   Available multiple times
 
@@ -228,7 +228,7 @@ Mutable references
 -   hot take: **shared** mutable data is the root of all evil. mutable
     data itself is ok, as long as you follow the ownership rules!
 
-`&mut` is the so-called "mutable" reference. They are:
+`&mut` is the so-called "exclusive" reference. They are:
 
 -   Available only once at a time
 
