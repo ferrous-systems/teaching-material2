@@ -20,6 +20,11 @@ pandoc -f docbook -t markdown_strict slides.xml -o slides.md
 * Commit the file
 
 
+----
+
+### Rough notes are next. Please don't use them.
+
+
 This works in a single file named `slides.adoc`, but we need it to work when recursing on directories...
 
 ```
