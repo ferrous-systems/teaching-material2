@@ -9,8 +9,15 @@
 
 * Navigate to the folder with the `slides.adoc` you wish to convert.
 * Then do
-```
+
+```console
 asciidoc -b docbook slides.adoc
+```
+
+This will produce a `slides.xml` which you then must feed into `pandoc`, with the resulting name you want
+for the file as `-o my_chose_name.md`:
+
+```console
 pandoc -f docbook -t markdown_strict slides.xml -o slides.md
 ```
 
