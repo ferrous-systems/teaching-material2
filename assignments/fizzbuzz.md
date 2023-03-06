@@ -1,30 +1,34 @@
+# Fizzbuzz
+
 In this exercise, we will implement our first tiny program: FizzBuzz.
 FizzBuzz is easy to implement, but allows for application of Rust
-patterns in a very clean fasion.
+patterns in a very clean fashion.
 
-You will learn:
+# After completing this exercise you are able to
 
--   How to write a simple Rust program
+-   write a simple Rust program
 
--   How to create and return owned `String` s
+-   create and return owned `String` s
 
--   How to use conditionals
+-   use conditionals
 
--   How to format strings with and without printing them to the system
-    console
+-   format strings with and without printing them to the system console
 
-Task
-====
+-   write a function with a parameter and return type.
 
-1.  Use Cargo to create a new project called `fizzbuzz`
+## Prerequisites
 
-2.  Implement the following function:
+For completing this exercise you need to have
 
-        fn fizzbuzz(i: u32) -> String {
-            ///....
-        }
+-   basic programming skills in other languages
 
-    Implementing the following rules:
+-   the Rust Syntax Cheat Sheet
+
+## Task
+
+-   Create a new project called `fizzbuzz`
+
+-   Define a function `fn fizzbuzz` that implements the following rules:
 
     -   If `i` is divisible by `3`, return `String::from("Fizz")`
 
@@ -33,49 +37,84 @@ Task
     -   If `i` is divisible by both `3` and `5`, return
         `String::from("FizzBuzz")`
 
-    -   Return the number as a String, otherwise, using `i.to_string()`
+    -   If neither of them is true return the number as a String, using
+        `format!("{}", i)`
 
-    -   Test the function
+-   Write a main function that implements the following:
 
-3.  Write a main function that loops from `1` to `100` using `for`
+    -   Iterate from `1` to `100`.
 
-    -   Call the `fizzbuzz` function inside the loop and store the
-        result in the variable `fizz`.
+    -   On each iteration the integer is tested with `fn fizzbuzz`
 
-    -   Print the returned value using `println!("{}", fizz)`
+    -   print the returned value.
 
-Help
-====
+## Knowledge
+### Returning data
 
-This section gives partial solutions to look at or refer to.
+If you have issues returning data from multiple branches of your
+solution, liberally use `return`.
+
+    if x % 5 == 0 {
+        return String::from("Buzz");
+    }
+
+### Printing to console
+
+The recommended way to print to the console in this exercise is
+`println!`. `println!` *always* needs a format string - it uses `{}` as
+a placeholder to mean **print the next argument**, like Python 3 or C#.
+
+    let s = String::from("Fizz");
+    println!("The value is s is {}. That's nice.", s);
+
+## Step-by-Step-Solution
 
 In general, we also recommend to use the Rust documentation to figure
-out things you are missing to familiarise yourself with it. If you ever
+out things you are missing to familiarize yourself with it. If you ever
 feel completely stuck or that you haven’t understood something, please
 hail the trainers quickly.
 
-Getting Started
----------------
+### Step 1: New Project
 
-Create a new binary Cargo project, check the build and see if it runs:
+Create a new binary Cargo project, check the build and see if it runs.
 
-$ cargo new fizzbuzz $ cd fizzbuzz $ cargo run&lt;/programlisting&gt;
+**Click to see hints/solutions for this step**
 
-Creating Strings
-----------------
+$ cargo new fizzbuzz $ cd fizzbuzz $ cargo run
 
-The recommended ways to get a `String` type for this exercise are:
+### Step 2: `fn fizzbuzz`
 
+-   Create the function with the name `fizzbuzz`. It takes an unsigned
+    32-bit integer as an argument and returns a `String` type.
+
+**Click to see hints/solutions for this step**
+
+    fn fizzbuzz(i: u32) -> String {
+        ///....
+    }
+
+-   Creating Strings: The two recommended ways to get a `String` type
+    for this exercise are:
+
+**Click to see hints/solutions for this step**
+
+    // 1.
     let string = String::from("Fizz");
+
     let i = 4;
     let string = i.to_string();
 
-Counting from 1 to 100
-----------------------
+-   Math operators:
+
+-   Control Flow:
+
+### Step 3: `fn main()`
+
+-   Counting from 1 to 100
 
 If you have issues that your program only counts to 99, be aware that
 the `..`-range syntax in Rust is *end-exclusive*. Either move the bound
-or use the inclusive range syntax.
+or use the inclusive range syntax `..=`.
 
     for i in 1..5 {
         // Only gives you 1, 2, 3, 4
@@ -85,33 +124,3 @@ or use the inclusive range syntax.
         // Gives you 1, 2, 3, 4 and 5
     }
 
-Returning data
---------------
-
-If you have issues returning data from multiple branches of your
-solution, liberally use `return`.
-
-    if x % 5 == 0 {
-        return String::from("Buzz");
-    }
-
-Printing to console
--------------------
-
-The recommended way to print to the console in this exercise is
-`println!`. `println!` *always* needs a format string - it uses `{}` as
-a placeholder to mean **print the next argument**, like Python 3 or C\#.
-
-    let s = String::from("Fizz");
-    println!("The value is s is {}. That's nice.", s);
-
-Testing
--------
-
-Testing functions are annotated using the `#[test]` attribute,
-assertions use `assert!(expr == expr)` or `assert_eq!(expr, expr)`.
-
-    #[test]
-    fn my_test() {
-        assert_eq!(1, 1);
-    }
