@@ -28,13 +28,13 @@
 
 -   [Strings](./presentations/strings.md)
 
--   [Drop, Panic, Abort](./presentations/drop-panic-abort.md)
+<!-- -   [Drop, Panic, Abort](./presentations/drop-panic-abort.md) -->
 
 -   [Iterators](./presentations/iterators.md)
 
 -   [Functions](./presentations/functions.md)
 
--   [Stack and Heap](./presentations/stack-and-heap.md)
+<!-- -   [Stack and Heap](./presentations/stack-and-heap.md) -->
 
 -   [Documentation](./presentations/documentation.md)
 
@@ -92,6 +92,10 @@
 -   [Async/Await: Laziness in detail (Rust vs other languages)](./presentations/async-await-laziness-in-detail.md)
 -->
 
+# FFI Rust 
+
+# Embedded Rust
+
 # Specialized topics
 
 -   [Cargo](./presentations/cargo.md)
@@ -135,11 +139,13 @@
 
 # Exercises
 
--   [FizzBuzz](./assignments/fizzbuzz.md)
-<!-- TODO
--   [Shapes](./assignments/shapes.md)
+- [FizzBuzz](./assignments/fizzbuzz.md)
+
+- [SimpleDB](./assignments/simpledb.md)
 
 -   [Files, match, and Result](./assignments/files-match-result-assignment.md)
+<!-- TODO
+-   [Shapes](./assignments/shapes.md)
 
 -   [FizzBuzz command line](./assignments/fizzbuzz-command-line.md)
 

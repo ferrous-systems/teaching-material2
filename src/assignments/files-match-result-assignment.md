@@ -1,3 +1,5 @@
+# Files, Match, Result Exercise
+
 In this exercise, you will learn
 
 -   how to open a file
@@ -32,11 +34,13 @@ Both types can be used with the `match` keyword. The received value is
 matched on patterns, each leads to the execution of a different
 expression.
 
+```rust
     match VALUE {
         PATTERN => EXPRESSION,
         PATTERN => EXPRESSION,
         PATTERN => EXPRESSION,
     }
+```
 
 Template
 ========
@@ -45,10 +49,12 @@ Clone the teaching material repository at
 [github.com/ferrous-systems/teaching-material](https://github.com/ferrous-systems/teaching-material).
 
 Then, start your `VSCode` in the proper root folder to have
-`Rust-Analyzer` working properly.
+`rust-analyzer` working properly.
 
+```console
     git clone https://github.com/ferrous-systems/teaching-material
     code teaching-material/assignments/files-match-result-assignment/template/
+```
 
 Your code will use the example data found in
 [files-match-result-assignment/template/src/data](https://github.com/ferrous-systems/teaching-material/tree/main/assignments/files-match-result-assignment/template/src/data).
@@ -70,6 +76,13 @@ Task 1: Files and Errors
 
 IDEs often provide a "quick fix" to roll out all match arms quickly
 
+<details>
+
+<summary> <b> Click here see to the solution. </b> <summary>
+
+</details>
+
+
 Task 2: Reading Files… and Errors
 =================================
 
@@ -87,6 +100,12 @@ Task 2: Reading Files… and Errors
 -   Print the entire content of the file using `println!`
 
 -   Handle all errors (the compiler will warn you if you miss one)
+
+<details>
+
+<summary> <b> Click here to the solution. </b> <summary>
+
+</details>
 
 Task 3: Reading files line by line… and Errors
 ==============================================
@@ -107,6 +126,12 @@ Task 3: Reading files line by line… and Errors
     [is\_empty](https://doc.rust-lang.org/std/string/struct.String.html#method.is_empty)
     method can help you here.
 
+<details>
+
+<summary> <b> Click here to the solution. </b> <summary>
+
+</details>
+
 Task 4: Read URLs from file… and Errors
 =======================================
 
@@ -122,6 +147,12 @@ Task 4: Read URLs from file… and Errors
     -   In the calling context, only print URLs that parse correctly
 
     -   Test the `parse_url` function
+
+<details>
+
+<summary> <b> Click here to the solution. </b> <summary>
+
+</details>
 
 Help
 ====

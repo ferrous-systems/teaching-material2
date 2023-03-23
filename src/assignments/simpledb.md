@@ -33,11 +33,16 @@ Prerequisites
 Tasks
 =====
 
-- ✅ Create a library project called `simple_db`.
-- ✅ Implement appropriate datastructures for `Command` and `Error`.
-- ✅ Read the documentation for `str` (primitive), especially `split_once()`, `splitn()` and `trim()`. Pay attention to their return type. Use the result value of `split_once()` and `splitn()` to guide your logic.
-- ✅ Learn about `if let` for control flow in Knowledge section.
-- (add anchor) ✅ Implement the following function so that it implements the rules of the protocol to parse the messages. Check the tests to help you with the case handling.
+✅ Create a library project called `simple_db`.
+
+✅ Implement appropriate datastructures for `Command` and `Error`.
+
+✅ Read the documentation for `str` (primitive), especially `split_once()`, `splitn()` and `trim()`. Pay attention to their return type. Use the result value of `split_once()` and `splitn()` to guide your logic.
+
+✅ Learn about `if let` for control flow in Knowledge section.
+
+✅ Implement the following function so that it implements the rules of the protocol to parse the messages. [Check the tests to help you](./simpledb.md#control-flow-and-pattern-matching-returning-values) with the case handling.
+
 
 ```rust
     fn parse(input: &str) -> Result<Command, Error> {
@@ -45,8 +50,8 @@ Tasks
     }
 ```
 
-- ✅ Run `clippy` on your codebase. 
-- ✅ Run `rustfmt` on your codebase.
+✅ Run `clippy` on your codebase. 
+✅ Run `rustfmt` on your codebase.
 
 Protocol Specification
 ----------------------
@@ -320,9 +325,10 @@ with `len()`. Return `Err(Error::TrailingData)` or for wrongly placed
 `\n`, `Err(Error::IncompleteMessage)` for absent `\n` and
 `Ok(Command::Command)` if the `\n` is placed correct.
 
-**Click to see the solution.**
 
-\[%collapsible\]
+<details>
+<summary> <b>Click to see the solution</b>
+</summary>
 
 ```rust
     #[derive(Eq, PartialEq, Debug)]
@@ -355,6 +361,7 @@ with `len()`. Return `Err(Error::TrailingData)` or for wrongly placed
         }
     }
 ```
+</details>
 
 Step 2: Remove the else branch
 ------------------------------
@@ -395,9 +402,9 @@ empty string would return `Some`!
 
 Can we test this?
 
-**Click to see the solution.**
+<details> 
 
-\[%collapsible\]
+<summary> <b>Click to see the solution.</b> </summary>
 
 ```rust
     pub fn parse(input: &str) -> Result<Command, Error> {
@@ -420,6 +427,9 @@ Can we test this?
         }
     }
 ```
+
+</details>
+
 Step 4: Pattern matching for the command keywords
 -------------------------------------------------
 
@@ -429,9 +439,11 @@ the command substring and use `match` to patternmatch its content.
 two necessary match arms: `""` for emtpy messages, `_` for any other
 string, currently evaluated to be an unknown command.
 
-**Click to see the solution.**
 
-\[%collapsible\]
+<details>
+
+<summary> <b> Click to see the solution.</b> </summary>
+
 ```rust
     pub fn parse(input: &str) -> Result<Command, Error> {
         // ...
@@ -448,6 +460,9 @@ string, currently evaluated to be an unknown command.
         }
     }
 ```
+
+</details>
+
 Step 5: Add Retrieve Case
 -------------------------
 
@@ -459,9 +474,11 @@ the next iteration over the substrings returns none. If this is true,
 return the `Ok(Command::Retrieve)`, if it is false, return
 `Err(Error::UnexpectedPayload)`.
 
-**Click to see the solution.**
 
-\[%collapsible\]
+<details>
+
+<summary> <b> Click to see the solution.</b> </summary>
+
 ```rust
     pub fn parse(input: &str) -> Result<Command, Error> {
         // ...
@@ -486,6 +503,8 @@ return the `Ok(Command::Retrieve)`, if it is false, return
     }
 ```
 
+</details>
+
 Step 6: Add Publish Case and finish
 -----------------------------------
 
@@ -499,9 +518,11 @@ Use `if let` to check if the next iteration into the substrings returns
 owned version of the trimmed payload. Otherwise return
 `Err(Error::MissingPayload)`
 
-**Click to see the solution.**
 
-\[%collapsible\]
+<details>
+
+<summary> <b>Click to see the solution.</b> </summary>
+
 ```rust
     pub fn parse(input: &str) -> Result<Command, Error> {
         // ...
@@ -532,15 +553,19 @@ owned version of the trimmed payload. Otherwise return
         }
     }
 ```
+
+</details>
+
 Full source code
 ----------------
 
 If all else fails, feel free to copy this solution to play around with
 it.
 
-**Click to see the solution.**
+<details> 
 
-\[%collapsible\]
+<summary> <b>Click to see the solution.</b> </summary>
+
 ```rust
     #[derive(Eq, PartialEq, Debug)]
     pub enum Command {
@@ -595,3 +620,5 @@ it.
         }
     }
 ```
+
+</details>

@@ -1,6 +1,6 @@
 # Start Here
 
-Make sure to have `rustup`, `VSCode` and the `Rust-analyzer` VSCode extension installed.
+Make sure to have `rustup`, `VSCode` and the `rust-analyzer` VSCode extension installed.
 
 The structure of the course is as follows:
 
@@ -20,3 +20,4 @@ graph TD;
 * **FFI Rust**: Bring Rust to your C, or C to your Rust. ~1.5 half days.
 * **Why Rust?**: A (stand-alone) half-day tour of Rust for decision-makers, technical leads and managers.
 
+[Link to these slides](./start_here-slides.html)
