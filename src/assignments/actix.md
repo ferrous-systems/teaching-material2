@@ -19,7 +19,7 @@ write messages in the text input field. Received messages will be
 displayed in the text box.
 
 Tasks
-=====
+----
 
 1.  Broadcast the client message to all other connected clients
 
@@ -55,7 +55,7 @@ Tasks
         to ping client
 
 Getting Started
-===============
+----
 
 Clone the repository at
 [ferrous-systems/teaching-material](https://github.com/ferrous-systems/teaching-material).
@@ -68,7 +68,7 @@ versions due to some incompatibilities. Updating these may not compile
 the program anymore.
 
 Help
-====
+----
 
 Further documentation
 
@@ -82,7 +82,7 @@ Further documentation
     documentation
 
 Bonus Tasks
-===========
+----
 
 1.  Add support to enter & display the client name
 

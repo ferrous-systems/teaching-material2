@@ -24,7 +24,7 @@ Any function with known error conditions returns a `Result<T,E>`.
     }
 ```
 Results Must Be Used
-====================
+----
 ```rust,editable
     fn this_can_fail(succeeds: bool) -> Result<String, String> {
         if succeeds {
@@ -40,7 +40,7 @@ Results Must Be Used
 ```
 
 Using Results With `match`
-==========================
+----
 ```rust,editable
     fn this_can_fail(succeeds: bool) -> Result<String, String> {
         if succeeds {
@@ -58,7 +58,7 @@ Using Results With `match`
     }
 ```
 Using Results With Conditionals
-===============================
+----
 
 Check for success with `is_ok()`, errors with `is_err()`:
 
@@ -80,7 +80,7 @@ Check for success with `is_ok()`, errors with `is_err()`:
     }
 ```
 Using Results With `?`
-======================
+----
 
 Use `?` in functions with multiple possible failures.
 
@@ -106,12 +106,12 @@ Use `?` in functions with multiple possible failures.
     }
 ```
 Using Results With `?`
-======================
+----
 
 Note the early exit. Click on the `Play` button on the top right corner!
 
 Using `?` in `main`
-===================
+----
 
 -   `main` can return `Result`
 
@@ -129,7 +129,7 @@ TODO: Fix this example
     }
 ```
 Mapping Result Values
-=====================
+----
 
 ```rust,editable
     fn this_can_fail(succeeds: bool) -> Result<String, String> {
@@ -150,7 +150,7 @@ Mapping Result Values
 `map_err()` is also available.
 
 Dynamic errors
-==============
+----
 
 Rust has an idiomatic dynamic error type, which most errors can be
 converted into:
@@ -170,7 +170,7 @@ To be converted like this, errors must implement the std::error::Error
 trait.
 
 Reporting Errors Only
-=====================
+----
 
 If you only have to report an error, but don’t have a meaningful return
 value, use `Result<(), Error>`.

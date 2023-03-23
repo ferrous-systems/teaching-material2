@@ -1,12 +1,12 @@
 # Compound Types
 
 Structs
-=======
+----
 
 `struct`s group and name data of different types.
 
 Definition
-==========
+----
 ```rust,editable
     struct Point {
         x: i32,
@@ -15,7 +15,7 @@ Definition
 ```
 
 Construction
-============
+----
 
 -   there is no partial initialization
 
@@ -32,13 +32,13 @@ Construction
 ```
 
 Side note
-=========
+----
 
 It’s common to hide construction behind a call to `Point::new()` instead
 of using a raw struct literal.
 
 Field Access
-============
+----
 
 -   note: no `->` operator for structs behind pointers, always `.`
 
@@ -57,7 +57,7 @@ Field Access
     }
 ```
 Tuples
-======
+----
 
 ```rust,editable
     fn main() {
@@ -67,7 +67,7 @@ Tuples
     }
 ```
 Tuple Structs
-=============
+----
 
 ```rust,editable
     struct Point(i32,i32);
@@ -79,7 +79,7 @@ Tuple Structs
     }
 ```
 Enums
-=====
+----
 
 `enum`s represent different variation of the same subject.
 
@@ -90,7 +90,7 @@ Enums
     (i.e. `Movement::Left`. but not `Movement`)
 
 Definition and Construction
-===========================
+----
 ```rust,editable
     enum Direction {
         Right,
@@ -106,7 +106,7 @@ Definition and Construction
 The different choices of Enums are called "variants."
 
 Enums with Values
-=================
+----
 
 ```rust,editable
     enum Movement {
@@ -121,7 +121,7 @@ Enums with Values
     }
 ```
 Enums with Structured Variants
-==============================
+----
 
 -   each enum variant will be its **worst-case** size! (e.g. the size of
     its biggest member)
@@ -152,12 +152,12 @@ bytes? - correct A: 12, because we have a tagged union:
 ```
 
 `null`
-======
+----
 
 Does not exist.
 
 `()`
-====
+----
 
 -   we often use this similarly to how you’d use `void` in C
 

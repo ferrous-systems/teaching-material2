@@ -1,7 +1,7 @@
 [Table of Contents](./index.html)
 
 Main components of Async/Await
-==============================
+----
 
 -   Tasks
 
@@ -12,7 +12,7 @@ Main components of Async/Await
 -   Pin
 
 Tasks
-=====
+----
 
 -   Every async function that awaits creates tasks
 
@@ -21,7 +21,7 @@ Tasks
 -   Tasks describe dependencies
 
 Tasks example
-=============
+----
 
     async fn learn_and_sing() {
         let song = learn_song().await;  // 1
@@ -30,7 +30,7 @@ Tasks example
     }
 
 Tasks implementation
-====================
+----
 
 -   Functions become a state machine
 
@@ -39,14 +39,14 @@ Tasks implementation
 -   Similar to generators
 
 Wakers
-======
+----
 
 -   Polling all the tasks is a busy wait
 
 -   Wakers allow us to register a way to wake
 
 Pin
-===
+----
 
 -   All types by default can move
 
@@ -55,7 +55,7 @@ Pin
 -   Pin: underlying memory can not move
 
 Pin Example
-===========
+----
 
     #[tokio::main]
     async fn main() {
@@ -78,7 +78,7 @@ Pin Example
     }
 
 Executors
-=========
+----
 
 -   Start with the top-level Futures and drive to completions
 

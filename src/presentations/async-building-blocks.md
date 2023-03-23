@@ -1,14 +1,14 @@
 [Table of Contents](./index.html)
 
 async
-=====
+----
 
 -   Built from important "building blocks"
 
 -   Futures, Tasks, Executors, Streams, and more
 
 Differences between async & sync
-================================
+----
 
 -   sync programming often has imperative behaviour
 
@@ -18,7 +18,7 @@ Differences between async & sync
 -   this process is called the "futures tree"
 
 An async Rust function
-======================
+----
 
     use tokio::{fs::File, io::AsyncReadExt};
 
@@ -31,7 +31,7 @@ An async Rust function
     }
 
 (sketch) Desugaring return type
-===============================
+----
 
     use std::future::Future;
 
@@ -50,7 +50,7 @@ An async Rust function
     }
 
 What are Futures
-================
+----
 
 Futures represent a datastructure that - at some point in the future -
 give us the value that we are waiting for. The Future may be:
@@ -62,7 +62,7 @@ give us the value that we are waiting for. The Future may be:
 -   infinite
 
 Futures are operations
-======================
+----
 
 Futures are complete operations that can be awaited for.
 
@@ -75,13 +75,13 @@ Examples:
 -   `connect`: Connect a socket
 
 Futures are poll-based
-======================
+----
 
 They can be checked if they are *done*, and are usually mapped to
 readiness based APIs like `epoll`.
 
 .await registers interest in completion
-=======================================
+----
 
     use tokio::{fs::File, io::AsyncReadExt};
 
@@ -94,14 +94,14 @@ readiness based APIs like `epoll`.
     }
 
 Futures are cold
-================
+----
 
     fn main() {
         let read_from_disk_future = read_from_disk();
     }
 
 Futures need to be executed
-===========================
+----
 
     use tokio::{fs::File, io::AsyncReadExt};
 
@@ -127,7 +127,7 @@ Futures need to be executed
     }
 
 Tasks
-=====
+----
 
 -   A task connects a future to the executor
 
@@ -136,7 +136,7 @@ Tasks
 -   A task is similar to a thread, but is user-space scheduled
 
 Futures all the way down: Combining Futures
-===========================================
+----
 
     use tokio::fs::File;
     use tokio::io::AsyncReadExt;
@@ -159,7 +159,7 @@ Futures all the way down: Combining Futures
     }
 
 Ownership/Borrowing Memory in concurrent systems
-================================================
+----
 
 -   Ownership works just like expected - it flows in and out of
     tasks/futures
@@ -172,7 +172,7 @@ Ownership/Borrowing Memory in concurrent systems
 -   Sharing between tasks is often done using `Rc/Arc`
 
 Categories of Executors
-=======================
+----
 
 -   single-threaded
 
@@ -194,7 +194,7 @@ Categories of Executors
         new ones
 
 Reference Counting
-==================
+----
 
 -   Reference counting on single-threaded executors can be done using
     `Rc`
@@ -203,7 +203,7 @@ Reference Counting
     `Arc`
 
 Streams
-=======
+----
 
 -   Streams are async iterators
 
@@ -212,7 +212,7 @@ Streams
 -   They cannot be executed, but operations on them are futures
 
 Classic Stream operations
-=========================
+----
 
 -   iteration
 
@@ -221,7 +221,7 @@ Classic Stream operations
 -   filtering
 
 Async iteration
-===============
+----
 
     while let Some(item) = stream.next().await {
         //...

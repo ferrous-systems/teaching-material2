@@ -1,14 +1,14 @@
 [Table of Contents](./index.html)
 
 Efficiency!
-===========
+----
 
 (This is Germany after all)
 
 **» efficient C bindings «**
 
 Application Binary Interface
-============================
+----
 
 (Like an API, but for machine code calling machine code)
 
@@ -77,7 +77,7 @@ Or *be* one.
 There are no conversion costs
 
 Using Rust from C
-=================
+----
 
 !
 =
@@ -102,7 +102,7 @@ project.
     }
 
 Things TODO
-===========
+----
 
 -   Tell C these functions exist
 
@@ -115,7 +115,7 @@ Things TODO
 -   Call our Rust functions
 
 C-flavoured Rust Code
-=====================
+----
 
     #[repr(C)]
     struct MagicAdder {
@@ -143,7 +143,7 @@ be null, or that it point at a valid, aligned, fully initialised object.
 If they just feed you a random integer, bad things will happen!
 
 Matching C header
-=================
+----
 
     /// Designed to have the exact same shape as the Rust version
     typedef struct magic_adder_t {
@@ -157,7 +157,7 @@ Matching C header
     uint32_t magicadder_process_value(magic_adder_t* self, uint32_t value);
 
 Making a library
-================
+----
 
 You can tell `rustc` to make:
 
@@ -176,7 +176,7 @@ You can tell `rustc` to make:
 See <https://doc.rust-lang.org/reference/linkage.html>
 
 Cargo.toml
-==========
+----
 
     [package]
     name = "magic_adder"
@@ -189,7 +189,7 @@ Cargo.toml
 See ./examples/ffi\_use\_rust\_in\_c for a working example.
 
 Using C from Rust
-=================
+----
 
 !
 =
@@ -212,7 +212,7 @@ project.
     }
 
 Things TODO
-===========
+----
 
 -   Tell Rust these functions exist
 
@@ -223,14 +223,14 @@ Things TODO
 -   Transmute data for C functions
 
 Naming things is hard
-=====================
+----
 
     #![allow(non_camel_case_types, non_upper_case_globals, non_snake_case)]
 
 Disables some Rust naming lints
 
 Binding functions
-=================
+----
 
     #include <stdint.h>
 
@@ -256,7 +256,7 @@ You cannot do `extern "C" fn some_function();` with no function body -
 you must use the block.
 
 Primitive types
-===============
+----
 
 Some type conversions can be infered by the compiler.
 
@@ -274,7 +274,7 @@ These C types are in `std`, not `core` - because you need the
 OS/platform to define the size of an `int`.
 
 Calling this
-============
+----
 
     use std::os::raw::c_uint;
 
@@ -290,10 +290,10 @@ Calling this
     }
 
 Some more specific details…
-===========================
+----
 
 Cargo (build-system) support
-============================
+----
 
 -   Build native code via build-dependency crates
 
@@ -303,7 +303,7 @@ Cargo (build-system) support
 -   `build.rs` can give linker extra arguments
 
 Opaque types
-============
+----
 
 When not knowing (or caring) about internal layout, [opaque
 structs](https://doc.rust-lang.org/nomicon/ffi.html#representing-opaque-structs)
@@ -323,7 +323,7 @@ can be used.
     pub struct FoobarHandle(*mut FoobarContext);
 
 Callbacks
-=========
+----
 
 `extern "C"` applies to function pointers given to extern functions too.
 
@@ -344,22 +344,22 @@ Callbacks
     }
 
 But this is a lot of manual work?
-=================================
+----
 
 There’s a better way!
 
 Making C headers from Rust
-==========================
+----
 
 [cbindgen](https://crates.io/crates/cbindgen)
 
 Making Rust source from C headers
-=================================
+----
 
 [bindgen](https://crates.io/crates/bindgen)
 
 Loading auto-generated Rust source
-==================================
+----
 
     #[allow(non_camel_case_types, non_snake_case, non_upper_case_globals)]
     pub mod bindings {
@@ -367,7 +367,7 @@ Loading auto-generated Rust source
     }
 
 Calling these tools:
-====================
+----
 
 -   On the command line
 
@@ -376,7 +376,7 @@ Calling these tools:
 -   Calling a library function in `build.rs`
 
 sys crates
-==========
+----
 
 `xxxx-sys` is a Rust crate that provides a thin wrapper around some C
 library `xxxx`.

@@ -10,7 +10,7 @@ In this exercise, you will learn:
     units
 
 Implement multithreading
-========================
+----
 
 Using your existing codebase, implement the following:
 
@@ -24,7 +24,7 @@ For every connection:
     to pass it around
 
 Notes
-=====
+----
 
 Base code
 ---------
@@ -46,7 +46,7 @@ Usage:
     cargo run -- "RETRIEVE"
 
 Help
-====
+----
 
 Wrapping the `VecDeque` correctly
 ---------------------------------

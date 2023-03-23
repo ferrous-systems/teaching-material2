@@ -14,7 +14,7 @@ You will learn:
     type
 
 Task
-====
+----
 
 1.  Use Cargo to create a new project called `shapes`
 
@@ -48,7 +48,7 @@ Task
     type.
 
 Help
-====
+----
 
 This section gives partial solutions to look at or refer to.
 

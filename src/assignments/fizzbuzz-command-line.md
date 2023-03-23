@@ -4,7 +4,7 @@ will take input from command line by the user as a space separated list
 of numbers.
 
 Specification
-=============
+----
 
 We want to create a simple command line app with the following CLI API -
 
@@ -23,7 +23,7 @@ You will learn to:
     ([clap](https://docs.rs/clap/latest/clap/)) to make our lives easier
 
 Tasks
-=====
+----
 
 Step 1
 ------

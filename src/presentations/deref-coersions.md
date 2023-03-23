@@ -1,7 +1,7 @@
 # Deref Coercions
 
 Motivation
-==========
+----
 
 Why does the following work?
 ```rust
@@ -18,7 +18,7 @@ Why does the following work?
 Box doesn’t have a field named "x"!
 
 Auto-Dereferencing
-==================
+----
 
 Rust automatically dereferences in certain cases. Like everything else,
 it must be explicitly requested:
@@ -54,7 +54,7 @@ Dereferencing is described by the `Deref` and `DerefMut`-Traits.
 This call is introduced when dereferencing is requested.
 
 Important deref behaviours
-==========================
+----
 
 -   `String` -> `&str`
 

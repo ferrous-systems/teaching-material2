@@ -6,7 +6,7 @@
 Rust offers the possibility to bind functions to types.
 
 Warning
-=======
+----
 
 !
 =
@@ -17,7 +17,7 @@ In particular, run-time polymorphism, messages, classes, subtypes, and
 method overload are missing.
 
 Simple implementations: associated function
-===========================================
+----
 
 ```rust
     #[derive(Debug)]
@@ -39,12 +39,12 @@ Simple implementations: associated function
 ```
 
 Remark
-======
+----
 
 `new` here is purely convention.
 
 A Python analogy
-================
+----
 
 -   if you’re familiar with Python’s `self`, Rust’s use of it is very
     very similar
@@ -113,7 +113,7 @@ A Python analogy
 ```
 
 Borrowing and Ownership of `self`
-=================================
+----
 
 It is like normal ownership and borrowing, but at the beginning somewhat
 unfamiliar.
@@ -126,7 +126,7 @@ unfamiliar.
     context.
 
 Borrowing and Ownership of `self`
-=================================
+----
 
 <table>
 <colgroup>
@@ -149,7 +149,7 @@ Borrowing and Ownership of `self`
 </table>
 
 Interesting Differences to Common OO
-====================================
+----
 
 -   Values can be replaced when calling `&mut` functions
 
@@ -159,13 +159,13 @@ Interesting Differences to Common OO
 -   This solves the problem of invalidating iterators!
 
 Side note
-=========
+----
 
 -   Implementations can occur multiple times. This is useful when
     multiple constraints are needed.
 
 Traits
-======
+----
 
 Traits are Rust’s particular way of abstracting over types.
 
@@ -206,12 +206,12 @@ generically.
     }
 ```
 Self
-====
+----
 
 `Self` is a special type: it is the type currently being implemented.
 
 Generic Traits
-==============
+----
 
 Traits can have type parameters.
 
@@ -245,7 +245,7 @@ Traits can have type parameters.
 Working with generic traits is very common.
 
 Inference of Traits
-===================
+----
 
 Type inference of traits is very advanced, but sometimes, undecidable
 situations can occur. In this case, the compiler needs help deciding.
@@ -253,7 +253,7 @@ situations can occur. In this case, the compiler needs help deciding.
 There are multiple techniques.
 
 Full qualified function calls
-=============================
+----
 
 ```rust
     struct Point {
@@ -280,7 +280,7 @@ Full qualified function calls
 Any reachable function in Rust can be addressed with this syntax.
 
 Associated Types
-================
+----
 
 Associated types are generic parameters, but they are ignored during
 inference.
@@ -316,7 +316,7 @@ inference.
 ```
 
 `impl Trait`
-============
+----
 
 `impl Trait` is used when the type of a value does not need to be named.
 ```rust

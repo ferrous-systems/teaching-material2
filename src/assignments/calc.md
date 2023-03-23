@@ -15,7 +15,7 @@ The library does not handle I/O. It’ll serve us as a pocket-sized
 "`big`" project.
 
 Syntax Specification
-====================
+----
 
 To simplify parsing, we will use postfix notation:
 
@@ -67,7 +67,7 @@ Postfix notation can be parsed in a straight-forward way with the help
 of the stack data structure.
 
 Basic Scaffold
-==============
+----
 
 Step 1  
 Create a library project called `calc`: `cargo new --lib calc`
@@ -162,7 +162,7 @@ Check that a smoke test works:
     }
 
 Idiomatic API
-=============
+----
 
 Now that all the logic is in place, let’s wrap it into idiomatic Rust:
 
@@ -186,7 +186,7 @@ Now that all the logic is in place, let’s wrap it into idiomatic Rust:
 7.  Run `rustfmt` on the codebase.
 
 Modularization
-==============
+----
 
 1.  Add a binary with an empty `fn main() {}` to `src/main.rs`.
 
@@ -222,7 +222,7 @@ Modularization
     evaluation code to `mod eval;`
 
 Naive Multithreading
-====================
+----
 
 In this task, we’ll offload expression evaluation and parsing to a
 separate thread, to not block the main loop.
@@ -255,7 +255,7 @@ separate thread, to not block the main loop.
         counter.fetch_add(1, Ordering::SeqCst);
 
 Bonus Task
-==========
+----
 
 If you are feeling really adventurous, you can change the syntax to use
 infix notation by using [this

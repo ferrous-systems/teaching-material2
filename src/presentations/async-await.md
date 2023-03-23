@@ -1,7 +1,7 @@
 # Async Await
 
 Welcome
-=======
+----
 
 -   Own your experience
 
@@ -12,13 +12,13 @@ Welcome
 -   Ask questions
 
 Warning
-=======
+----
 
 async-await was stabilized yesterday \* Use newest nightly! \* Adjust
 your expectation
 
 Agenda
-======
+----
 
 !
 =
@@ -42,7 +42,7 @@ Agenda
 -   Closing (5min)
 
 async-std
-=========
+----
 
 -   async-std is an implementation Rust’s async/await story
 
@@ -51,7 +51,7 @@ async-std
 -   familiar interface, new internals
 
 Tutorial
-========
+----
 
 -   Follow the tutorial in <https://book.async.rs>
 
@@ -62,7 +62,7 @@ Tutorial
 -   Use the client to test your server
 
 What are Futures?
-=================
+----
 
 ```rust,ignore
     pub trait Future {
@@ -73,7 +73,7 @@ What are Futures?
 ```
 
 Futures
-=======
+----
 
 -   Types that provide values… at some time in the future
 
@@ -84,9 +84,9 @@ Futures
 -   Polling is not a user concern!
 
 async-await functions and Futures
-=================================
+----
 
-==
+----
 ```rust,ignore
     use async_std::io;
 
@@ -103,7 +103,7 @@ async-await functions and Futures
 ```
 
 async-await functions and Futures
-=================================
+----
 
 ```rust,ignore
     use std::time::Duration;
@@ -114,7 +114,7 @@ async-await functions and Futures
 ```
 
 Async blocks
-============
+----
 
 -   Async blocks are blocks that get transformed into futures
 
@@ -142,14 +142,14 @@ Async blocks
 ```
 
 Cold Futures
-============
+----
 
 -   Do nothing unless polled
 
 -   Calling an async function does nothing
 
 Tasks
-=====
+----
 ```rust,ignore
     use std::time::Duration;
 
@@ -165,21 +165,21 @@ Tasks
     }
 ```
 Tasks
-=====
+----
 
 -   Tasks in async-std are similar to threads
 
 -   They give you a `JoinHandle` and a way to retrieve their results
 
 Executors
-=========
+----
 
 -   Components executing Futures
 
 -   Multiple implementations possible
 
 Exercise one
-============
+----
 
 <https://book.async.rs>
 
@@ -190,10 +190,10 @@ Exercise one
 -   3.3
 
 Communication between Tasks
-===========================
+----
 
 Channels and streams
-====================
+----
 
 -   Channels are a way to communicate between concurrent Tasks
 
@@ -204,14 +204,14 @@ Channels and streams
 -   Channels are closed on drop
 
 Select/Join
-===========
+----
 
 -   `Selecting` is waiting for the first of multiple futures
 
 -   `Joining` is waiting for all of them
 
 Exercise Two
-============
+----
 
 <https://book.async.rs>
 
@@ -222,7 +222,7 @@ Exercise Two
 -   3.6
 
 Sleeping/Waking
-===============
+----
 
 -   Tasks are very good if they *mostly sleep*
 
@@ -233,7 +233,7 @@ Sleeping/Waking
 -   Messages in a channel
 
 Client handling
-===============
+----
 
 -   Every client `spawns` a task on connection
 
@@ -242,12 +242,12 @@ Client handling
 -   Disconnection might be by error
 
 Shutdown
-========
+----
 
 -   Shutdown needs to properly clean up all connections
 
 Exercise Three
-==============
+----
 
 <https://book.async.rs>
 

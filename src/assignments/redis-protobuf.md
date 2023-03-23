@@ -4,7 +4,7 @@ functionality.
 -   [Presentation slides](../redis-protobuf.html)
 
 Preparation + Setup
-===================
+----
 
 Step 1  
 -   Install the [protoc
@@ -20,7 +20,7 @@ Step 1
     to your source directory.
 
 Implementation
-==============
+----
 
 Step 2  
 Generate Rust protobuf code for phone book and configuration, using

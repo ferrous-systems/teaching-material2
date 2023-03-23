@@ -12,7 +12,7 @@ Rust has closures. Multiple, even.
     easy.
 
 Notation
-========
+----
 
 ```rust
     fn main() {
@@ -31,7 +31,7 @@ Notation
     }
 ```
 Closure Types
-=============
+----
 
 Moving  
 The closure consumes its environment. It can only be called once.
@@ -49,7 +49,7 @@ The closure references its environment immutably
 signatures!
 
 Notation of closure arguments
-=============================
+----
 
 ```rust
     fn call_with_one<F>(some_closure: F) -> i32
@@ -60,7 +60,7 @@ Notation of closure arguments
     }
 ```
 Moves and Closures
-==================
+----
 
 To resolve ambiguity, closures borrow by default. Moving needs to be
 requested.

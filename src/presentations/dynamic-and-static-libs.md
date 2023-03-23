@@ -6,7 +6,7 @@
 Let’s try to use Rust from C.
 
 Library
-=======
+----
 ```rust,ignore
     #[derive(Debug)]
     #[repr(C)]
@@ -35,7 +35,7 @@ Library
     }
 ```
 C-Header (excerpt)
-==================
+----
 ```c
     #include <stdint.h>
     #include <stdbool.h>
@@ -52,7 +52,7 @@ C-Header (excerpt)
     void inspect(Point* p);
 ```
 Cargo
-=====
+----
 ```toml
     [lib]
     crate-type = ["cdylib", "staticlib"]
@@ -62,7 +62,7 @@ Cargo
 Rust-specific metadata.
 
 Usage
-=====
+----
 ```c
     #include "../include/point.h"
 
@@ -81,7 +81,7 @@ Usage
 ```
 
 Execution
-=========
+----
 ```console
     $ ./point
     Point { x: 1, y: 1 }
@@ -92,7 +92,7 @@ Execution
 ```
 
 Woops!
-======
+----
 
 Take good care of ownership!
 ```rust,ignore
@@ -112,7 +112,7 @@ Take good care of ownership!
 ```
 
 Helpers
-=======
+----
 
 -   Cheddar - generates C-Headers from Rust-Libs. TODO: isn't this `cbindgen` now?
 -   `bindgen` - generates Rust bindings from C headers

@@ -1,5 +1,5 @@
 Presentations
-=============
+----
 
 -   [Overview](./overview.html)
 
@@ -122,7 +122,7 @@ Presentations
 -   [Basic Design Patterns](./design-patterns.html)
 
 Assignments
-===========
+----
 
 -   [FizzBuzz](./assignments/fizzbuzz.html)
 

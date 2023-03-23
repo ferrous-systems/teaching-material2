@@ -1,28 +1,28 @@
 # Design Patters
 
 `.clone()` before Lifetimes
-===========================
+----
 
 -   As a beginner, use `.clone()` to overcome compiler struggle.
 
 -   It is alright! Refactor later.
 
 `String` before `&str`
-======================
+----
 
 -   Use "owned" types before references.
 
 -   It is alright! Refactor later.
 
 String concatenation: Use `format!()`
-=====================================
+----
 
 -   Owned type `String` can be generated easily.
 
 -   `let s: String = format!("No fear from {}", "Rust Strings")`
 
 Clippy is your friend in linting
-================================
+----
 
 -   A collection of lints to catch common mistakes and improve your Rust
     code.
@@ -35,7 +35,7 @@ Clippy is your friend in linting
     <https://rust-lang.github.io/rust-clippy/stable/index.html>
 
 Pattern: `From<T>`, `Into<T>`
-=============================
+----
 
 Conversion of one Type into another.
 
@@ -44,7 +44,7 @@ If `X` is `From<T>`, then `T` is `Into<X>` automatically.
 The usage depends on the context.
 
 Pattern: `From<T>`, `Into<T>` - Example
-=======================================
+----
 
 ```rust
     fn main() {
@@ -53,7 +53,7 @@ Pattern: `From<T>`, `Into<T>` - Example
     }
 ```
 Pattern: What does `?` do?
-==========================
+----
 
 ```rust
     use std::fs::File;
@@ -89,13 +89,13 @@ Pattern: What does `?` do?
     fn main() {}
 ```
 Pattern: `AsRef<T>`
-===================
+----
 
 Reference-to-reference-conversion. Indicates that a type can easily
 produce references to another type.
 
 Pattern: `AsRef<T>` - Example
-=============================
+----
 ```rust
     use std::fs::File;
     use std::path::Path;
@@ -113,7 +113,7 @@ Pattern: `AsRef<T>` - Example
     }
 ```
 Pattern: Constructor `new()`
-============================
+----
 
 -   No constructors but convention.
 
@@ -138,7 +138,7 @@ Pattern: Constructor `new()`
 ```
 
 Pattern: NewType
-================
+----
 
 -   Use Rust type system to convey meaning to the user.
 
@@ -155,7 +155,7 @@ Pattern: NewType
     }
 ```
 Pattern: Extending external Types
-=================================
+----
 
 -   Recall that at least one of Trait or Type should be local to `impl`.
 
@@ -179,7 +179,7 @@ Pattern: Extending external Types
     }
 ```
 Pattern: Narrowing variable’s scope
-===================================
+----
 
 -   Shadowing allows you to redefine a variable with `let` keyword
     again.

@@ -7,7 +7,7 @@ You will learn:
 -   How to describe a JSON structure in Rust types
 
 Task
-====
+----
 
 1.  Create a new Terrarium project
 
@@ -33,12 +33,12 @@ Task
 5.  On error, return status `422`, along with the resulting error
 
 Extension Task
-==============
+----
 
 1.  Make it optional to send the Address
 
 Helpers
-=======
+----
 
 Sending JSON via curl
 ---------------------

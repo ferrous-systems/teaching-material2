@@ -1,14 +1,14 @@
 # Functions
 
 Declaration
-===========
+----
 ```rust,editable
     fn add(first: i32, second: i32) -> i32 {
         first + second
     }
 ```
 Arguments
-=========
+----
 
 ```rust,editable
     fn return_nothing() {}
@@ -31,7 +31,7 @@ Arguments
 ```
 
 Returning
-=========
+----
 
 Returning is optional. Signatures must be complete. Note the `;`!
 ```rust,editable
@@ -59,7 +59,7 @@ Returning is optional. Signatures must be complete. Note the `;`!
 
 TODO: Move rest of slides to "Applied Rust"
 Generic Functions
-=================
+----
 
 Generic functions have type parameters.
 ```rust,editable
@@ -68,7 +68,7 @@ Generic functions have type parameters.
     }
 ```
 With Bounds
-===========
+----
 
 Generic functions can be *constrained*.
 
@@ -93,7 +93,7 @@ These are equivalent:
     }
 ```
 Functions for types
-===================
+----
 
 If we didn’t have methods (like in C), we’d have to write this:
 
@@ -113,7 +113,7 @@ If we didn’t have methods (like in C), we’d have to write this:
     }
 ```
 Associated Functions
-====================
+----
 
 Fortunately, Rust has a better solution than putting `square_` on all
 our function names.
@@ -132,7 +132,7 @@ our function names.
     }
 ```
 Methods that access data
-========================
+----
 
 When our function needs to access the data inside the associated type,
 we can use `&self`.
@@ -155,7 +155,7 @@ whatever `impl Foo` block we’re inside of.
     }
 ```
 Methods that mutate data
-========================
+----
 
 When our function needs to mutate the data inside the associated type,
 we can use `&mut self`.
@@ -184,7 +184,7 @@ whatever `impl Foo` block we’re inside of.
     }
 ```
 Methods that taken ownership of the data
-========================================
+----
 
 When our function needs to take ownership of the variable associated
 type, we can use `self`.

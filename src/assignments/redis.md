@@ -3,7 +3,7 @@ In this exercise, we will implement a simple redis client.
 -   [Presentation slides](../redis.html)
 
 Preparation + Setup
-===================
+----
 
 Step 1  
 Install a Redis server on your machine, using e.g. your favorite package
@@ -14,7 +14,7 @@ Create a binary project called `redis-client`:
 `cargo new --bin redis-client`
 
 Implementation
-==============
+----
 
 Step 3  
 Implement a command line handler that lets your program either
@@ -44,6 +44,6 @@ Hook up your command line arguments to the `RedisClient`. In the `get`
 case, `println!` a String created from the returned value.
 
 Solution
-========
+----
 
 <https://github.com/ferrous-systems/teaching-material/tree/main/assignments/solutions/redis>

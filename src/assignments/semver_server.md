@@ -11,7 +11,7 @@ You will learn:
 -   How to handle a connection lifecycle
 
 Task
-====
+----
 
 1.  Move all your previous work on `SemVer` into a `lib.rs` module
 
@@ -40,7 +40,7 @@ Task
     error handling where possible.
 
 Note
-====
+----
 
 To send and receive messages, you can either use `nc` or `telnet`.
 Alternatively, you can use the client provided:

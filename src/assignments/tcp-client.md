@@ -9,7 +9,7 @@ You will learn how to:
 -   close parts of a bidirectional stream
 
 Task
-====
+----
 
 1.  Start a TCP connection on port `127.0.0.1:7878`
 
@@ -20,7 +20,7 @@ Task
 4.  Print the response to the console
 
 Getting started
-===============
+----
 
 Use this template:
 

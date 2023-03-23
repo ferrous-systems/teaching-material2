@@ -43,7 +43,7 @@ expression.
 ```
 
 Template
-========
+----
 
 Clone the teaching material repository at
 [github.com/ferrous-systems/teaching-material](https://github.com/ferrous-systems/teaching-material).
@@ -60,7 +60,7 @@ Your code will use the example data found in
 [files-match-result-assignment/template/src/data](https://github.com/ferrous-systems/teaching-material/tree/main/assignments/files-match-result-assignment/template/src/data).
 
 Task 1: Files and Errors
-========================
+----
 
 -   Open the file `"src/data/content.txt"` using
     [File::open](https://doc.rust-lang.org/std/fs/struct.File.html#method.open)
@@ -84,7 +84,7 @@ IDEs often provide a "quick fix" to roll out all match arms quickly
 
 
 Task 2: Reading Files… and Errors
-=================================
+----
 
 -   import `std::io::prelude::*`
 
@@ -108,7 +108,7 @@ Task 2: Reading Files… and Errors
 </details>
 
 Task 3: Reading files line by line… and Errors
-==============================================
+----
 
 -   Construct a
     [BufReader](https://doc.rust-lang.org/std/io/struct.BufReader.html)
@@ -133,7 +133,7 @@ Task 3: Reading files line by line… and Errors
 </details>
 
 Task 4: Read URLs from file… and Errors
-=======================================
+----
 
 -   Add `url = "2"` to your dependencies section in `Cargo.toml`
 
@@ -155,7 +155,7 @@ Task 4: Read URLs from file… and Errors
 </details>
 
 Help
-====
+----
 
 Typing variables
 ----------------

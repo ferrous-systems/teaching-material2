@@ -1,7 +1,7 @@
 # Imports, Modules, and Visibility
 
 Imports
-=======
+----
 
 All used items must be declared. This is similar to Java or Haskell.
 
@@ -13,7 +13,7 @@ All used items must be declared. This is similar to Java or Haskell.
     }
 ```
 Module Imports
-==============
+----
 
 It is possible to import the module instead and qualify every use.
 ```rust
@@ -24,7 +24,7 @@ It is possible to import the module instead and qualify every use.
     }
 ```
 Glob Imports
-============
+----
 
 You can also import everything from a module.
 ```rust
@@ -37,13 +37,13 @@ You can also import everything from a module.
 This is **generally** frowned upon.
 
 Prelude
-=======
+----
 
 One exception to the rule is the "Prelude": This is a special module in
 the standard library that is automatically fully imported.
 
 Other Preludes
-==============
+----
 
 Other libraries offer `prelude`-Modules, one of the most common is
 `std::io`.
@@ -63,7 +63,7 @@ Other libraries offer `prelude`-Modules, one of the most common is
 Here, the glob is accepted.
 
 Structured imports
-==================
+----
 
 You can combine multiple things, that are also nested.
 ```rust,
@@ -80,7 +80,7 @@ You can combine multiple things, that are also nested.
     }
 ```
 Renaming on import
-==================
+----
 ```rust
     use std::fs as file_system;
 
@@ -89,7 +89,7 @@ Renaming on import
     }
 ```
 Local import
-============
+----
 
 Imports can happen inside a function. They only take effect within the
 function.
@@ -101,7 +101,7 @@ function.
     }
 ```
 Modules
-=======
+----
 
 The module system of Rust is similar to Python.
 
@@ -124,7 +124,7 @@ the root module of a single application in `src/main.rs`.
 The root modules for multiple applications in `src/bin/*.rs`.
 
 Example
-=======
+----
 ```rust
     fn main() {
         workload::work();
@@ -137,7 +137,7 @@ Example
     }
 ```
 Moving the Module to a Separate File
-====================================
+----
 
 Our application could also have the following layout:
 
@@ -149,7 +149,7 @@ Our application could also have the following layout:
 ```
 
 A Larger Module as a Directory
-==============================
+----
 
 Simply by adding a new folder of the same name
 ```text
@@ -161,7 +161,7 @@ Simply by adding a new folder of the same name
          |- thing.rs
 ```
 A Larger Module as a Directory
-==============================
+----
 
 Or declare a module via `mod.rs`
 ```text
@@ -192,7 +192,7 @@ With the last approach, you can create additional modules relative to
 `mod.rs`.
 
 Visibility
-==========
+----
 
 In Rust, everything is private by default. Publicly available types are
 marked with `pub`.
@@ -201,7 +201,7 @@ Public types and functions that can be reached through a public module
 path are exported.
 
 Example
-=======
+----
 ```rust,ignore
     pub mod workload;
 
@@ -221,7 +221,7 @@ Traits must be public and imported before use.
 The compiler will detect if you use an un-imported trait.
 
 Structs
-=======
+----
 
 Struct fields are not exported (public) by default. A struct with
 non-public members can’t be constructed or fully used outside of its
@@ -262,7 +262,7 @@ In general, exporting fields should be avoided:
     optimizations.
 
 Pub qualifiers
-==============
+----
 ```rust,ignore
     pub(crate) fn crate_local() {
 

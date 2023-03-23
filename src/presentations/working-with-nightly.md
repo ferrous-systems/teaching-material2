@@ -1,7 +1,7 @@
 # Working with nightly
 
 Why?
-====
+----
 
 -   Dependencies may require nightly
 
@@ -13,7 +13,7 @@ Why?
 -   Compiler plugins
 
 Using Nightly
-=============
+----
 
 Use `rustup` to override the version used in a specific directory.
 ```console
@@ -22,7 +22,7 @@ Use `rustup` to override the version used in a specific directory.
 ```
 
 Features
-========
+----
 
 Features are gated behind "Feature Flags" which are enabled project
 wide.
@@ -36,7 +36,7 @@ Some examples:
 -   `inclusive_range`, similar to the stable `exclusive_range`
 
 Enabling Features
-=================
+----
 
 To enable a feature, add the following line into `src/main.rs` (for
 executables), or `src/lib.rs` (for libraries):
@@ -45,7 +45,7 @@ executables), or `src/lib.rs` (for libraries):
     #![feature(asm, no_std)]
 ```
 Compiler Plugins
-================
+----
 
 Compiler Plugins add additional capabilities to Rust. For example:
 
@@ -56,7 +56,7 @@ Compiler Plugins add additional capabilities to Rust. For example:
 -   Libraries like [`regex_macros`](https://github.com/rust-lang/regex#usage-regex-compiler-plugin)
 
 Enabling Compiler Plugins
-=========================
+----
 
 To enable a compiler plugin add the following line into `src/main.rs`
 (for executables), or\`src/lib.rs\` (for libraries):
@@ -66,12 +66,12 @@ To enable a compiler plugin add the following line into `src/main.rs`
 ```
 
 Warning
-=======
+----
 
 It is unknown, when and if ever compiler-plugins will be stabilised.
 
 Stable development on nightly
-=============================
+----
 
 It is recommendable to use a nighly compiler close to the release
 version used.

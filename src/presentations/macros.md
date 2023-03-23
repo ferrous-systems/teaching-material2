@@ -7,7 +7,7 @@ Rust has a macro language. See [The Little Book Of
 Macros](https://danielkeep.github.io/tlborm/book/README.html).
 
 Important Macros
-================
+----
 
 -   `println!(pattern, [values])` Easy printing of formatted strings to
     stdout
@@ -18,7 +18,7 @@ Important Macros
     a buffer
 
 What Can They do?
-=================
+----
 
 Macros can be used to things such as:
 
@@ -29,7 +29,7 @@ Macros can be used to things such as:
 -   Write things that would otherwise be hard without Macros.
 
 What do They Provide?
-=====================
+----
 
 Macros are:
 
@@ -40,7 +40,7 @@ Macros are:
 -   **Limited**, they cannot, for example, pollute their expansion site.
 
 Components of a Macro
-=====================
+----
 
 A macro has three parts.
 
@@ -51,7 +51,7 @@ A macro has three parts.
 -   An output portion, defining how it expands.
 
 Macros: Syntax
-==============
+----
 
 Let’s see how they look:
 ```rust
@@ -72,7 +72,7 @@ Let’s see how they look:
     }
 ```
 Macros: Syntax
-==============
+----
 
 The `($value:expr)` part says that:
 
@@ -83,14 +83,14 @@ Parameter types can be restricted.
 For example, `$foo:ty` only accepts a type.
 
 Macros: Syntax
-==============
+----
 
 The parameters are prepended with a `$` to distinguish them.
 
 Both in the input and output.
 
 Macros: Repetitions
-===================
+----
 ```rust
     macro_rules! implement_foo_for {
         [
@@ -118,7 +118,7 @@ Macros: Repetitions
     }
 ```
 Macros: Repetitions
-===================
+----
 
 When we see `$(...)*` this is signalling a repetition. It communicates:
 
@@ -127,7 +127,7 @@ This portion of the macro takes a variable number of arguments.
 Each repetition in the input should have a matching one in the output.
 
 Macros: Custom Syntax
-=====================
+----
 ```rust
     macro_rules! email {
         ($user:expr => $domain:expr) => {
@@ -141,7 +141,7 @@ Macros: Custom Syntax
     }
 ```
 Macros: Custom Syntax
-=====================
+----
 
 Macros allow for a limited form of custom syntax and can be used to
 build simple DSLs.
@@ -150,7 +150,7 @@ For a good example of this, see
 [clap-rs](https://github.com/kbknapp/clap-rs)
 
 Downsides of Macros
-===================
+----
 
 Macros:
 
@@ -159,7 +159,7 @@ Macros:
 -   Can be confusing to read and understand.
 
 When Should You Use Macros?
-===========================
+----
 
 Use macros where there are no other good alternatives.
 

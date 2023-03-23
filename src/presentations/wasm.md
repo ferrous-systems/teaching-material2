@@ -1,7 +1,7 @@
 # WASM
 
 What?
-=====
+----
 
 WebAssembly(WASM) enables running Rust (among others) in a sandbox
 environment, including the browser.
@@ -9,13 +9,13 @@ environment, including the browser.
 WebAssembly is supported as a *compile target*.
 
 High performance
-================
+----
 
 WASM is built with speed in mind and executes almost as fast as native
 code.
 
 The WASM sandbox
-================
+----
 
 In its initial state, WASM does only provide memory and execution, no
 functionality.
@@ -23,7 +23,7 @@ functionality.
 This can be added through the host system in various ways.
 
 Hello World
-===========
+----
 ```lisp
     (module
         ;; Import the required fd_write WASI function which will write the given io vectors to stdout
@@ -55,7 +55,7 @@ Hello World
 ```
 
 WASM targets in Rust
-====================
+----
 
 Rust ships 3 WASM targets:
 
@@ -73,7 +73,7 @@ Rust ships 3 WASM targets:
     capabilities
 
 Installation: `rustup` Target
-=============================
+----
 
 `rustup` allows installing multiple compilation targets.
 ```console
@@ -81,7 +81,7 @@ rustup target install wasm32-unknown-unknown
 rustup target install wasm32-wasi
 ```
 Installing a host runtime
-=========================
+----
 
 ```console
 curl https://wasmtime.dev/install.sh -sSf | bash
@@ -91,7 +91,7 @@ curl https://wasmtime.dev/install.sh -sSf | bash
     <https://github.com/bytecodealliance/wasmtime>
 
 Usage: Hello World!
-===================
+----
 
 ```console
 cargo new hello-world
@@ -100,6 +100,6 @@ wasmtime target/wasm32-wasi/debug/main.wasm
 ```
 
 Usage: The WASI tutorial example
-================================
+----
 
 <https://github.com/kubkon/rust-wasi-tutorial.git>

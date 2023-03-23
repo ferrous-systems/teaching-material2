@@ -64,7 +64,7 @@ Some collected hints to get you started.
 -   The `assert_eq!` compares to values and panics if they don’t match!
 
 Unwrap Results and Option
-=========================
+----
 
 If you expect something to work or an item to be there, use `unwrap`:
 
@@ -80,7 +80,7 @@ This expects the operation to have worked. You can add structured error
 handling later.
 
 Strings and their slices
-========================
+----
 
 Strings and string slices work much the same.
 ```rust,editable

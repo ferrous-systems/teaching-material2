@@ -12,12 +12,12 @@ Note: this is a trimmed down version of the tutorial found in the
 [async-std book](https://book.async.rs/tutorial/index.html).
 
 1. Clone the template
-=====================
+----
 
     $ git clone git@github.com:skade/async-chat-template.git
 
 2. Protocol Specification
-=========================
+----
 
 The protocol is simple:
 
@@ -26,7 +26,7 @@ The protocol is simple:
 -   Every subsequent line is a message
 
 3. Task
-=======
+----
 
 Implement the client function so that it:
 
@@ -41,7 +41,7 @@ Go step by step, first reading the name from the input, printing it
 using `println` and then going from there.
 
 Help
-====
+----
 
 Clone everywhere
 ----------------

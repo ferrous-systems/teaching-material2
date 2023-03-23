@@ -45,7 +45,7 @@ Unsafe code should never:
     that works" bugs.
 
 Rust’s little secret
-====================
+----
 
 When implementing data structures, unsafe isn’t unusual.
 
@@ -70,7 +70,7 @@ Unsafe code must **always** be marked `unsafe`.
     }
 ```
 Traps of `unsafe`
-=================
+----
 
 -   Not all examples are that simple. `unsafe` **must** guarantee the
     invariants that Rust expects.
@@ -89,7 +89,7 @@ Rust allows you to shoot yourself in the foot, it just requires you to
 take your gun out of the holster and remove the safety first.
 
 Practical example
-=================
+----
 
 As Rust forbids aliasing, it is impossible in safe Rust to split a slice
 into 2 non-overlapping parts.
@@ -108,7 +108,7 @@ into 2 non-overlapping parts.
     }
 ```
 Highlight unsafe code in VSCode
-===============================
+----
 
 -   Will highlight which function calls are `unsafe` inside an `unsafe`
     block

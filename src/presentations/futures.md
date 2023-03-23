@@ -8,7 +8,7 @@ commonly used to build asyncronous functionality. It provides constructs
 similar to \`\`Promise\`\`s in Javascript.
 
 Notes on performance and usability
-==================================
+----
 
 -   Rust does not have an implicit runtime event loop like Node.js.
 
@@ -21,14 +21,14 @@ Notes on performance and usability
 -   The async ecosystem is still very young. Be patient!
 
 You’ve got oneshot
-==================
+----
 
 `futures::sync::oneshot` provides a basic, single use future.
 
 They feel like a channel to use, even coming with a `tx` and `rx` pair.
 
 You’ve got oneshot
-==================
+----
 ```rust,ignore,does_not_compile
     use futures::Future;
     use futures::sync::oneshot;
@@ -50,7 +50,7 @@ You’ve got oneshot
 ```
 
 You’ve got oneshot
-==================
+----
 
 What happens if we swap the `rx.wait()` and the `tx.send()`?
 
@@ -58,7 +58,7 @@ There is **no** implicit threading, calling `rx.wait()` blocks the
 thread until data is received!
 
 You’ve got oneshot (threads)
-============================
+----
 
 ```rust
     use std::thread;
@@ -81,7 +81,7 @@ You’ve got oneshot (threads)
 ```
 
 Multiple oneshots
-=================
+----
 ```rust
     const NUM_OF_TASKS: usize = 10;
 
@@ -127,7 +127,7 @@ Multiple oneshots
     }
 ```
 57 channels (and nothing on)
-============================
+----
 
 An `futures::sync::mpsc` represents a channel that will yield a series
 of futures.
@@ -139,7 +139,7 @@ pressure.
 memory.
 
 57 channels (and nothing on)
-============================
+----
 ```rust
     use std::time::Duration;
     use std::thread;
@@ -200,7 +200,7 @@ memory.
 ```
 
 Toes in the CPU pool
-====================
+----
 
 `futures-rs` comes with [`futures_cpupool`](https://docs.rs/futures-cpupool/0.1.7/futures_cpupool/)
 which provides a simple, easy to use CPU Pool type.
@@ -209,7 +209,7 @@ This allows for us to dispatch arbitrary (heterogeneous!) jobs to a pool
 without worrying about where (and when) it gets executed.
 
 Toes in the CPU pool
-====================
+----
 ```rust
     use futures::future::Future;
     use futures_cpupool::Builder;
@@ -233,7 +233,7 @@ Toes in the CPU pool
     }
 ```
 Interacting with futures
-========================
+----
 
 Most of the times you will not be creating raw futures and sending them
 around.

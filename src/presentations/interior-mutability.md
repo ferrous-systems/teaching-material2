@@ -17,7 +17,7 @@ Of course we can!
 Our prime accomplices are `Cell<T>` and `RefCell<T>`.
 
 A motivating example
-====================
+----
 
 We have some blog posts which have immutable content, and an
 incrementing view count.
@@ -26,7 +26,7 @@ Ideally, we would have a `fn view(&self) -> &'static str` to return the
 content, and increment the view count.
 
 Without `Cell` s
-================
+----
 ```rust
     #[derive(Debug, Default)]
     struct Post {
@@ -42,7 +42,7 @@ Without `Cell` s
     }
 ```
 Without `Cell` s
-================
+----
 
 This isn’t ideal! `view` takes a `&mut self`, meaning this won’t work:
 ```rust,ignore
@@ -72,7 +72,7 @@ This isn’t ideal! `view` takes a `&mut self`, meaning this won’t work:
 ```
 
 Without `Cell` s
-================
+----
 ```rust,ignore
     fn main() {
         // We need to make the entire struct mutable!
@@ -100,7 +100,7 @@ Without `Cell` s
     }
 ```
 Tossing our views into a `Cell`
-===============================
+----
 
 -   `Cell` lets us move and take **values** inside.
 
@@ -109,7 +109,7 @@ Tossing our views into a `Cell`
 Let’s see our previous example with `Cell`.
 
 Tossing our views into a `Cell`
-===============================
+----
 ```rust,ignore
     fn main() {
         let post = Post {
@@ -137,7 +137,7 @@ Tossing our views into a `Cell`
     use std::cell::Cell;
 ```
 Again with `RefCell`
-====================
+----
 ```rust,ignore
     use std::cell::RefCell;
 

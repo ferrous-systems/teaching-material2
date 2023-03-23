@@ -12,7 +12,7 @@ TODO: Ownership 2x2 cheatsheet
 Ownership is the basis for the memory management of Rust.
 
 Rules
-=====
+----
 
 -   you can use the metaphor of a physical book: I own it, I can decide
     to mutate it (e.g. by coloring in it or not), I’m responsible for
@@ -40,7 +40,7 @@ These rules:
 -   are practical in many other ways
 
 Example
-=======
+----
 ```rust,editable
     use std::fs::File;
     use std::io::Write;
@@ -66,7 +66,7 @@ Example
 -   Remove the handle and close it in the process
 
 Ownership passing
-=================
+----
 ```rust,editable
     use std::fs::File;
     use std::io::Write;
@@ -94,7 +94,7 @@ Ownership passing
 -   The value dropped here.
 
 First safety checkpoint
-=======================
+----
 ```rust,does_not_compile,ignore,editable
     use std::fs::File;
     use std::io::Write;
@@ -119,7 +119,7 @@ First safety checkpoint
 -   This is illegal.
 
 Oops!
-=====
+----
 ```console
     8  |     let file = match file_create {
        |         ---- move occurs because `file` has type `std::fs::File`, which does not implement the `Copy` trait
@@ -137,7 +137,7 @@ In Rust-Lingo, this is called `consuming`.
 The value cannot be used anymore.
 
 Background
-==========
+----
 
 When calling `write_and_close` with `file`, the value is "moved" into
 the arguments of `write_and_close`.
@@ -148,7 +148,7 @@ At that moment, ownership passes to `write_and_close`.
 or manipulate them.
 
 References & Borrowing
-======================
+----
 
 -   book metaphor: I can mutably borrow my book to a friend to color in
     it read it, and then immutably borrow it to another to look at the
@@ -181,7 +181,7 @@ Intuitively: what you own, you can borrow.
     }
 ```
 Shared references
-====================
+----
 
 `&` is the so-called "shared" reference. They are:
 
@@ -194,7 +194,7 @@ Shared references
 -   Guaranteed to never observe mutation of the pointee
 
 Mutable Borrowing
-=================
+----
 ```rust,editable
     use std::fs::File;
     use std::io::Write;
@@ -223,7 +223,7 @@ Mutable Borrowing
     }
 ```
 Mutable references
-==================
+----
 
 -   hot take: **shared** mutable data is the root of all evil. mutable
     data itself is ok, as long as you follow the ownership rules!
@@ -249,7 +249,7 @@ Values can be:
 Rust forbids *shared mutability*.
 
 Types and their ownership behaviour
-===================================
+----
 
 <table>
 <colgroup>
@@ -282,7 +282,7 @@ Types and their ownership behaviour
 </table>
 
 Collections and their ownership behaviour
-=========================================
+----
 
 <table>
 <colgroup>
@@ -310,7 +310,7 @@ Collections and their ownership behaviour
 </table>
 
 Working with moves: explicit clone
-==================================
+----
 
 What if ownership behaviour is getting messy, but we don’t want to
 reference?
@@ -343,7 +343,7 @@ Cloning is a general operation that - depending on the complexity of the
 data at hand - can be costly.
 
 Working with moves: copy instead of move
-========================================
+----
 ```rust,editable
     #[derive(Debug, Clone, Copy)]
     struct Dot {
@@ -374,14 +374,14 @@ Values that are copy follow the standard ownership rules, but they are
 copied when ownership is passed on.
 
 Warning
-=======
+----
 
 The terminology around moves is similar, but not the same to the one
 used in C++, which is why you should always use Rust-Terminology:
 Ownership, passing on ownership and consumption.
 
 Small quiz
-==========
+----
 
 `drop` is the function that deallocates a value immediately. What does
 the implementation look like?

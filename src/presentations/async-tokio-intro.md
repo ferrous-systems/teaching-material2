@@ -1,7 +1,7 @@
 [Table of Contents](./index.html)
 
 What is Tokio
-=============
+----
 
 -   Async runtime for Rust
 
@@ -10,7 +10,7 @@ What is Tokio
 -   Provides network APIs and more
 
 More than one project
-=====================
+----
 
 -   Mio
 
@@ -23,14 +23,14 @@ More than one project
 -   Tower
 
 Mio
-===
+----
 
 -   Metal I/O
 
 -   Lowest layer
 
 Example Mio
-===========
+----
 
     let addr = "127.0.0.1:13265".parse()?;
     let mut server = TcpListener::bind(addr)?;
@@ -45,7 +45,7 @@ Example Mio
         .register(&mut client, CLIENT, Interest::READABLE | Interest::WRITABLE)?;
 
 Tokio Runtime
-=============
+----
 
 -   Foundational API
 
@@ -54,7 +54,7 @@ Tokio Runtime
 -   Efficient executor for async tasks
 
 Example Tokio
-=============
+----
 
     #[tokio::main]
     async fn main() {
@@ -69,14 +69,14 @@ Example Tokio
     }
 
 Hyper
-=====
+----
 
 -   HTTP Client and Server APIs
 
 -   Support HTTP/1 and HTTP/2
 
 Example Hyper
-=============
+----
 
     #[tokio::main]
     async fn main() {
@@ -99,7 +99,7 @@ Example Hyper
     }
 
 Others
-======
+----
 
 -   Tonic: gRPC Client/Server library
 

@@ -1,7 +1,7 @@
 # Control Flow
 
 Control Flow primitives
-=======================
+----
 
 -   `if`
 
@@ -12,7 +12,7 @@ Control Flow primitives
 -   `return` and `?`
 
 Control Flow with `if`
-======================
+----
 
 ```rust,editable
     fn main() {
@@ -28,7 +28,7 @@ Control Flow with `if`
 -   Blocks need brackets, no shorthand
 
 Control Flow with `match`
-=========================
+----
 ```rust,editable
     fn main() {
         let a = 4;
@@ -43,7 +43,7 @@ Control Flow with `match`
 -   default arm
 
 Control Flow with `match` and `enums`
-=====================================
+----
 ```rust,editable
     enum Direction { //
         North(i32), //
@@ -68,7 +68,7 @@ Control Flow with `match` and `enums`
 -   … on the structure
 
 2 important enums
-=================
+----
 
 ```rust,editable
     enum Option<T> {
@@ -86,7 +86,7 @@ Control Flow with `match` and `enums`
 -   `Result` describes that an operation might return an error instead
 
 Using `Option` and `Result`
-===========================
+----
 
 ```rust,editable
     fn main() {
@@ -98,7 +98,7 @@ Using `Option` and `Result`
     }
 ```
 Using `Option` and `Result`
-===========================
+----
 
 ```rust,editable
     use std::fs::File;
@@ -114,7 +114,7 @@ Using `Option` and `Result`
     }
 ```
 Match guards
-============
+----
 
 ```rust,editable
     fn main() {
@@ -129,7 +129,7 @@ Match guards
 -   Match guards allow further refining of a `match`
 
 Combining matches
-=================
+----
 
 You can use the `|` operator to match several values in one arm.
 
@@ -149,7 +149,7 @@ You can use the `|` operator to match several values in one arm.
     }
 ```
 Shorthand: `if let` conditionals
-================================
+----
 
 ```rust,editable
     fn main() {
@@ -163,7 +163,7 @@ Shorthand: `if let` conditionals
 -   `if let` are idiomatic if only one case is of interest
 
 `loop`
-======
+----
 
 ```rust,editable
     fn main() {
@@ -179,7 +179,7 @@ Shorthand: `if let` conditionals
 `loop` is used for (potentially) infinite loops
 
 `for`
-=====
+----
 
 ```rust,editable
     fn main() {
@@ -194,7 +194,7 @@ Shorthand: `if let` conditionals
 `for` is used for iteration
 
 `while`
-=======
+----
 
 ```rust,editable
     fn main() {
@@ -214,7 +214,7 @@ Shorthand: `if let` conditionals
 `while` is used for conditional loops
 
 `break`, `continue`
-===================
+----
 
 ```rust,editable
     'outer: for i in 0..10 {
@@ -231,7 +231,7 @@ terminate current iteration or entire loop, using optional labels if not
 referring to innermost loop
 
 `return`
-========
+----
 
 ```rust,editable
     fn get_number() -> u32 {
@@ -245,7 +245,7 @@ referring to innermost loop
 -   The result of the last expression of a function is always returned
 
 `?` (early return operator)
-===
+----
 
 ```rust,editable
     use std::io;

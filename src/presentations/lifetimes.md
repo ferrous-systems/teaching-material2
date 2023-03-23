@@ -43,7 +43,7 @@ Rust’s lifetimes are notorious for being hard to understand.
 That is not necessary.
 
 Lifetimes
-=========
+----
 
 -   Lifetimes describe the time that values remain in memory
 
@@ -52,7 +52,7 @@ Lifetimes
 -   Lifetimes are types!
 
 You have used them already
-==========================
+----
 ```rust
     struct Point {
         x: i32,
@@ -70,7 +70,7 @@ You have used them already
     }
 ```
 Motivation
-==========
+----
 ```rust,does_not_compile,ignore
     struct Container<T> {
         inner: &T,
@@ -128,7 +128,7 @@ Takeaway:
 Lifetimes describe minimal conditions
 
 Multiple lifetimes in one signature
-===================================
+----
 ```rust
     // slice::split_at
 
@@ -141,7 +141,7 @@ Multiple lifetimes in one signature
     }
 ```
 Sublifetimes
-============
+----
 ```rust
     use std::str::Split;
 
@@ -198,7 +198,7 @@ Common pitfall: you cannot "shorten a lifetime", as it just describes
 what’s already there.
 
 `'static`
-=========
+----
 
 -   as part of a reference, `'static` means "lives forever"
 
@@ -241,7 +241,7 @@ also bounds in generic code.
 ```
 
 Lifetime Elision
-================
+----
 
 For simple cases, lifetimes are automatically inserted into signatures.
 ```rust
@@ -254,7 +254,7 @@ For simple cases, lifetimes are automatically inserted into signatures.
     }
 ```
 Lifetimes and Bindings
-======================
+----
 ```rust
     use std::io;
     let mut sink = io::BufWriter::new(io::stdout().lock());
@@ -264,7 +264,7 @@ Lifetimes and Bindings
 ```
 
 Lifetimes and Boxes
-===================
+----
 
 For boxes, the default lifetime bound of the contained value is
 `'static`. Sometimes, this is too long and can be overwritten:
