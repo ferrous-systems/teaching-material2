@@ -14,7 +14,7 @@ Rusts iterators are:
 -   Potentially infinite
 
 Where Do They Come From?
-========================
+----
 
 -   Collections like `Vec<T>` have an `iter()` function which yields an
     iterator.
@@ -26,7 +26,7 @@ Where Do They Come From?
 -   Iterators can be implemented on other structures as well.
 
 Owned iterators
-===============
+----
 
 ```rust,editable
     fn main() {
@@ -43,7 +43,7 @@ Owned iterators
 -   this won’t work
 
 Borrowed iterators
-==================
+----
 
 -   point out that the `for` loop "unwraps" all \`Some()\`s returned by
     the iterator for us
@@ -63,7 +63,7 @@ Borrowed iterators
     }
 ```
 Mutably Borrowed iterators
-==========================
+----
 ```rust,editable
     fn main() {
         let mut vec = vec![1,2,3];
@@ -77,7 +77,7 @@ Mutably Borrowed iterators
     }
 ```
 Conventions
-===========
+----
 
 <table>
 <colgroup>
@@ -100,10 +100,10 @@ Conventions
 </table>
 
 Common Uses
-===========
+----
 
 `next()`
-========
+----
 
 -   ask participants what they think this returns
 
@@ -122,7 +122,7 @@ Iterators can be advanced manually:
     }
 ```
 Combinators: `map()`
-====================
+----
 
 Transform items as they are evaluated:
 ```rust,editable
@@ -140,7 +140,7 @@ Transform items as they are evaluated:
     }
 ```
 Combinators: `filter()`
-=======================
+----
 
 Filter out unwanted values, skipping further computation on them:
 ```rust,editable

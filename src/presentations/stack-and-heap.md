@@ -5,7 +5,7 @@ TODO: Yeet slides to Applied Rust?
 Rust defaults to allocation on the stack
 
 Stack Allocation
-================
+----
 
 ```rust,editable
     struct Point {
@@ -18,7 +18,7 @@ Stack Allocation
     }
 ```
 Box
-===
+----
 
 Heap allocation is represented by the type `Box`.
 
@@ -34,7 +34,7 @@ Heap allocation is represented by the type `Box`.
     }
 ```
 Ownership and Borrowing
-=======================
+----
 
 `Box` is owned, but you can borrow the contained values.
 
@@ -56,12 +56,12 @@ Ownership and Borrowing
     }
 ```
 Other heap allocations
-======================
+----
 
 Other types also allocate on the heap, most notably `Vec` and `String`.
 
 Placement in
-============
+----
 
 It is currently **not** possible to allocate values at a self-chosen
 location. The missing feature is called "placement in".

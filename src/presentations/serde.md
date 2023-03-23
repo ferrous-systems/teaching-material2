@@ -1,12 +1,12 @@
 [Table of Contents](./index.html)
 
 **Ser**ialization and **De**serialization
-=========================================
+----
 
 <https://serde.rs/>
 
 `Serialize` & `Deserialize`
-===========================
+----
 
 To make a Rust structure (de)serializable:
 
@@ -24,7 +24,7 @@ To make a Rust structure (de)serializable:
     fn main() {}
 
 Formats
-=======
+----
 
 Serde supports a number of formats, such as:
 
@@ -45,7 +45,7 @@ Serde supports a number of formats, such as:
 Did you enjoy that acronym salad?
 
 `Serialize`
-===========
+----
 
 To JSON:
 
@@ -69,7 +69,7 @@ To JSON:
     enum Direction { North, South, East, West }
 
 `Deserialize`
-=============
+----
 
 From JSON:
 
@@ -89,7 +89,7 @@ From JSON:
     enum Direction { North, South, East, West }
 
 Transcode
-=========
+----
 
     use serde_transcode::transcode;
 
@@ -106,7 +106,7 @@ Transcode
     }
 
 Attributes
-==========
+----
 
 `serde` has a large number of attributes you can utilize:
 

@@ -6,7 +6,7 @@ TODO: Fix naming inconsistency in folder/presentation/filename/kebab vs snake ca
 Generics are fundamental for Rust.
 
 Generic Structs
-===============
+----
 
 ```rust,editable
     struct Point<Precision> {
@@ -20,7 +20,7 @@ Generic Structs
     }
 ```
 Type Inference
-==============
+----
 
 Rust finds the types of all variables and generics with sufficient
 information.
@@ -30,7 +30,7 @@ This only applies **inside** of function bodies.
 Signatures must always be fully specified.
 
 Generic Enums
-=============
+----
 
 -   under the hood: the compiler silently copies for all instances of
     `Either` → the compiler does the boilerplate-ing for you!
@@ -59,7 +59,7 @@ Generic Enums
     }
 ```
 Generic Functions
-=================
+----
 
 -   the pattern is always `name<type>` regardless of whether name
     is a function name, parameter name, etc

@@ -14,7 +14,7 @@ You will learn:
     console
 
 Task
-====
+----
 
 1.  Use Cargo to create a new project called `fizzbuzz`
 
@@ -46,7 +46,7 @@ Implementing the following rules:
 -   Print the returned value using `println!("{}", fizz)`
 
 Help
-====
+----
 
 This section gives partial solutions to look at or refer to.
 

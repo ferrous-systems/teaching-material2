@@ -1,7 +1,7 @@
 [Table of Contents](./index.html)
 
 Example: JavaScript
-===================
+----
 
 -   Eager execution model
 
@@ -119,7 +119,7 @@ Output: JavaScript
     promise is awaited
 
 Eager Execution: Takeaways
-==========================
+----
 
 -   as soon as async function is called it starts executing
 
@@ -270,7 +270,7 @@ Output: JavaScript
     })();
 
 Lazy Future Execution: Takeaways
-================================
+----
 
 -   no code is being run until a future is `await` ed
 

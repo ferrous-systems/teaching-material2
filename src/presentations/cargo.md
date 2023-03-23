@@ -10,7 +10,7 @@ Every release of `rustc` is shipped with a specific version of cargo.
 In general, cargo is independent of the used `rustc` version.
 
 Projects
-========
+----
 
 A cargo project contains (at minimum):
 
@@ -32,7 +32,7 @@ In addition, a cargo project can contain:
 -   examples (default directory `examples`)
 
 The Manifest
-============
+----
 
 The [Cargo Manifest](http://doc.crates.io/manifest.html) is written
 using [TOML](http://doc.crates.io/manifest.html).
@@ -50,7 +50,7 @@ It at least contains the name of the project.
 ```
 
 `cargo build`
-=============
+----
 
 `cargo build` builds the whole project and puts the result in the
 directory `target`.
@@ -67,7 +67,7 @@ binary with be unoptimized and with debug symbols!
 huge speed boost from optimizations.
 
 `cargo run`
-===========
+----
 
 If the project contains an application, you can run it using
 `+cargo run -- [Arguments]+`.
@@ -78,7 +78,7 @@ given using `+--bin <name>+`.
 The debug profile is default here.
 
 `cargo test`
-============
+----
 
 `cargo test` runs all tests.
 
@@ -90,7 +90,7 @@ Tests use the debug profile per default.
 documentation test and compilation of examples!
 
 `cargo bench`
-=============
+----
 
 `cargo bench` runs all benchmarks.
 
@@ -99,7 +99,7 @@ Benchmarks default to the release profile.
 Benchmarks can be written using the `criterion` crate.
 
 Versioning
-==========
+----
 
 In the Rust community [Semantic Versioning](https://semver.org) is the
 recommended versioning standard.
@@ -112,7 +112,7 @@ recommended versioning standard.
 -   The patch version marks bug fixes and performance improvements.
 
 Pre-release
-===========
+----
 
 If the version of a library is below `1`, it is considered
 "pre-release", which means breaking interface changes can happen with
@@ -120,7 +120,7 @@ If the version of a library is below `1`, it is considered
 version.
 
 Version expressions
-===================
+----
 
 Cargo allows expressing version ranges in different fashions.
 
@@ -135,7 +135,7 @@ Cargo allows expressing version ranges in different fashions.
 For more details, check the [docs](http://doc.crates.io/manifest.html)
 
 Version resolution
-==================
+----
 
 At the first build (or through `cargo update`), cargo calculates a
 version tree fulfilling the constraints stated in Cargo.toml.
@@ -149,7 +149,7 @@ For libraries, it can be checked in to provide a repeatable test
 environment.
 
 Dependencies in detail
-======================
+----
 
 Cargo knows 3 different kinds of dependencies:
 
@@ -160,7 +160,7 @@ Cargo knows 3 different kinds of dependencies:
 -   development/test dependencies
 
 Example
-=======
+----
 
 ```toml
 [dependencies]
@@ -172,7 +172,7 @@ quickcheck = "0.9"
 ```
 
 Dependencies in detail
-======================
+----
 
 ```toml
 [dependencies.async-std]
@@ -185,13 +185,13 @@ path = "/my/local/path"
 ```
 
 Aside
-=====
+----
 
 Dependencies outside of crates.io are forbidden if a library is to be
 published on crates.io.
 
 Local paths
-===========
+----
 
 It is possible to temporarily replace libraries with local ones.
 
@@ -205,7 +205,7 @@ Libraries found here will be preferred. This allows easy testing of
 patches.
 
 Profiles
-========
+----
 
 The cargo profiles (release, bench, test…) can be customized.
 
@@ -213,7 +213,7 @@ Details can be found in the
 [Manifest-documentation](http://doc.crates.io/manifest.html).
 
 Targets
-=======
+----
 
 -   profiles and dependencies can be configured based on the compilation
     target
@@ -225,7 +225,7 @@ Targets
 -   consider using xargo
 
 Workspaces
-==========
+----
 
 Cargo can group multiple projects in a workspace.
 
@@ -235,7 +235,7 @@ See the [manifest documentation](http://doc.crates.io/manifest.html) for
 details.
 
 Features
-========
+----
 
 `rustc` provides the ability to ignore certain code parts on
 compilation.
@@ -271,7 +271,7 @@ And then be expressed on a dependency:
 or used with `+cargo build --features experimental,other_feature`
 
 Directly invoking `rustc`
-=========================
+----
 
 `cargo rustc` invokes `rustc` directly and allows passing of additional
 parameters.

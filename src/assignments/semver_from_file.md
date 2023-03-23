@@ -36,7 +36,7 @@ expression.
     }
 
 Template
-========
+----
 
 Clone the teaching material repository at
 [github.com/ferrous-systems/teaching-material](https://github.com/ferrous-systems/teaching-material).
@@ -46,4 +46,4 @@ A template with example data can be found in folder
 It already imports (`use` s) all required items.
 
 Task: see template for details
-==============================
+----

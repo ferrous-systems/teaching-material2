@@ -19,7 +19,7 @@ To check variants of enums, `match` is used.
 ```
 
 Alternative: if-let
-===================
+----
 ```rust
     fn main() {
         let mut args = std::env::args();
@@ -47,7 +47,7 @@ Alternative: if-let
 Matches must cover all variants!
 
 Ignoring variants
-=================
+----
 ```rust
     fn main() {
         let maybe_file = std::fs::File::open("Not there!");

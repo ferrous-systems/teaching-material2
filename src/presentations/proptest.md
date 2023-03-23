@@ -1,24 +1,24 @@
 # Proptest
 
 This is your brain
-==================
+----
 
 -   Everything we know is subject to bias
 
 -   Everything we build reflects these biases
 
 Problem:
-========
+----
 
 Our code reflects our biases, our tests are often biased similarly
 
 Solution:
-=========
+----
 
 Don’t write tests
 
 Solution:
-=========
+----
 
 Write expectations
 
@@ -35,7 +35,7 @@ Write expectations
 This is called property testing
 
 Crate: **proptest**
-===================
+----
 
     // this property is false, but perhaps
     // not unreasonable to expect to be true
@@ -48,7 +48,7 @@ Crate: **proptest**
     }
 
 Crate: **proptest**
-===================
+----
 
     $ cargo test
     test mult_and_div ... FAILED
@@ -57,7 +57,7 @@ Crate: **proptest**
     test result: FAILED. 0 passed; 1 failed
 
 Crate: **proptest**
-===================
+----
 
     $ cat proptest-regressions/main.txt
     # Seeds for failure cases proptest has
@@ -97,7 +97,7 @@ It’s easy to generate more structured input, too
     }
 
 Configuration is a great target
-===============================
+----
 
     proptest! {
       #[test]
@@ -113,7 +113,7 @@ Configuration is a great target
     }
 
 Miscellaneous Tips
-==================
+----
 
 -   Isolate business logic from IO concerns
 

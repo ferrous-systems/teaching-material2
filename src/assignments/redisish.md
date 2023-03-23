@@ -15,7 +15,7 @@ You will learn:
 The library does not handle I/O.
 
 Protocol Specification
-======================
+----
 
 The protocol has two commands:
 
@@ -35,7 +35,7 @@ With the additional properties:
     `PUBLISH \n`.
 
 Task
-====
+----
 
 1.  Create a library project called `redisish`.
 
@@ -59,7 +59,7 @@ Task
     type. Run `clippy` on your codebase. Run `rustfmt` on your codebase.
 
 Help
-====
+----
 
 This section gives partial solutions to look at or refer to.
 

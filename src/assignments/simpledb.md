@@ -8,7 +8,7 @@ are formatted correctly and returns errors for the different ways the
 formatting can go wrong.
 
 You will learn how to:
-======================
+----
 
 -   write a simple Rust library from scratch
 
@@ -22,7 +22,7 @@ You will learn how to:
 The library does not handle I/O.
 
 Prerequisites
-============
+----
 
 -   basic pattern matching with `match`
 
@@ -31,7 +31,7 @@ Prerequisites
 -   familiarity with `Result<T, T>`, `Option<>`
 
 Tasks
-=====
+----
 
 ✅ Create a library project called `simple_db`.
 
@@ -199,7 +199,7 @@ them to the bottom of your `lib.rs`.
     }
 ```
 Knowledge
-=========
+----
 
 This section explains concepts necessary to solve this exercise.
 
@@ -303,7 +303,7 @@ Returning Values from branches and match arms
     statements can help.
 
 Step by Step Solution
-=====================
+----
 
 Step 1: Sorting out wrongly placed and absent newlines
 ------------------------------------------------------

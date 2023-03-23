@@ -9,7 +9,7 @@ Testing is fundamental to Rust.
 Unit, integration, and documentation tests all come builtin.
 
 Organizing Tests
-================
+----
 
 Tests typically end up in 1 of 4 possible locations:
 
@@ -22,7 +22,7 @@ Tests typically end up in 1 of 4 possible locations:
 -   In the `tests/` directory. (Public integration test)
 
 Unit Tests
-==========
+----
 
 -   Allows testing functionality in the same module and environment.
 
@@ -31,7 +31,7 @@ Unit Tests
 -   Good for testing to make sure a single action **works**.
 
 Unit Tests
-==========
+----
 ```rust,editable
     enum Direction { North, South, East, West }
 
@@ -49,7 +49,7 @@ Unit Tests
     }
 ```
 Unit Tests
-==========
+----
 
 ```console
     $ cargo test
@@ -60,7 +60,7 @@ Unit Tests
 ```
 
 `tests` Submodule
-=================
+----
 
 -   Allows testing as if the functionality is being used elsewhere in
     the project.
@@ -70,7 +70,7 @@ Unit Tests
 -   Good for testing expected processes and use cases.
 
 `tests` Submodule
-=================
+----
 
 ```rust,editable
     enum Direction { North, South, East, West }
@@ -95,7 +95,7 @@ Unit Tests
 ```
 
 `tests` Submodule
-=================
+----
 ```console
     $ cargo test
     running 1 test
@@ -104,7 +104,7 @@ Unit Tests
     test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
 ```
 Documentation Tests
-===================
+----
 
 -   Allows testing public functionality.
 
@@ -113,7 +113,7 @@ Documentation Tests
 -   For demonstrating expected use cases and examples.
 
 Documentation Tests
-===================
+----
 ```rust,ignore,editable
 /// ```rust
 /// use example::Direction;
@@ -123,7 +123,7 @@ pub enum Direction { North, South, East, West }
 ```
 
 Documentation Tests
-===================
+----
 
 ```console
     $ cargo test
@@ -140,14 +140,14 @@ Documentation Tests
 ```
 
 Integration Tests
-=================
+----
 
 -   Tests as if the crate is an external dependency.
 
 -   Intended for longer or full-function tests.
 
 Integration Tests
-=================
+----
 
 
 **`/tests/basic.rs`.**
@@ -161,7 +161,7 @@ Integration Tests
     }
 ```
 Integration Tests
-=================
+----
 ```console
     $ cargo test
     running 1 test

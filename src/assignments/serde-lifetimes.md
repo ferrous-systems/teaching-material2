@@ -9,7 +9,7 @@ In this exercise you will learn
     allocations
 
 Getting Started
-===============
+----
 
 Create a new binary project for this exercise. Add the following
 dependencies to your `Cargo.toml` file:
@@ -73,7 +73,7 @@ your JSON strings:
     "##
 
 Tasks
-=====
+----
 
 1. Serialization and Deserialization using `String` s
 -----------------------------------------------------
@@ -151,7 +151,7 @@ macro.
 Get to the point when your program prints: `is borrowed = true`
 
 Questions after this exercise
-=============================
+----
 
 1.  Why is there a need for separate `serde` and `serde-json` crates?
 

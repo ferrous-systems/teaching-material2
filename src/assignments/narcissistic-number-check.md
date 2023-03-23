@@ -2,7 +2,7 @@ In this exercise we will implement a function that returns a `bool`
 whether a number (integer) is a Narcissistic number or not.
 
 Specification
-=============
+----
 
 A number is Narcissistic number if the sum of each of its digits raised
 to the power of the number of digits is equal to the number itself. Also
@@ -20,7 +20,7 @@ You will learn:
 -   To get more practice with iterators
 
 Tasks
-=====
+----
 
 Step 1
 ------

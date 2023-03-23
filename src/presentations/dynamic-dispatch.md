@@ -9,7 +9,7 @@ at runtime instead of letting the compiler monomorphize the code.
 There’s two approaches.
 
 Dispatch through Enums
-======================
+----
 
 If the number of possible choices is limited, an Enum can be used:
 ```rust,ignore,does_not_compile
@@ -28,7 +28,7 @@ If the number of possible choices is limited, an Enum can be used:
     }
 ```
 Alternative Form
-================
+----
 ```rust,ignore,does_not_compile
     enum Operation {
         Get,
@@ -47,12 +47,12 @@ Alternative Form
     }
 ```
 Recommendation
-==============
+----
 
 Try to minimise repeated matches on the Enum, if not strictly necessary.
 
 Trait Objects
-=============
+----
 
 References or raw pointers on traits, also boxes, describe so-called
 "trait objects".
@@ -61,14 +61,14 @@ Trait objects are a pair of pointers to a virtual function table and the
 data.
 
 Limitations
-===========
+----
 
 -   You can only use one trait per object
 
 -   This trait must fulfill certain conditions
 
 Rules for object-safe traits (abbreviated)
-==========================================
+----
 
 -   Object-safe traits are **not** allowed to require `Self: Sized`
 
@@ -79,7 +79,7 @@ Rules for object-safe traits (abbreviated)
     -   They don’t use `Self`
 
 Trait Objects and Closures
-==========================
+----
 
 Closure traits fulfill object safety rules.
 
@@ -91,7 +91,7 @@ Closure traits fulfill object safety rules.
     }
 ```
 Further properties
-==================
+----
 
 -   As trait objects know about their exact type at runtime, they
     support downcasts through the `Any` trait.

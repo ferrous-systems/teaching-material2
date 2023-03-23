@@ -20,7 +20,7 @@ You will learn:
 -   Most common way to do string concatenation
 
 Specification
-=============
+----
 
 For this exercise we define
 
@@ -38,7 +38,7 @@ using the following logic:
     word
 
 Tasks
-=====
+----
 
 Step 1
 ------

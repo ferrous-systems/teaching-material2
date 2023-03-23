@@ -3,7 +3,7 @@ Mutex to moderate our queue, let’s instead use a single task and use a
 channel for synchronisation.
 
 Task
-====
+----
 
 1.  Pick a MPMC channel module (recommended tokio, async-std or
     async-channel)
@@ -22,7 +22,7 @@ you will need to implement 2 channels, one towards your mailbox and one
 backchannel.
 
 Getting started
-===============
+----
 
 Use this template:
 

@@ -1,7 +1,7 @@
 # Installation
 
 Rustup
-======
+----
 
 Rustup installs and manages Rust compiler toolchains
 
@@ -10,7 +10,7 @@ Rustup installs and manages Rust compiler toolchains
 **It is not the Rust compiler!**
 
 Hello, world! with Cargo
-========================
+----
 ```console
 cargo new hello-world
 cd hello-world
@@ -27,7 +27,7 @@ cargo run
 Hello, world!
 ```
 Important commands
-==================
+----
 ```console
 # Installation of a toolchain (here: the stable release channel)
 rustup install stable
@@ -51,7 +51,7 @@ For up-to-date information, please see [Rust Component
 History](https://rust-lang.github.io/rustup-components-history/)
 
 Contents of the toolchain
-=========================
+----
 
 TODO: infographic
 
@@ -71,7 +71,7 @@ Cargo is installed along with `rustc`, but is not tightly coupled to a
 `rustc` version.
 
 A Little Look Around
-====================
+----
 
 -   What is in Cargo.toml?
 
@@ -81,7 +81,7 @@ For details, check the [Cargo Manifest
 docs](http://doc.crates.io/manifest.html).
 
 IDEs
-====
+----
 
 -   rust-analyzer: <https://rust-analyzer.github.io>
 

@@ -8,13 +8,13 @@ TODO: Move to "Applied Rust"
 What happens in detail when values drop?
 
 Drop-Order
-==========
+----
 
 Rust generally guarantees drop order
 ([RFC1857](https://github.com/rust-lang/rfcs/issues/1857))
 
 Drop-Order
-==========
+----
 
 -   Values are dropped at the end of their scope
 
@@ -25,7 +25,7 @@ Drop-Order
 -   Structure fields are dropped **first to last**
 
 Destructors
-===========
+----
 
 Sometimes, certain actions must be taken before deallocation.
 
@@ -45,12 +45,12 @@ For this, the `Drop` trait can be implemented.
     }
 ```
 Warning!
-========
+----
 
 Destructors cannot return errors.
 
 Also possible
-=============
+----
 
 Explicit destruction of a value through a consuming function. This
 cannot be statically enforced currently.
@@ -59,7 +59,7 @@ Implementing a `Drop`-bomb (a failing destructor) can make sure this
 error is caught early.
 
 Panics
-======
+----
 
 Rust also has another error mechanism: `panic!`
 ```rust,ignore,does_not_compile,editable
@@ -91,7 +91,7 @@ only be used for fatal errors. They cannot be (normally) caught.
 The affected thread dies.
 
 Catching Panics
-===============
+----
 
 Panicking across FFI-boundaries is undefined behaviour. In these cases,
 panics *must* be caught. For cases like this, there are
@@ -100,7 +100,7 @@ and
 [std::panic::resume-unwind](https://doc.rust-lang.org/std/panic/fn.resume_unwind.html).
 
 Hooks
-=====
+----
 
 [std::panic::set\_hook](https://doc.rust-lang.org/std/panic/fn.set_hook.html)
 allows setting a global handler that is run **before** the unwinding
@@ -113,7 +113,7 @@ In general, `Result` is always the right way to propagate errors if they
 are to be handled.
 
 Abort
-=====
+----
 
 In some environments, unwinding on `panic!` is not very meaningful. For
 those cases, `rustc` and `cargo` have a switch that immediately aborts
@@ -122,7 +122,7 @@ the program on panic.
 The panic hook is executed.
 
 Double-panics
-=============
+----
 
 Panicking while a panic is being handled - for example in a destructor -
 invokes undefined behaviour. For that reason, the program will

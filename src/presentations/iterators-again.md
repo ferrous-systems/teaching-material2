@@ -1,7 +1,7 @@
 # Iterators again
 
 Returning Generic Iterators
-===========================
+----
 
 Currently, Rust allows no generic return values. You have to use impl
 trait here.

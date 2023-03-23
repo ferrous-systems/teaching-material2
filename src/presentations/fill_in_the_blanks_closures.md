@@ -1,5 +1,5 @@
 Task
-====
+----
 
 Take the code snippet at the end of this sheet and complete it where
 indicated with `✅ TODO`.
@@ -18,7 +18,7 @@ When you’re done, it should print the following output:
     empty haystack: [(), (), (), (), ()]
 
 Code snippet to be completed
-============================
+----
 
     // NOTE: Once you're done, your ouput could look like this:
     //
@@ -91,7 +91,7 @@ Code snippet to be completed
     }
 
 Note for Instructors
-====================
+----
 
 Distribute the code snippet below in a
 [playground](https://play.rust-lang.org)

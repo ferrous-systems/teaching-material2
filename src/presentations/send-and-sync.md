@@ -19,7 +19,7 @@ These traits are what Rust uses to prevent data races.
 They are **automatically derived** for all types if appropriate.
 
 Automatically Derived
-=====================
+----
 ```rust
     use std::thread;
 
@@ -43,7 +43,7 @@ There are some notable types which are not `Send` or `Sync`.
 Such as `Rc`, raw pointers, and `UnsafeCell`.
 
 Example: `Rc`
-=============
+----
 ```rust,ignore,does_not_compile
     use std::rc::Rc;
     use std::thread;
@@ -58,7 +58,7 @@ Example: `Rc`
     }
 ```
 Example: `Rc`
-=============
+----
 
 ```console
     error[E0277]: the trait bound `std::rc::Rc<bool>: std::marker::Send` is not satisfied
@@ -69,7 +69,7 @@ Example: `Rc`
 ```
 
 Implementing
-============
+----
 
 It’s possible to add the implementation of `Send` and `Sync` to a type.
 ```rust
@@ -82,13 +82,13 @@ It’s possible to add the implementation of `Send` and `Sync` to a type.
 In these cases, the task of thread safety is left to the implementor.
 
 Relationships
-=============
+----
 
 If a type implements both `Sync` and `Copy` then it can also implement
 `Send`.
 
 Relationships
-=============
+----
 
 A type `&T` can implement `Send` if the type `T` also implements `Sync`.
 ```rust,ignore,does_not_compile
@@ -96,7 +96,7 @@ A type `&T` can implement `Send` if the type `T` also implements `Sync`.
 ```
 
 Relationships
-=============
+----
 
 A type `&mut T` can implement `Send` if the type `T` also implements
 `Send`.
@@ -106,12 +106,12 @@ A type `&mut T` can implement `Send` if the type `T` also implements
 ```
 
 Consequences
-============
+----
 
 What are the consequences of having `Send` and `Sync`?
 
 Consequences
-============
+----
 
 Carrying this information at the type system level allows driving data
 race bugs down to a **compile time** level.

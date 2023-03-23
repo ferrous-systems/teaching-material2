@@ -8,7 +8,7 @@ You will learn:
 -   How to use terrariums sync and async interface
 
 Task
-====
+----
 
 1.  Create a new Terrarium project
 
@@ -22,7 +22,7 @@ Task
 3.  If the request method was not POST, respond with status `405`
 
 Helpers
-=======
+----
 
 Making backend requests
 -----------------------

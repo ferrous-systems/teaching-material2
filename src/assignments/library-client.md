@@ -1,5 +1,5 @@
 An FFI based chat client
-========================
+----
 
 Using a Rust library, implement an FFI based chat client
 

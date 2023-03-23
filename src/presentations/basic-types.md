@@ -1,7 +1,7 @@
 # Basic types
 
 ints
-====
+----
 
 Rust comes with all standard int types, with and without sign
 
@@ -16,7 +16,7 @@ Rust comes with all standard int types, with and without sign
 -   `i128`, `u128`
 
 Syntactic clarity in specifying numbers
-=======================================
+----
 
 ```rust,ignore,editable
     123_456   // underscore as separator
@@ -27,14 +27,14 @@ Syntactic clarity in specifying numbers
 ```
 
 Architecture-dependent numbers
-==============================
+----
 
 Rust comes with two architecture-dependent number types:
 
 -   `isize`, `usize`
 
 Casts
-=====
+----
 
 Casts between number are possible, **also shortening casts**:
 
@@ -50,13 +50,13 @@ Casts between number are possible, **also shortening casts**:
 If the size isn’t given, or cannot be inferred, ints default to `i32`.
 
 Overflows
-=========
+----
 
 Overflows trigger a trap in Debug mode, but not in release mode. This
 behaviour can be configured.
 
 Floats
-======
+----
 
 Rust also comes with floats of all standard sizes: `f32`, `f64`
 
@@ -66,13 +66,13 @@ Rust also comes with floats of all standard sizes: `f32`, `f64`
     }
 ```
 Boolean
-=======
+----
 
 Boolean in Rust is represented by either of two values: `true` or
 `false`
 
 Character
-=========
+----
 
 `char` is a [Unicode Scalar
 Value](https://www.unicode.org/glossary/#unicode_scalar_value) being
@@ -108,7 +108,7 @@ represented as a "single character"
 ```
 
 Arrays
-======
+----
 
 Fixed-size arrays have the following notation:
 
@@ -118,7 +118,7 @@ Fixed-size arrays have the following notation:
     }
 ```
 Arrays of dynamic size
-======================
+----
 
 Arrays of dynamic size in Rust are represented as slices.
 

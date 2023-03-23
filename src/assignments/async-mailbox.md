@@ -1,5 +1,5 @@
 The async mailbox
-=================
+----
 
 In this exercise, you will learn how to turn a small server implemented
 using threads into an asynchronous server.

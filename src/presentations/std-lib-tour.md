@@ -8,7 +8,7 @@ It’s time for a tour of some interesting parts in `std`.
 We will focus on parts we have not otherwise covered.
 
 Collections
-===========
+----
 
 [`std::collections`](https://doc.rust-lang.org/std/collections/index.html)
 
@@ -23,7 +23,7 @@ Contains a number of valuable data structures. In particular:
 When seeking to optimize code other options may be appropriate.
 
 Entry
-=====
+----
 
 [`std::collections::hash_map::Entry`](https://doc.rust-lang.org/std/collections/hash_map/enum.Entry.html)
 
@@ -46,7 +46,7 @@ Calling `.entry()` on a `HashMap` accesses this API and allows for
 ```
 
 PhantomData
-===========
+----
 
 [`std::marker::PhantomData`](https://doc.rust-lang.org/std/marker/struct.PhantomData.html)
 
@@ -67,7 +67,7 @@ unsafe code.
 ```
 
 Command
-=======
+----
 
 [`std::process::Command`](https://doc.rust-lang.org/std/process/struct.Command.html)
 
@@ -87,7 +87,7 @@ Used for interacting with other executables.
     }
 ```
 Synchronization Primitives
-==========================
+----
 
 [`std::sync`](https://doc.rust-lang.org/std/sync/)
 
@@ -110,7 +110,7 @@ s.
     }
 ```
 Read and Write
-==============
+----
 
 [`std::io::Read`](https://doc.rust-lang.org/std/io/trait.Read.html) & [`std::io::Write`](https://doc.rust-lang.org/std/io/trait.Write.html)
 
@@ -137,7 +137,7 @@ Also part of
     }
 ```
 Filesystem Manipulation
-=======================
+----
 
 [`std::fs`](https://doc.rust-lang.org/std/fs/) &
 [`std::path`](https://doc.rust-lang.org/std/path/)

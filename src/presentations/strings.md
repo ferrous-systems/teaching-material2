@@ -8,7 +8,7 @@ There are several different kinds of strings in Rust.
 Most common are `String` and `&str`.
 
 `String`
-========
+----
 
 -   **Owns** the data it stores, and can be mutated freely.
 
@@ -19,7 +19,7 @@ Most common are `String` and `&str`.
 -   Does not implement `Copy`, but implements `Clone`.
 
 `&str`
-======
+----
 
 -   A shared reference to a string slice.
 
@@ -28,7 +28,7 @@ Most common are `String` and `&str`.
 -   May be anywhere, on the heap, stack, or in program memory.
 
 Creation
-========
+----
 ```rust,editable
     fn main() {
         // &'static str
@@ -40,7 +40,7 @@ Creation
     }
 ```
 When to Use What?
-=================
+----
 
 -   `String` is the **easiest** to use when starting out. Refine later.
 
@@ -50,7 +50,7 @@ When to Use What?
 -   `&str` is typically used in function arguments.
 
 `Deref` Coercion
-================
+----
 
 Just because multiple types exist doesn’t mean they can’t work in
 harmony.
@@ -65,7 +65,7 @@ harmony.
 This is because `String` s implement `Deref<Target=str>` .
 
 Exotic String types
-===================
+----
 
 -   `OsStr` and `OsString` may show up when working with file systems or
     system calls.
@@ -76,13 +76,13 @@ The differences between `[Os|C]Str` and `[Os|C]String` are generally the
 same as the normal types.
 
 `OsString` & `OsStr`
-====================
+----
 
 These types represent **platform native** strings. This is necessary
 because Unix and Windows strings have different characteristics.
 
 Behind the `OsString` Scenes
-============================
+----
 
 -   Unix strings are often arbitrary non-zero sequences, usually
     interpreted as UTF-8.
@@ -96,7 +96,7 @@ Behind the `OsString` Scenes
 to and from `String` and `str`.
 
 `CString` & `CStr`
-==================
+----
 
 These types represent valid C compatible strings.
 
@@ -106,7 +106,7 @@ It is strongly recommended you read **all** of the documentation on
 these types before using them.
 
 Common String Tasks
-===================
+----
 
 Splitting:
 ```rust,editable
@@ -117,7 +117,7 @@ Splitting:
     }
 ```
 Common String Tasks
-===================
+----
 
 Concatenation:
 ```rust,editable
@@ -129,7 +129,7 @@ Concatenation:
     }
 ```
 Common String Tasks
-===================
+----
 
 Replacing:
 ```rust,editable
@@ -140,7 +140,7 @@ Replacing:
     }
 ```
 Accepting `String` or `str`
-===========================
+----
 
 It’s possible to accept either rather painlessly:
 ```rust,editable
@@ -155,7 +155,7 @@ It’s possible to accept either rather painlessly:
     }
 ```
 Raw String Literals
-===================
+----
 
 -   Starts with `r` followed by zero or more `#` followed by `"`
 
@@ -178,7 +178,7 @@ Raw String Literals
     }
 ```
 Byte String Literals
-====================
+----
 
 -   not really strings
 

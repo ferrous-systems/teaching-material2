@@ -51,7 +51,7 @@ assert\_eq!(calc\_green\_and\_yellow(&\[1, 3, 3, 2\], &\[2, 2, 2, 1\]),
 "🟨 ⬜ ⬜ 🟨".to\_string()); } \`\`\`
 
 Step 1.
-=======
+----
 
 Use the "rand" crate to generate a secret number.
 
@@ -59,7 +59,7 @@ Use the "rand" crate to generate a secret number.
 ).collect(); \`\`\`
 
 Step 2.
-=======
+----
 
 Parse the input strings (the user’s guess).
 
@@ -76,7 +76,7 @@ Parse the input strings (the user’s guess).
     ```
 
 Step 3.
-=======
+----
 
 If the guess is correctly formed, return the appropriate combination of
 green and yellow squares.
@@ -85,7 +85,7 @@ green and yellow squares.
 println!("{:?} got {}", guess, squares); \`\`\`
 
 Step 4.
-=======
+----
 
 Write the `calc_green_and_yellow` function.
 
@@ -98,6 +98,6 @@ way you don’t count anything twice.
 Make sure all the tests pass.
 
 Step 5.
-=======
+----
 
 Play the game.

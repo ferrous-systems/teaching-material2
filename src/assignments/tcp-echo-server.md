@@ -9,7 +9,7 @@ You will learn:
 -   How to handle a connection lifecycle
 
 Task
-====
+----
 
 1.  Accept TCP connections on port `127.0.0.1:7878`
 
@@ -20,7 +20,7 @@ Task
 4.  Echo it back to the client
 
 Getting started
-===============
+----
 
 Use this template:
 
@@ -46,7 +46,7 @@ Read the documentation for the `std::io::Read`, `std::io::Write` traits,
 especially `Read::read_to_string` and `Write::write_all`.
 
 Hints
-=====
+----
 
 Blanket import of `io` functionality
 ------------------------------------

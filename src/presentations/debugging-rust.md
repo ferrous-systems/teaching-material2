@@ -1,21 +1,21 @@
 [Table of Contents](./index.html)
 
 tl;dr
-=====
+----
 
 **VSCode + CodeLLDB**
 
 The best debugging experience on Windows, Linux, and macOS
 
 Honorable Mentions
-==================
+----
 
 -   IntelliJ Rust
 
 -   `rr` / Pernosco for time-traveling and postmortem debugging
 
 How Debuggers Work
-==================
+----
 
 Debuggers use special metadata embedded into executable to correctly
 match bits of machine code to lines of source code, areas of memory to
@@ -24,7 +24,7 @@ variables and their types, etc.
 Kinda like Source Maps for JavaScript.
 
 How Debuggers Work
-==================
+----
 
 Two things have to happen for a debugger to work and provide decent
 developer experience:
@@ -35,7 +35,7 @@ developer experience:
     information.
 
 How Debuggers Work
-==================
+----
 
 Two things have to happen for a debugger to work and provide decent
 developer experience:
@@ -46,7 +46,7 @@ developer experience:
     information.
 
 Compiler
-========
+----
 
 `rustc` uses `llvm` which emits debug info in DWARF or PDB format.
 
@@ -58,7 +58,7 @@ Compiler
     including GNU toolchains on Windows (like `x86_64-pc-windows-gnu`)
 
 DWARF
-=====
+----
 
 -   Open standard.
 
@@ -70,13 +70,13 @@ DWARF
     debuggers work out of the box.
 
 Extending DWARF
-===============
+----
 
 DWARF standard is growing organically over time and largely
 implementation driven.
 
 Extending DWARF
-===============
+----
 
 1.  Come up with a new name for Rust-specific DWARF field.
 
@@ -91,7 +91,7 @@ Standardizing takes almost no time due to how few people in the world
 actually work on DWARF.
 
 PDB
-===
+----
 
 -   Proprietary format with no documentation.
 
@@ -109,7 +109,7 @@ You may have a better experience debugging Rust on macOS or Linux than
 on Windows, because of PDB.
 
 How Debuggers Work
-==================
+----
 
 Two things have to happen for a debugger to work and provide decent
 developer experience:
@@ -120,7 +120,7 @@ developer experience:
     information.**
 
 Debuggers
-=========
+----
 
 -   [GDB](https://sourceware.org/gdb/onlinedocs/gdb/Rust.html)
 
@@ -129,7 +129,7 @@ Debuggers
 IDEs and editors rely on these two to provide GUI debugging
 
 GDB
-===
+----
 
 -   Supports a lot of languages.
 
@@ -138,7 +138,7 @@ GDB
 -   Harder to contribute in general.
 
 LLDB
-====
+----
 
 -   **Default choice for Rust.**
 
@@ -151,7 +151,7 @@ LLDB
     enough for Rust.
 
 LLDB
-====
+----
 
 Rust project maintains a fork of LLDB with extended support for the
 language.
@@ -163,14 +163,14 @@ language.
 -   Non-Rust-specific bug fixes get upstreamed to main LLVM repository
 
 Wrappers
-========
+----
 
 Rust comes with `rust-gdb` and `rust-lldb` wrappers around debuggers.
 
 They improve visualizing Rust values printed in console.
 
 Editors and IDEs
-================
+----
 
 **Rust-analyzer** does not come with debugger support on its own.
 
@@ -179,7 +179,7 @@ Instead it relies on other editor / ide plugins for debugging support.
 Prompts you to install one when you open a Rust project.
 
 VSCode Extensions
-=================
+----
 
 -   [Microsoft C/C++
     extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools).
@@ -190,7 +190,7 @@ VSCode Extensions
 -   [CodeLLDB](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb).
 
 CodeLLDB.
-=========
+----
 
 -   LLDB-only.
 
@@ -210,7 +210,7 @@ Microsoft’s extension offers better support for displaying PDB
 information on Windows.
 
 IntelliJ-Rust
-=============
+----
 
 -   A plugin for IDEA and CLion
 
@@ -222,7 +222,7 @@ IntelliJ-Rust
 -   Requires a JB license.
 
 What to use?
-============
+----
 
 -   **VSCode + CodeLLDB offer the best debugging experience across all
     platforms.**
@@ -236,7 +236,7 @@ What to use?
     platforms where only GDB is available.
 
 `rr`
-====
+----
 
 -   [A Linux-only terminal-based time-traveling
     debugger.](https://rr-project.org)
@@ -249,7 +249,7 @@ What to use?
 -   May help you in very difficult situations.
 
 Things may not work well
-========================
+----
 
 -   PDB may result in subpar debugging experience.
 
@@ -271,7 +271,7 @@ Things may not work well
     resolve.
 
 When debugger fails you
-=======================
+----
 
 -   Try to isolate the code in question into smaller functions.
 
@@ -280,7 +280,7 @@ When debugger fails you
 -   Tests.
 
 Future
-======
+----
 
 -   **New [Rust
     Debugging](https://blog.rust-lang.org/inside-rust/2022/02/22/compiler-team-ambitions-2022.html#debugging-aspirations-)

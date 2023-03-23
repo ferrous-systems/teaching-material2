@@ -7,7 +7,7 @@ Rust calls libraries `crates`. Management of crates is generally done
 through `cargo`, but this is not strictly necessary.
 
 Usage of libraries
-==================
+----
 
 In Rust 2015 you need to declare crates via the
 `extern crate`-statement.
@@ -48,7 +48,7 @@ declared via cargo can simply be used with `use`-statements.
     }
 ```
 Macro usage
-===========
+----
 
 Since Rust 2018 you no longer have to explicitly import macros, they
 work just like functions.
@@ -87,12 +87,12 @@ Alternative: rename dependencies via cargo:
     bar = { version = "0.1", package = "actually_its_bar_these_days" }
 ```
 crates.io
-=========
+----
 
 Published crates can be found on [crates.io](https://crates.io), their
 documentation is automatically published to [docs.rs](https://docs.rs).
 
 Crates and Applications
-=======================
+----
 
 `cargo install my_crate` installs the applications shipped with a crate.

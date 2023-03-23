@@ -8,7 +8,7 @@ Rust offers several special pointers to handle different scenarios.
 They all have something in common: They are managed by ownership.
 
 `std::rc::Rc<T>`
-================
+----
 
 Runtime reference counted within a thread.
 ```rust
@@ -26,7 +26,7 @@ Runtime reference counted within a thread.
     }
 ```
 Semantics
-=========
+----
 
 -   `Rc` is a handle on the contained data
 
@@ -37,7 +37,7 @@ Semantics
 -   `Rc<T>` implements `Deref<Target=T>`
 
 `std::rc::Weak<T>`
-==================
+----
 
 Weak pointer to data.
 ```rust
@@ -55,7 +55,7 @@ Weak pointer to data.
     }
 ```
 Semantics
-=========
+----
 
 -   Similar to `Rc`, however the existence of the data is not guaranteed
 
@@ -67,7 +67,7 @@ Semantics
 -   `Rc` cycles are memory leaks, weak pointers prevent that
 
 Use
-===
+----
 
 -   Frequently used in data structures that require complex cross
     references
@@ -75,19 +75,19 @@ Use
 -   Higher runtime costs for more flexibility
 
 `std::sync::Arc<T>`
-===================
+----
 
 A more expensive `Rc` which works across thread boundaries since an
 atomic counter is used for incrementing.
 
 Remark
-======
+----
 
 Do not use `Arc` on a hunch. `rustc` rejects code using `Rc` over thread
 boundaries.
 
 `std::borrow::Cow`
-==================
+----
 
 -   Copy-on-write
 

@@ -9,7 +9,7 @@ mutability.
 Where does Rust land?
 
 An Example
-==========
+----
 
 ```rust,does_not_compile, ignore, editable
     fn main() {
@@ -18,7 +18,7 @@ An Example
     }
 ```
 Correct
-=======
+----
 ```rust,editable
     fn main() {
         let mut answer = 42;

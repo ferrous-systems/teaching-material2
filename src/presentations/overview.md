@@ -32,7 +32,7 @@ fn generate_random_number() -> i32 {
 
 ---
 What is Rust?
-=============
+----
 
 - Rust is an empathic systems programming language that is determined to not let you shoot yourself in the foot.
 
@@ -40,7 +40,7 @@ What is Rust?
 ---
 
 A Little Bit of History
-=======================
+----
 
 -   Rust began around 2008
 
@@ -56,7 +56,7 @@ A Little Bit of History
 ---
 
 Focus
-=====
+----
 
 -   Rust has lost many features from 2012 to 2014
 
@@ -70,7 +70,7 @@ Focus
 ---
 
 Development
-===========
+----
 
 -   Always together with a larger project (e.g. Servo)
 
@@ -80,7 +80,7 @@ Development
 ---
 
 Release Method
-==============
+----
 
 -   Nightly releases
 
@@ -98,7 +98,7 @@ Release Method
 ---
 
 Goals
-=====
+----
 
 -   Explicit over implicit
 
@@ -117,7 +117,7 @@ spend time discussing the impact of many features on large projects.
 ---
 
 The Four Words
-===============
+----
 
 -   Safe
 
@@ -131,7 +131,7 @@ The Four Words
 ---
 
 Safe
-====
+----
 
 -   Rust is memory-safe
 
@@ -145,7 +145,7 @@ Safe
 ---
 
 Concurrent
-==========
+----
 
 -   "Concurrency without fear"
 
@@ -160,7 +160,7 @@ Concurrent
 ---
 
 Fast
-====
+----
 
 -   These properties are guaranteed at compile time and have no runtime
     cost!
@@ -182,7 +182,7 @@ Fast
 ---
 
 Pragmatic
-=========
+----
 
 -   Great tooling
 
@@ -198,7 +198,7 @@ Pragmatic
 ---
 
 Where do Rustaceans come from?
-==============================
+----
 
 From diverse backgrounds:
 

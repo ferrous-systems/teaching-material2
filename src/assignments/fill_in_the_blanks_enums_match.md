@@ -1,5 +1,5 @@
 Task
-====
+----
 
 Take the code snippet at the end of this sheet and complete its
 `match statement` in the indicated places. When you’re done, it should
@@ -12,13 +12,13 @@ print the following output:
         Worm says: "-- (silence)"
 
 Note for Instructors
-====================
+----
 
 Distribute the code snippet below in a
 [playground](https://play.rust-lang.org)
 
 Code snippet to be completed
-============================
+----
 
     #[derive(PartialEq, Debug)]
     enum FarmAnimal {

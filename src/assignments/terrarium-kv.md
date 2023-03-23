@@ -7,7 +7,7 @@ You will learn:
 -   How to react differently based on HTTP method
 
 Task
-====
+----
 
 1.  Create a new Terrarium project
 

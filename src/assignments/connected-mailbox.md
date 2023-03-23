@@ -1,5 +1,5 @@
 The mailbox
-===========
+----
 
 Bring your TCP server and the protocol we wrote yesterday together.
 
@@ -49,7 +49,7 @@ Implement `std::error::Error` for all your error types and start passing
 around a dynamically dispatched error.
 
 Note
-====
+----
 
 To send and receive messages, you can either use `nc` or `telnet`.
 Alternatively, you can use the client provided:
@@ -64,7 +64,7 @@ The help section omits Step 4, "proper error handling" and makes the
 server panic if bad data is received.
 
 Parsing a command from a TCPStream
-==================================
+----
 
 We highly recommend moving reading and parsing into its own function.
 
@@ -86,7 +86,7 @@ We highly recommend moving reading and parsing into its own function.
 -   Parse the incoming buffer
 
 Handling the received command
-=============================
+----
 
 You can copy-paste this snippet to quickly set you up reading and
 matching commands.

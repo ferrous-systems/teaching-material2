@@ -1,14 +1,14 @@
 [Table of Contents](./index.html)
 
 Concurrency
-===========
+----
 
     graph TD
       A[Concurrency] --> B[Asynchrony]
       A --> C[Parallelism]
 
 Parallelism
-===========
+----
 
 -   Running on multiple OS/hardware threads
 
@@ -17,7 +17,7 @@ Parallelism
 -   Handled by OS
 
 Parallelism
-===========
+----
 
 -   Running on multiple OS/hardware threads
 
@@ -28,7 +28,7 @@ Parallelism
 -   Best for: **CPU-bound workloads**
 
 Asynchrony
-==========
+----
 
 -   Lightweight tasks
 
@@ -37,7 +37,7 @@ Asynchrony
 -   Needs user-level scheduler (executor)
 
 Asynchrony
-==========
+----
 
 -   Lightweight tasks
 
@@ -48,7 +48,7 @@ Asynchrony
 -   Best for: **I/O-bound workloads**
 
 Asynchronous Advantages
-=======================
+----
 
 -   Many thousands of tasks simultaneously
 
@@ -57,7 +57,7 @@ Asynchronous Advantages
 -   Many I/O requests in flight
 
 Asynchrony in Rust
-==================
+----
 
 Example: making an HTTP request
 
@@ -72,7 +72,7 @@ Example: making an HTTP request
     }
 
 Async
-=====
+----
 
 -   *async* marks a function as asynchronous
 
@@ -81,7 +81,7 @@ Async
 -   Running function creates the future
 
 Await
-=====
+----
 
 -   *.await* creates an await point
 
@@ -90,7 +90,7 @@ Await
 -   *.await* returns when the future has finished
 
 Asynchrony in Rust
-==================
+----
 
     async fn fetch_into_string(url: &str) -> Result<String, Box<dyn Error + Send + Sync>> {
         let url: hyper::Uri = url.parse()?;
@@ -105,7 +105,7 @@ Asynchrony in Rust
 -   Question: How many tasks are running concurrently?
 
 Asynchrony in Rust
-==================
+----
 
 -   By default no asynchrony in async/await
 
@@ -118,7 +118,7 @@ Asynchrony in Rust
     -   Select: wait for one async task to complete
 
 Join example
-============
+----
 
     let check_example = is_website_up("http://example.com");
     let check_forever = is_website_up("http://httpforever.com");
@@ -126,7 +126,7 @@ Join example
     let (example_result, forever_result) = join!(check_example, check_forever);
 
 Select example
-==============
+----
 
     select! {
         example = fetch_into_string("http://example.com") =>
@@ -136,14 +136,14 @@ Select example
     }
 
 Make Futures Go
-===============
+----
 
 -   `Future` s are **lazy**
 
 -   executor (single-threaded or multi-threaded)
 
 Make Futures Go
-===============
+----
 
 Do lines 1 and 2 print?
 
@@ -162,7 +162,7 @@ Do lines 1 and 2 print?
     }
 
 Running tasks
-=============
+----
 
     use futures::executor::block_on;
 
@@ -176,7 +176,7 @@ Running tasks
     }
 
 `block_on`
-==========
+----
 
 -   takes a future
 
@@ -185,7 +185,7 @@ Running tasks
 -   async runtimes provide this method
 
 Runtimes
-========
+----
 
     fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
         let rt = tokio::runtime::Runtime::new()?;
@@ -199,7 +199,7 @@ Runtimes
     }
 
 "Async Main" Pattern
-====================
+----
 
     #[tokio::main]
     async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
@@ -207,7 +207,7 @@ Runtimes
     }
 
 Why Many Runtimes
-=================
+----
 
 -   `tokio` - a high-performant multithreaded runtime
 
@@ -218,7 +218,7 @@ Why Many Runtimes
 -   task executor, scheduler, non-blocking IO APIs
 
 Multithreading
-==============
+----
 
 -   `block_on` runs tasks on a single tread
 
@@ -243,13 +243,13 @@ Multithreading
 -   other runtimes may have similar APIs
 
 Multithreading
-==============
+----
 
 Use concurrency primitives to pass or share data between async blocks:
 \* `Arc`, `Mutex`, channels, etc.
 
 `std::sync::Mutex` vs `<runtime>::Mutex`
-========================================
+----
 
 -   use `std::sync::Mutex` if critical section is short and doesn’t have
     `await` s in it.
@@ -257,7 +257,7 @@ Use concurrency primitives to pass or share data between async blocks:
 -   use runtime’s `Mutex` otherwise.
 
 Compatibility
-=============
+----
 
 -   thin compatibility layer based on `std::future::Future`
 
@@ -266,7 +266,7 @@ Compatibility
 -   standardization of other APIs is in progress
 
 Reading an async stream
-=======================
+----
 
 -   no async iterators in the language yet
 
@@ -283,7 +283,7 @@ Reading an async stream
     }
 
 Async Traits
-============
+----
 
 -   a big missing piece of the puzzle
 
@@ -302,7 +302,7 @@ Async Traits
 -   each runtime brings their own implementations!
 
 Libraries
-=========
+----
 
 -   has to either choose one runtime to work on
 
@@ -311,7 +311,7 @@ Libraries
 -   `tokio` has the largest ecosystem
 
 Future of Async in Rust
-=======================
+----
 
 -   async traits!
 
