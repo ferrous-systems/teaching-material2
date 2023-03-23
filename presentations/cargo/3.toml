@@ -1,4 +1,0 @@
-[dependencies.async-std]
-version = "1"
-git = "https://github.com/skade/async-std.git"
-branch = "my-new-feature"

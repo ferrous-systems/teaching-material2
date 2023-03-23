@@ -9,7 +9,7 @@ graph TD;
     A(Rust Fundamentals)-->B(Applied Rust);
     B-->C(FFI Module);
     B-->D(Async Rust);
-    B-->E(Embedded Rust);
+    A-->E(Embedded Rust);
     F(Why Rust?);
 ```
 

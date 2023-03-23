@@ -1,8 +1,0 @@
-[package]
-name = "tcp-mailbox"
-version = "0.1.0"
-authors = ["Florian Gilcher <florian.gilcher@ferrous-systems.com>"]
-
-[dependencies]
-async-std = "1" # would also choose 1.5
-clap = "2.2" # would also choose 2.3

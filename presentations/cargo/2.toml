@@ -1,8 +1,0 @@
-[dependencies]
-async-std = "1"
-
-[build-dependencies]
-cbindgen = "0.5"
-
-[dev-dependencies]
-quickcheck = "0.9"
