@@ -42,7 +42,7 @@ non-urls.
 
 ✅ Filter out empty lines and print the non-empty ones.
 
-✅ Write a function that parses each line and returns Some(url) if the line is a URL, and `None` if it is not. Use the Url crate [Url
+✅ Write a function that parses each line and returns `Some(url)` if the line is a URL, and `None` if it is not. Use the Url crate's [Url 
     Type](https://docs.rs/url/2.1.1/url/)
 
 ## Knowledge
