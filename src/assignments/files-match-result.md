@@ -71,7 +71,7 @@ expression.
 ### How to use `match`
 
 `match` is a way of control flow based on pattern matching. A pattern on
-the one left evaluates to an expression on the right side.
+the left results in the expression on the right side.
 
 ```rust
 match VALUE {
