@@ -32,7 +32,7 @@ non-urls.
 ✅ Fix the runtime error by correcting the file path. 
 
 ✅ Manually unwrap the `Result` type that is returned from the
-    File::open() with a match statement, so that the .unwrap() can be
+    `File::open()` with a match statement, so that the `.unwrap()` can be
     deleted.
 
 ✅ Move this manual unwrap to it’s own function.
