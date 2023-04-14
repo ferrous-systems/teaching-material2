@@ -26,23 +26,23 @@ non-urls.
 ## Task
 
 ✅ Clone the teaching material repository at
-[github.com/ferrous-systems/teaching-material](https://github.com/ferrous-systems/teaching-material2).
+[github.com/ferrous-systems/teaching-material](https://github.com/ferrous-systems/teaching-material).
 
 [todo!] add correct location once it's definite.
 ✅ Fix the runtime error by correcting the file path. 
 
 ✅ Manually unwrap the `Result` type that is returned from the
-    File::open() with a match statement, so that the .unwrap() can be
+    `File::open()` with a match statement, so that the `.unwrap()` can be
     deleted.
 
-✅ Move this manual unwrap to it’s own function.
+✅ Move this manual unwrap to its own function.
 
 ✅ Read the content of the file to a buffer and count the lines in a
     for loop.
 
 ✅ Filter out empty lines and print the non-empty ones.
 
-✅ Write a function that parses each line and returns Some(url) if the line is a URL, and `None` if it is not. Use the Url crate [Url
+✅ Write a function that parses each line and returns `Some(url)` if the line is a URL, and `None` if it is not. Use the Url crate's [Url 
     Type](https://docs.rs/url/2.1.1/url/)
 
 ## Knowledge
@@ -53,8 +53,7 @@ Both `Option` and `Result` are similar in a way. Both have two
 variants, and depending on what those variants are, the program may
 continue in a different way.
 
-The `Option` Type can have the variant `Some(<some other type>)` or
-`None`. It is used, when you have to handle optional values. For example
+The Option type can have the variant `Some(T)` or `None`. `T` is a type parameter that means some type should go here, we'll decide which one later.. It is used, when you have to handle optional values. For example
 if you want to be able to leave a field of a struct empty, you assign the
 `Option` type to it. If the field has a value, it is `Some(<value>)`, if
 it is empty, it is `None`.
@@ -71,7 +70,7 @@ expression.
 ### How to use `match`
 
 `match` is a way of control flow based on pattern matching. A pattern on
-the one left evaluates to an expression on the right side.
+the left results in the expression on the right side.
 
 ```rust
 match VALUE {
@@ -106,9 +105,14 @@ In case of a `Result<T, E>`, match statements can be used to get to
 the inner value.
 
 ```rust
-match RESULT<T,E> {
-    Ok(T) => EXPRESSION, that uses or returns T
-    Err(E) => EXPRESSION,
+let some_result: Result<File, Error> = do_operation();
+match some_result {
+    Ok(file) => {
+        // In this block we have a new variable `file`, of type `File`
+    }
+    Err(error) => {
+        // In this block we have a new variable `err`, of type `Error`
+    }
 }
 ```
 All arms of the match tree have to result in the same type!
@@ -135,7 +139,6 @@ Your code will use the example data found in
 ```
 $ teaching-material2/assignments/_templates/files-match-result/src/data
 ```
-
 ## Step-by-Step Solution
 
 ### Step 1: Unwrapping
