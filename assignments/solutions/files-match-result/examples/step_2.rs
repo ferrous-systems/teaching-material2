@@ -1,17 +1,18 @@
 use std::fs::File;
+use std::io::prelude::*;
 use std::io::Error;
 
-// first function
+fn main() -> Result<(), Error> {
+    let open_result = File::open("src/data/content.txt");
 
-fn unwrap_file(open_result: Result<File, Error>) -> File {
-    match open_result {
-        Ok(file) => return file,
+    let mut file = match open_result {
+        Ok(file) => file,
         Err(e) => panic!("Problem opening the file: {:?}", e),
     };
-}
 
-fn main() {
-    let open_result = File::open("src/lib/content.txt");
+    let mut content_string = String::new();
+    file.read_to_string(&mut content_string)?;
 
-    let _file = unwrap_file(open_result);
+    println!("{}", content_string);
+    Ok(())
 }

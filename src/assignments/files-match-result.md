@@ -1,6 +1,6 @@
 # Files, Match and Result
 
-In this exercise you will complete a number of steps to learn about
+In this exercise you will complete a number of mini exercises to learn about
 Error Handling. The final result will be a url parser that reads lines
 from a text file and can distinguish the content between URLs and
 non-urls.
@@ -29,16 +29,11 @@ non-urls.
 [github.com/ferrous-systems/teaching-material](https://github.com/ferrous-systems/teaching-material).
 
 [todo!] add correct location once it's definite.
-✅ Fix the runtime error by correcting the file path. 
+✅ Fix the runtime error by correcting the file path and handle the `Result` type that is returned from the `File::open()` with a match statement, so that the `.unwrap()` can be deleted. 
 
-✅ Manually unwrap the `Result` type that is returned from the
-    `File::open()` with a match statement, so that the `.unwrap()` can be
-    deleted.
+Important Note: The result of this first step is the starting point for each of the next Tasks. They are not consecutive to each other!
 
-✅ Move this manual unwrap to its own function.
-
-✅ Read the content of the file to a buffer and count the lines in a
-    for loop.
+✅ Read the content of the file to a buffer using [Read::read\_to\_string](https://doc.rust-lang.org/std/io/trait.Read.html#method.read_to_string). Propagate the Error with `?` to `fn main()`.
 
 ✅ Filter out empty lines and print the non-empty ones.
 
@@ -141,7 +136,7 @@ $ teaching-material2/assignments/_templates/files-match-result/src/data
 ```
 ## Step-by-Step Solution
 
-### Step 1: Unwrapping
+### Step 1: Handle the `Result` instead of unwrapping it!
 
 `File::open` yields a `Result<T, E>` kind of type, a quick way to get to
 inner type T is to use the `.unwrap()` method on the `Result<T, E>`. The
@@ -154,9 +149,9 @@ often used as a quick fix before implementing proper error handling.
     [File::open](https://doc.rust-lang.org/std/fs/struct.File.html#method.open)
     returns.
 
-✅ Implement a manual unwrap using `match` so to get to the inner type. Link the two possible patterns, `Ok(file)` and `Err(e)` to an an appropriate expression, for example: `println!("File opened")` and `println!("Error: {}", e)`.
+✅ Handle the `Result` using `match` to get to the inner type. Link the two possible patterns, `Ok(file)` and `Err(e)` to an an appropriate expression, for example: `println!("File opened")` and `panic!("Problem opening the file: {:?}", e)`.
 
-✅ Fix the location of the file so that the error is no longer returned. 
+✅ Fix the location of the file so that the program no longer panics. 
 
 <details>
   <summary>Click me</summary>
@@ -167,7 +162,7 @@ fn main() {
 
     match open_result {
         Ok(_file) => println!("File opened"),
-        Err(e) => println!("Problem opening the file: {:?}", e),
+        Err(e) => panic!("Problem opening the file: {:?}", e),
     };
 }
 ```
@@ -176,67 +171,21 @@ fn main() {
 
 TIP: IDEs often provide a "quick fix" to roll out all match arms quickly
 
-### Step 2: Moving the unwrapping into a function.
-
-✅ Implement the following function based on what you wrote in the last
-    step.
-
-```rust
-fn unwrap_file(open_result: Result<File, Error>) -> File {
-        todo!
-    }
-```
-
-✅ Change `println!("Error: {}", e)` to `panic!("Error: {}", e)`.
-
-✅ To be able to return from the `Ok()` arm, add a `return` statement.
-    to return the `File` object.
-
-✅ Call the function.
-
-<details>
-  <summary>Click me</summary>
-
-```rust
-fn unwrap_file(open_result: Result<File, Error>) -> File {
-    match open_result {
-        Ok(file) => return file,
-        Err(e) => panic!("Problem opening the file: {:?}", e),
-    };
-}
-
-fn main() {
-    let open_result = File::open("src/lib/content.txt");
-
-    let _file = unwrap_file(open_result);
-}
-```
-</details>
-
-### Step 3: Reading the File content and Error propagation.
+### Step 2: Reading the File content to a String and Error propagation.
 
 ✅ Import `std::io::prelude::*`
 
 Take a look at [Read::read\_to\_string](https://doc.rust-lang.org/std/io/trait.Read.html#method.read_to_string). The method takes in a mutable empty `String`, and writes the content of a file to this buffer. The method returns a `Result<usize, Error>`, where the usize is the number of bytes that have been written to the buffer. Handling this Result, will not yield the `String` of file content. For a simple program, handling it with an 
-`.unwrap()` would be sufficient, but for bigger code bases this is not helpful.
+`.unwrap()` would be sufficient, but for bigger code bases this is not helpful, so we want to propagate the Error.
 
-✅ Instead, add the following function to your program: 
+✅ Add `Result<(), Error>` as return type to `fn main()` and `Ok(())` as the last line of `fn main()`.
+  
 
-```rust
-fn content_to_string(mut file: File) -> Result<String, Error> {
-    let mut content_string = String::new();
-    file.read_to_string(&mut content_string)?;
-    Ok(content_string)
-}
-```
+✅ Create an empty `String` that serves as buffer and bind it to a mutable variable. 
 
-It takes in a mutable instance of the `File` and returns a `Result<String, Error>`. It
-creates an empty `String` that serves as buffer. The `.read_to_string()` method is applied on the `File` object. The method takes in the `String` buffer. The method is then followed by the `?` operator. If the method returns an `Error` the function propagates this error. If the method returns the `Ok` value, the function returns the `String` wrapped in the
-`Ok`.
+✅ Call the `.read_to_string()` method on the `File` object. The method takes in the `String` buffer and is followed by the `?` operator. If the method returns an `Error` it is propagated to the instance that called `fn main()`. If the method returns the `Ok` value, the program proceeds as planned.
 
-✅ In `main()`, call the function and bind it to a variable. You can use `.unwrap()` to handle the `Result`.
-
-✅ Use `println!` to print the content of the `String`.
+✅ Use `println!` to print the content of the `String` buffer.
 
 <details>
   <summary>Click me</summary>
@@ -246,31 +195,24 @@ use std::fs::File;
 use std::io::prelude::*;
 use std::io::Error;
 
-fn unwrap_file(open_result: Result<File, Error>) -> File {
-    match open_result {
-        Ok(file) => return file,
-        Err(e) => panic!("Problem opening the file: {:?}", e),
-    };
-}
-
-fn content_to_string(mut file: File) -> Result<String, Error> {
-    let mut content_string = String::new();
-    file.read_to_string(&mut content_string)?;
-    Ok(content_string)
-}
-
-fn main() {
+fn main() -> Result<(), Error> {
     let open_result = File::open("src/data/content.txt");
 
-    let file = unwrap_file(open_result);
+    let mut file = match open_result {
+        Ok(file) => file,
+        Err(e) => panic!("Problem opening the file: {:?}", e),
+    };
 
-    let content = content_to_string(file).unwrap();
-    println!("{}", content);
+    let mut content_string = String::new();
+    file.read_to_string(&mut content_string)?;
+
+    println!("{}", content_string);
+    Ok(())
 }
 ```
 </details>
 
-### Task 4: Counting lines
+### Task 3: Filter out empty lines print the Rest …and Errors
 
 ✅ Add the following imports:
 
@@ -283,48 +225,20 @@ use std::io::{ BufReader, BufRead,}
 
 ✅ Construct a `BufReader` around the file.
 
-✅ The `lines()`- method returns an Iterator over the file’s lines. Iterate over the lines with a for loop to count them.
+✅ The `lines()`- method returns an Iterator over the file’s lines. Iterate over the lines with a for loop.
 
-✅ Print the number of lines the file contains.
+✅ `lines()` returns the `Result`-Type. In each iteration use it with a `match` statement to get to the actual `String`.
 
 ✅ You don’t have to handle the `Result` that is returned from `.lines()`, why?
 
 <details>
   <summary>Click me</summary>
 
-```rust
-use std::fs::File;
-use std::io::{BufRead, BufReader, Error};
 
-fn unwrap_file(open_result: Result<File, Error>) -> File {
-    match open_result {
-        Ok(file) => return file,
-        Err(e) => panic!("Problem opening the file: {:?}", e),
-    };
-}
 
-fn main() {
-    let open_result = File::open("src/data/content.txt");
+### Step 4: Filter out empty lines print the Rest …and Errors
 
-    let file = unwrap_file(open_result);
-
-    let buf_reader = BufReader::new(file);
-
-    let mut number = 0;
-
-    for _line in buf_reader.lines() {
-        number += 1;
-    }
-
-    println!("{}", number);
-}
-```
-
-</details>
-
-### Step 5: Filter out empty lines print the Rest …and Errors
-
-✅ `lines` returns the `Result`-Type, use it with a `match` statement to get to the actual `String`.
+✅  
 
 ✅ Filter out the empty lines, and only print the the others. The [is\_empty](https://doc.rust-lang.org/std/string/struct.String.html#method.is_empty) method can help you here.
 
@@ -361,7 +275,7 @@ fn main() {
 
 </details>
 
-### Step 6: Read URLs from file and return with Option.
+### Step 5: Read URLs from file and return with Option.
 
 ✅ Add `url = "2"` to your `[dependencies]` section in `Cargo.toml` and import `url::Url` in `main.rs`.
 
