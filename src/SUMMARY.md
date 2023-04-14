@@ -139,7 +139,7 @@
 <!-- TODO
 -   [Shapes](./assignments/shapes.md)
 
--   [Files, match, and Result](./assignments/files-match-result-assignment.md)
+-   [Files, match, and Result](./assignments/files-match-result.md)
 
 -   [FizzBuzz command line](./assignments/fizzbuzz-command-line.md)
 
