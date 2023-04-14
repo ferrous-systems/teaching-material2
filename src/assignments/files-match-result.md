@@ -120,22 +120,25 @@ All arms of the match tree have to result in the same type!
 # Template
 
 Clone the teaching material repository at
-[github.com/ferrous-systems/teaching-material](https://github.com/ferrous-systems/teaching-material).
+[github.com/ferrous-systems/teaching-material2](https://github.com/ferrous-systems/teaching-material2).
 
-[todo!] add correct location once it's definite.
+<!-- [todo!] add correct location once it's definite. -->
 
 Then, start your `VSCode` in the proper root folder to have
 `Rust-Analyzer` working properly.
 
-    git clone https://github.com/ferrous-systems/teaching-material
-    code teaching-material/assignments/files-match-result-assignment/template/
+```
+$ teaching-material2/aassignments/_templates/files-match-result/
+```
 
 The template builds, but has a runtime error, as the location of the file
 is wrong. This is intentional.
 
 Your code will use the example data found in
-[files-match-result-assignment/template/src/data](https://github.com/ferrous-systems/teaching-material/tree/main/assignments/files-match-result-assignment/template/src/data).
 
+```
+$ teaching-material2/assignments/_templates/files-match-result/src/data
+```
 ## Step-by-Step Solution
 
 ### Step 1: Unwrapping
