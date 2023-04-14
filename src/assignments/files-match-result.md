@@ -53,8 +53,7 @@ Both `Option` and `Result` are similar in a way. Both have two
 variants, and depending on what those variants are, the program may
 continue in a different way.
 
-The `Option` Type can have the variant `Some(<some other type>)` or
-`None`. It is used, when you have to handle optional values. For example
+The Option type can have the variant `Some(T)` or `None`. `T` is a type parameter that means some type should go here, we'll decide which one later.. It is used, when you have to handle optional values. For example
 if you want to be able to leave a field of a struct empty, you assign the
 `Option` type to it. If the field has a value, it is `Some(<value>)`, if
 it is empty, it is `None`.
@@ -106,9 +105,14 @@ In case of a `Result<T, E>`, match statements can be used to get to
 the inner value.
 
 ```rust
-match RESULT<T,E> {
-    Ok(T) => EXPRESSION, that uses or returns T
-    Err(E) => EXPRESSION,
+let some_result: Result<File, Error> = do_operation();
+match some_result {
+    Ok(file) => {
+        // In this block we have a new variable `file`, of type `File`
+    }
+    Err(error) => {
+        // In this block we have a new variable `err`, of type `Error`
+    }
 }
 ```
 All arms of the match tree have to result in the same type!
