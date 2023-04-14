@@ -35,7 +35,7 @@ non-urls.
     `File::open()` with a match statement, so that the `.unwrap()` can be
     deleted.
 
-✅ Move this manual unwrap to it’s own function.
+✅ Move this manual unwrap to its own function.
 
 ✅ Read the content of the file to a buffer and count the lines in a
     for loop.
