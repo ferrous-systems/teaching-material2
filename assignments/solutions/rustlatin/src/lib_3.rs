@@ -9,7 +9,7 @@ fn rustlatin(sentence: &str) -> Vec<char> {
         let first_char = word.chars().next().unwrap();
         collection_of_chars.push(first_char);
     };
-    words
+    collection_of_chars
  
 }
 
