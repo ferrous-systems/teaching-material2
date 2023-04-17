@@ -7,7 +7,7 @@ fn rustlatin(sentence: &str) -> Vec<char> {
     
     for word in sentence.split(' ') {
         let first_char = word.chars().next().unwrap();
-        collection_of_words.push(first_char);
+        collection_of_chars.push(first_char);
     };
     words
  
