@@ -44,7 +44,7 @@ For this exercise we define
 
 - the Vowels of English alphabet → `['a', 'e', 'i', 'o', 'u']`
 
-- a sentence is a collection of ASCII characters with words that are separated by a white space
+- a sentence is a collection of Unicode characters with words that are separated by a space character (`U+0020`)
 
 ✅ Implement a function that splits a sentence into its words, and adds a suffix or prefix to them according to the following rules:
 
