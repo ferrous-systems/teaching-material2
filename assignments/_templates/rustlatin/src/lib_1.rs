@@ -3,7 +3,6 @@ const VOWELS: [char; 5] = ['a', 'e', 'i', 'o', 'u'];
 //           It's a global const because it will not be modified in any way and it's
 //           small enough that the way that const variables are copied into each
 //           usage location isn't a problem.
-//           serves as a reference.
 
 fn rustlatin(sentence: &str) -> Vec<_> {
                             // ^^^^^^^ The correct return type needs to be added by you, 
