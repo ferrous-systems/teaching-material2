@@ -136,7 +136,7 @@ fn rustlatin(sentence: &str) -> Vec<String> {
 ✅ After iterating over the sentence to split it into words, add the first
 character of each word to the vector.
 
-✅ Check the Rust documentation on the [primitive str Type](https://doc.rust-lang.org/std/primitive.str.html#) for a method that returns an iterator over the `chars` of a `&str`. The `char` type is a unicode scalar value that represents a single character.
+✅ Check the Rust documentation on the [primitive str Type](https://doc.rust-lang.org/std/primitive.str.html#) for a method that returns an iterator over the `chars` of a `&str`. The `char` type holds a Unicode Scalar Value that represents a single *character* (although just be aware the definition of *character* is complex when talking about emojis and other non-English text).
 
 Since iterators don’t do anything by themselves, it needs to be advanced first, with the `.next()` method. This method returns an `Option(Self::Item)`, where `Self::Item` is the `char` in this case. You don’t need to handle it with pattern matching in this case, a simple `unwrap()` will do, as a `None` is not expected to happen.
 
