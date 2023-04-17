@@ -58,16 +58,16 @@ In order to learn as much as possible we recommend following the step-by-step so
 
 ### Getting started
 
-Find the exercise skeleton in `/assignments/_templates/rustlatin`
+Find the exercise template in `/assignments/_templates/rustlatin`
 
-The folder contains each step as it’s own numbered `lib.rs` file. Each file contains starter code and a test that needs to pass in order for the step to be considered complete.
+The folder contains each step as it’s own numbered project, containing a `lib.rs` file. Each `lib.rs` contains starter code and a test that needs to pass in order for the step to be considered complete.
 
 ## Knowledge
 ### Rust Analyzer
 
 A part of this exercise is seeing type inference in action and to use it to help to determine the type the function is going to return. To make sure the file can be indexed by Rust Analyzer, make sure 
 
-* that the `rustlatin` folder is your root folder in VSCode
+* that the `rustlatin/step_x` folder is your root folder in VSCode
 * rename the file you’re currently working on to `lib.rs`. Name it back to it’s numbered version when you are finished.
 
 # Step-by-step-Solution
