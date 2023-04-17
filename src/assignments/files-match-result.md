@@ -25,20 +25,21 @@ non-urls.
 
 ## Task
 
-✅ Clone the teaching material repository at
+Clone the teaching material repository at
 [github.com/ferrous-systems/teaching-material](https://github.com/ferrous-systems/teaching-material).
 
 [todo!] add correct location once it's definite.
-✅ Fix the runtime error by correcting the file path and handle the `Result` type that is returned from the `File::open()` with a match statement, so that the `.unwrap()` can be deleted. 
 
-Important Note: The result of this first step is the starting point for each of the next Tasks. They are not consecutive to each other!
+1. Fix the runtime error in the template code by correcting the file path. Handle the `Result` type that is returned from the `File::open()` with a match statement, so that the `.unwrap()` can be deleted. 
 
-✅ Read the content of the file to a buffer using [Read::read\_to\_string](https://doc.rust-lang.org/std/io/trait.Read.html#method.read_to_string). Propagate the Error with `?` to `fn main()`.
+2. Read the content of the file to a buffer using [Read::read\_to\_string](https://doc.rust-lang.org/std/io/trait.Read.html#method.read_to_string). Propagate the Error with `?` to `fn main()`. Start with the code of Step 1. 
+  
+3. Use the [`lines()`](https://doc.rust-lang.org/std/io/trait.BufRead.html#method.lines)-method to read the lines into a [BufReader](https://doc.rust-lang.org/std/io/struct.BufReader.html) and count them! Start with the code of Step 1.
 
-✅ Filter out empty lines and print the non-empty ones.
 
-✅ Write a function that parses each line and returns `Some(url)` if the line is a URL, and `None` if it is not. Use the Url crate's [Url 
-    Type](https://docs.rs/url/2.1.1/url/)
+4. Filter out empty lines using [is\_empty](https://doc.rust-lang.org/std/string/struct.String.html#method.is_empty) and print the non-empty ones. Start with the code of Step 3.
+
+5. Write a function that parses each line and returns `Some(url)` if the line is a URL, and `None` if it is not. Use the Url crate's [UrlType](https://docs.rs/url/2.1.1/url/). Start with the code of Step 4.
 
 ## Knowledge
 
@@ -212,7 +213,7 @@ fn main() -> Result<(), Error> {
 ```
 </details>
 
-### Task 3: Filter out empty lines print the Rest …and Errors
+### Task 3: Read the lines into a `BufReader` and count them!
 
 ✅ Add the following imports:
 
@@ -225,41 +226,26 @@ use std::io::{ BufReader, BufRead,}
 
 ✅ Construct a `BufReader` around the file.
 
-✅ The `lines()`- method returns an Iterator over the file’s lines. Iterate over the lines with a for loop.
+✅ The `lines()`- method returns an Iterator over the file’s lines. Iterate over the lines with a for loop to count them.
 
-✅ `lines()` returns the `Result`-Type. In each iteration use it with a `match` statement to get to the actual `String`.
+✅ Print the number of lines the file contains.
 
 ✅ You don’t have to handle the `Result` that is returned from `.lines()`, why?
 
 <details>
   <summary>Click me</summary>
 
-
-
-### Step 4: Filter out empty lines print the Rest …and Errors
-
-✅  
-
-✅ Filter out the empty lines, and only print the the others. The [is\_empty](https://doc.rust-lang.org/std/string/struct.String.html#method.is_empty) method can help you here.
-
-<details>
-  <summary>Click me</summary>
-
 ```rust
 use std::fs::File;
-use std::io::{BufRead, BufReader, Error};
-
-fn unwrap_file(open_result: Result<File, Error>) -> File {
-    match open_result {
-        Ok(file) => return file,
-        Err(e) => panic!("Problem opening the file: {:?}", e),
-    };
-}
+use std::io::{BufRead, BufReader};
 
 fn main() {
-    let open_result = File::open("src/data/content.txt");
+    let open_result = File::open("./src/data/content.txt");
 
-    let file = unwrap_file(open_result);
+    let file = match open_result {
+        Ok(file) => file,
+        Err(e) => panic!("Problem opening the file: {:?}", e),
+    };
 
     let buf_reader = BufReader::new(file);
 
@@ -270,6 +256,42 @@ fn main() {
     }
 
     println!("{}", number);
+}
+```
+
+</details>
+
+### Step 4: Filter out empty lines print the Rest …and Error Handling
+
+✅ Filter out the empty lines, and only print the the others. The [is\_empty](https://doc.rust-lang.org/std/string/struct.String.html#method.is_empty) method can help you here.
+
+<details>
+  <summary>Click me</summary>
+
+```rust
+use std::fs::File;
+use std::io::{BufRead, BufReader};
+
+fn main() {
+    let open_result = File::open("src/data/content.txt");
+
+    let file = match open_result {
+        Ok(file) => file,
+        Err(e) => panic!("Problem opening the file: {:?}", e),
+    };
+
+    let buf_reader = BufReader::new(file);
+
+    for line in buf_reader.lines() {
+        match line {
+            Ok(content) => {
+                if !content.is_empty() {
+                    println!("{}", content)
+                }
+            }
+            Err(e) => println!("Error reading line {}", e),
+        }
+    }
 }
 ```
 
@@ -298,7 +320,7 @@ fn parse_url(line: String) -> Option<Url> {
 
 ```rust
 use std::fs::File;
-use std::io::{BufRead, BufReader, Error};
+use std::io::{BufRead, BufReader};
 use url::Url;
 
 fn parse_line(line: String) -> Option<Url> {
@@ -308,17 +330,13 @@ fn parse_line(line: String) -> Option<Url> {
     }
 }
 
-fn unwrap_file(open_result: Result<File, Error>) -> File {
-    match open_result {
-        Ok(file) => return file,
-        Err(e) => panic!("Problem opening the file: {:?}", e),
-    };
-}
-
 fn main() {
     let open_result = File::open("src/data/content.txt");
 
-    let file = unwrap_file(open_result);
+    let file = match open_result {
+        Ok(file) => file,
+        Err(e) => panic!("Problem opening the file: {:?}", e),
+    };
 
     let buf_reader = BufReader::new(file);
 
